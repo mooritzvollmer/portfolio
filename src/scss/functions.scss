@@ -1,0 +1,32 @@
+// functions.scss contains the Sass functions used by active styles.
+
+// baseline
+/// @param {Number} $value Number can be integer or pixel
+/// @requires $baseline
+/// @returns {Number} Size specification in pixels, which is a multiple of $baseline
+/// @example
+/// foo {
+///   width: baseline(4); // -> 32px ($baseline of 8px multiplied by 4)
+///   width: baseline(30px); // -> 32px (rounded to the closest multiple of $baseline of 8px)
+/// }
+
+@function baseline($value) {
+  $result: 0;
+
+  // is number
+  @if type-of($value) == 'number' {
+    // is pixel value
+    @if is-number($value) and index('px', unit($value)) != null {
+      $result: $baseline * round(math.div($value, $baseline));
+    }
+
+    // is integer
+    @else {
+      $result: $baseline * $value;
+    }
+  } @else {
+    @error 'Type error: "#{$value}" is not a number!';
+  }
+
+  @return $result;
+}

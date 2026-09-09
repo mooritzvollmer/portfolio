@@ -1,0 +1,203 @@
+// helper-mixins.scss contains often used helper mixins
+//
+// the Unstyled element mixin marks elements that are still in the Friendation state and to which no client-specific styling has been applied. this should be the only element in the project to use „!important” rules!
+/// @require {variable} $unstyled-elements-enabled - the mixin unstyled-element only applies, if $unstyled-elements-enabled is set to „true”
+@mixin unstyled-element($text: null) {
+  @if $unstyled-elements-enabled {
+    opacity: 1 !important;
+    outline: 1px dashed #f00 !important;
+    outline-offset: 8px !important;
+    position: relative !important;
+
+    &::before {
+      background-color: #f00 !important;
+      border-radius: 0 !important;
+      bottom: 100% !important;
+      color: #fff !important;
+      display: block !important;
+      font-family: monospace !important;
+      font-size: 13px !important;
+      height: auto !important;
+      left: 0 !important;
+      padding: 2px 3px !important;
+      position: absolute !important;
+      text-transform: none !important;
+      width: auto !important;
+
+      @if $text {
+        content: '#{$text} (unstyled-element)' !important;
+      } @else {
+        content: 'unstyled-element' !important;
+      }
+    }
+  }
+}
+
+// hide visually (still accessible by screenreaders)
+// .visuallyHidden class instead of using the mixin directly to add JS to those elements to further improve accessibility.
+/// @link https://a11yproject.com/posts/how-to-hide-content/
+
+@mixin hide-visually() {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.visuallyHidden {
+  &:not(:focus-visible):not(:focus):not(:focus-within) {
+    @include hide-visually();
+  }
+}
+
+// defines a font face for custom fonts. `.woff2` files only. Convert `.ttf` fonts before using them.
+/// @param {string} $family - The font family name
+/// @param {string} $file - The font file name without extension
+/// @param {string} $weight - The font weight
+/// @param {string} $style - The font style
+/// @param {string} $base-path - The base path to the font files
+/// @see _text.scss
+/// @example Usage
+///   @include font-face('Roboto', 'roboto', $font-weight-normal, 'normal');
+
+@mixin font-face(
+  $family,
+  $file,
+  $weight: 'normal',
+  $style: 'normal',
+  $base-path: '../assets/fonts/'
+) {
+  @font-face {
+    font-display: swap;
+    font-family: $family;
+    font-style: unquote($style);
+    font-weight: unquote($weight);
+    src: url($base-path + $file + '.woff2') format('woff2');
+  }
+}
+
+/// use this primarily for containers where you want to get rid of spacing of last or first child element
+@mixin reset-content-margins($direction: 'both') {
+  @if ($direction == 'both' or $direction == 'top') {
+    > :first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  @if ($direction == 'both' or $direction == 'bottom') {
+    > :last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+// allows words to break on line end with hyphens.
+// only works with supported browsers and text languages.
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens#browser_compatibility
+@mixin break-word {
+  -webkit-hyphenate-limit-after: 4;
+  -webkit-hyphenate-limit-before: 4;
+  -ms-hyphenate-limit-chars: 10 4 4;
+  hyphenate-limit-chars: 10 4 4;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  text-wrap: balance; // Balance line lengths (@see https://developer.chrome.com/docs/css-ui/css-text-wrap-balance)
+  -ms-word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+// resets list styling for semantic lists that should not be displayed in a list format
+@mixin reset-list {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &:not([class]) {
+    li:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// fixes the layout of ordered and unordered lists in a container with center-aligned text
+@mixin fix-list-layout-for-center-alignment {
+  ol,
+  ul {
+    display: inline-block;
+    list-style-position: inside;
+    padding-left: 0;
+  }
+}
+
+// /// prevent layout shifts when Swiper initializes,
+// /// by specifying the same sizes, that the Swiper will use, in CSS before the Swiper is initialized
+// /// @example Usage
+// ///   @include swiper-prevent-layout-shifts(
+// ///     (
+// ///       (0, 1, var(--grid-gap-mobile)),
+// ///       (768px, 2, var(--grid-gap-tablet)),
+// ///       (1024px, 3),
+// ///       (1280px, 3, var(--grid-gap-desktop))
+// ///     )
+// ///   );
+// @mixin swiper-prevent-layout-shifts($configs) {
+//   .swiper:not(.swiper-initialized) {
+//     .swiper-wrapper {
+//       // Variable to keep track of the last 'space-between' value
+//       $last-space-between: null;
+//       // Default config
+//       @include flex-grid(1);
+
+//       .swiper-slide:nth-child(n + 2) {
+//         display: none;
+//       }
+
+//       // Loop through each breakpoint config
+//       @each $config in $configs {
+//         $breakpoint: nth($config, 1);
+//         $slides-per-view: nth($config, 2);
+//         $space-between: if(
+//           length($config) > 2,
+//           nth($config, 3),
+//           $last-space-between
+//         );
+
+//         // Update the last known value of 'space-between'
+//         $last-space-between: $space-between;
+
+//         @media (min-width: $breakpoint) {
+//           @if $space-between != null {
+//             @include flex-grid($slides-per-view, $gap-column: $space-between);
+//           } @else {
+//             @include flex-grid($slides-per-view);
+//           }
+
+//           .swiper-slide:nth-child(n) {
+//             display: initial;
+//           }
+
+//           .swiper-slide:nth-child(n + #{($slides-per-view + 1)}) {
+//             display: none;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// adds rules to center object-fit an image to its container
+@mixin cover-image {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

@@ -1,0 +1,225 @@
+// global.scss contains all default HTML element reset styles (similar to normalize.css or reset.css)
+
+html {
+  background-color: var(--c-bg);
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: $font-family-default;
+  font-size: calc(#{$font-global-size} * var(--a11y-font-scale, 1));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: $font-global-line-height;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #d72638;
+  outline-offset: 3px;
+}
+
+:root.a11y-text-large {
+  --a11y-font-scale: 1.08;
+  --a11y-ui-scale: 1.08;
+  --a11y-space-scale: 1.12;
+}
+
+:root.a11y-text-larger {
+  --a11y-font-scale: 1.16;
+  --a11y-ui-scale: 1.16;
+  --a11y-space-scale: 1.24;
+}
+
+:root.a11y-focus-strong {
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible,
+  summary:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    box-shadow: 0 0 0 7px rgba(215, 38, 56, 0.32), 0 0 18px rgba(215, 38, 56, 0.38);
+    outline: 3px solid #d72638;
+    outline-offset: 4px;
+  }
+}
+
+:root.a11y-reduce-motion {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+dt {
+  font-weight: $font-weight-bold;
+}
+
+p,
+.paragraph,
+ul,
+ol,
+dl,
+dd,
+table {
+  margin: 0 0 $font-paragraph-spacing;
+}
+
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding-left: 24px;
+
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  background-color: $color-border;
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: $font-paragraph-spacing 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+figcaption {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+code {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 90%;
+  padding: 2px 5px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+}
+
+tr {
+  background-color: $color-grey-light;
+
+  &:nth-child(even) {
+    background-color: $color-background;
+  }
+
+  thead + tbody & {
+    background-color: $color-background;
+
+    &:nth-child(even) {
+      background-color: $color-grey-light;
+    }
+  }
+}
+
+td,
+th {
+  padding: 20px;
+  text-align: inherit;
+  vertical-align: top;
+}
+
+th {
+  background-color: $color-background-alt;
+  color: $color-headline;
+
+  thead & {
+    box-shadow: inset 0 -2px 0 0 $color-border; // because border doesn't work correctly with position: sticky
+    vertical-align: bottom;
+    // white-space: nowrap; // use instead of vertical-align: bottom if needed
+  }
+
+  tbody & {
+    box-shadow: inset -2px 0 0 0 $color-border; // because border doesn't work correctly with position: sticky
+  }
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  text-align: inherit;
+}
+
+form {
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba($color-blue, 0.4);
+  border-radius: 9999px;
+  background-color: rgba($color-blue, 0.1);
+  color: #747da3;
+  font-weight: $font-weight-normal;
+  text-align: center;
+  padding: 6px baseline(1.25);
+  font-size: 14px;
+  line-height: 1;
+
+  .kicker__icon {
+    margin-right: 6px;
+  }
+}

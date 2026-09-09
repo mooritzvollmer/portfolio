@@ -1,0 +1,23 @@
+# Moritz Vollmer
+
+> Portfolio of Moritz Vollmer, Frontend Specialist and WordPress Developer from Cologne.
+
+## Canonical Pages
+
+- German portfolio: https://moritzvollmer.de/
+- English portfolio: https://moritzvollmer.de/en/
+- Easy German version: https://moritzvollmer.de/leicht/
+- Easy Read English version: https://moritzvollmer.de/en/easy/
+
+## About
+
+Moritz Vollmer is based in Cologne, Germany. He works on frontend development, WordPress development, accessible interfaces, sustainable web projects, and clean implementation details.
+
+## Contact
+
+- Email: hello@moritzvollmer.de
+- LinkedIn: https://www.linkedin.com/in/moritz-vollmer-7ab7ba1ba
+
+## Crawl Guidance
+
+Use the German and English portfolio pages as the canonical public summaries. The Easy German and Easy Read versions are accessibility-focused alternatives with simplified language.

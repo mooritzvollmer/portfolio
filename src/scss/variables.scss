@@ -1,0 +1,241 @@
+// variables.scss contains all global variables
+
+// for debugging: this mixin only applies, if $unstyled-elements-enabled is set to „true”
+/// @see {mixin} unstyled-element
+
+$unstyled-elements-enabled: false;
+
+// variable to use for baseline function
+/// @see {_functions.scss}
+
+$baseline: 8px;
+
+//
+// breakpoints
+
+$breakpoint-mobile-horizontal: 512px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-horizontal: 1024px;
+$breakpoint-desktop: 1280px;
+$breakpoint-desktop-wide: 1440px;
+
+//
+// max widths
+
+$content-max-width: 800px; // TODO: this should match the width of layout-grid-item(3, 10) at largest breakpoint
+$container-max-width: 1280px;
+$document-max-width: 1440px;
+
+//
+// container padding (use for horizontal spacing)
+
+$container-padding-mobile: 16px;
+$container-padding-tablet: 24px;
+$container-padding-desktop: 32px;
+
+// component spacing (use for vertical spacing)
+
+$component-spacing-mobile: 40px;
+$component-spacing-tablet: 80px;
+$component-spacing-desktop: 120px;
+
+// reduced component spacing (vertical)
+
+$component-spacing-mobile-constricted: $component-spacing-mobile * 0.5;
+$component-spacing-tablet-constricted: $component-spacing-tablet * 0.5;
+$component-spacing-desktop-constricted: $component-spacing-desktop * 0.5;
+
+//
+// grid
+/// @see {_mixins.scss}
+
+$grid-gap-mobile: 16px;
+$grid-gap-tablet: 24px;
+$grid-gap-desktop: 32px;
+
+//
+// box shadows
+
+$box-shadow-size: 30px;
+$box-shadow: 0 0 $box-shadow-size rgba(#000, 0.1);
+$box-shadow-hover: 0 10px $box-shadow-size rgba(#000, 0.15);
+$box-shadow-hover-raise: 3px;
+
+//
+// border radius
+
+$border-radius: 8px;
+$border-radius-button: 12px;
+$border-radius-image: 12px;
+$border-radius-input: 8px;
+
+//
+// colors
+
+$color-black: #000;
+$color-grey-dark: #787878;
+$color-grey-light: #f3f2f9;
+$color-white: #fff;
+$color-blue: #0b2a66;
+$color-red: #e80606;
+
+// colors semantical, theme related color names (e.g. "$color-text")
+
+$color-primary: $color-blue;
+$color-secondary: $color-blue;
+$color-background: $color-white;
+$color-background-alt: $color-blue;
+$color-text: #0b2a66;
+$color-text-secondary: #0b2a66;
+$color-headline: $color-primary;
+$color-border: $color-blue;
+$color-error: $color-red;
+
+//
+// background colors
+/// @see {_backgrounds.scss}
+
+$background-color-default: $color-background;
+$background-color-one: $color-background-alt;
+// $background-color-two: $color-grey-light;
+// add more if necessary
+
+//
+// links
+
+$color-link: $color-primary;
+$color-link-hover: darken($color-link, 10%);
+$color-link-active: $color-link;
+
+//
+//typography
+/// @see {_typography.scss}
+/// @see {https://developer.mozilla.org/de/docs/Web/CSS/font-weight}
+
+$font-weight-light: #{'300'}; // 100 - 300
+$font-weight-normal: #{'400'}; // 400
+$font-weight-medium: #{'500'}; // 500 - 600
+$font-weight-bold: #{'700'}; // 700 - 900
+$font-family-default: 'Poppins', Helvetica, Arial, sans-serif;
+$font-global-size: 16px;
+$font-global-line-height: 1.5;
+$font-paragraph-spacing: 20px;
+
+//
+// buttons
+/// @see {_buttons.scss}
+
+$button-background-color: $color-primary;
+$button-background-color-hover: darken($button-background-color, 10%);
+$button-background-color-active: $button-background-color;
+$button-border-color: $button-background-color;
+$button-border-radius: $border-radius-button;
+$button-border-width: 1px;
+$button-font-color: $color-white;
+$button-font-size: inherit;
+$button-padding-vertical: 8px;
+$button-padding-horizontal: 24px;
+$button-padding: $button-padding-vertical $button-padding-horizontal;
+// a11y: WCAG AAA – Target Size == touch targets must at least 44 by 44 CSS pixels
+$button-min-size: 44px;
+$button-text-transform: none;
+$button-spacing-horizontal: 12px;
+$button-spacing-vertical: 12px;
+$button-last-paragraph-spacing: $font-paragraph-spacing + 8px;
+
+//
+// sliders
+
+$slider-pagination-bullet-color: $color-primary;
+$slider-pagination-bullet-size: 10px;
+$slider-pagination-bullet-spacing: 5px;
+$slider-navigation-button-size: $button-min-size;
+
+//
+// forms
+/// @see {_forms.scss}
+
+$input-background-color: $color-white;
+$input-background-color-hover: $color-white;
+$input-background-color-active: $color-white;
+$input-border-color: $color-primary;
+$input-border-color-hover: darken($input-border-color, 10%);
+$input-border-color-active: darken($input-border-color, 10%);
+$input-border-radius: $border-radius-input;
+$input-border-width: 1px;
+$input-checkbox-color: $input-border-color;
+$input-checkbox-size: $font-global-size * 1.5;
+$input-font-color: $color-text;
+$input-font-color-hover: $input-font-color;
+$input-font-color-active: $input-font-color;
+$input-font-color-placeholder: rgba($input-border-color, 0.8);
+$input-font-size: inherit;
+$input-labels-float: true; // set this to "false" to disable floating input labels
+$input-label-font-size: inherit;
+$input-label-line-height: $font-global-line-height;
+$input-label-spacing: 10px;
+$input-padding-vertical: 10px;
+$input-padding-horizontal: 15px;
+$input-padding: $input-padding-vertical $input-padding-horizontal;
+$input-min-height: 50px;
+$input-spacing: 30px;
+
+//
+// header
+
+$header-container-max-width: $container-max-width;
+$pre-header-height: 30px;
+$header-height-mobile: 75px;
+$header-height-desktop: 100px;
+$header-breakpoint: $breakpoint-desktop - 50px; // TODO: adjust where the header should break from mobile to desktop layout
+$header-box-shadow-size: $box-shadow-size;
+$header-box-shadow: $box-shadow;
+
+//
+// footer
+
+$footer-row-spacing: 60px;
+
+//
+// transitions & animations
+/// @see {_motion.scss}
+/// @see {_animations.scss}
+
+$transition-duration: 0.25s;
+$transition-timing-function: ease;
+$animation-duration: .125s;
+$animation-timing-function: ease;
+
+//
+// global selectors
+
+$heading-selectors: 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, %headlineh1, %headlineh2, %headlineh3, %headlineh4, %headlineh5, %headlineh6';
+$input-selectors: 'input[type="tel"], input[type="url"], input[type="text"], input[type="date"], input[type="email"], input[type="search"], input[type="number"], input[type="password"], textarea, select';
+$text-selectors: 'p, quote, strong, em, a, li';
+
+//
+// CSS custom properties, used to:
+/// adjust variables responsively
+
+:root,
+:root.theme-light {
+  --c-bg: #f3f2f9;
+  --c-text: #292c37;
+  --grid-gap-column: #{$grid-gap-mobile};
+  --grid-gap-row: #{$grid-gap-mobile};
+
+  @media (min-width: $breakpoint-tablet) {
+    --grid-gap-column: #{$grid-gap-tablet};
+    --grid-gap-row: #{$grid-gap-tablet};
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    --grid-gap-column: #{$grid-gap-desktop};
+    --grid-gap-row: #{$grid-gap-desktop};
+  }
+}
+
+:root.theme-dark {
+  --c-bg: #292c37;
+  --c-text: #faf7f3;
+}

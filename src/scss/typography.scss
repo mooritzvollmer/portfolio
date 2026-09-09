@@ -1,0 +1,265 @@
+// typography.scss contains fonts and text styles
+// Convert font files to woff: https://convertio.co/de/
+
+@font-face {
+  font-family: 'moritzfontmer';
+  src: url('../fonts/moritzfontmer.ttf') format('truetype');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Montreal Mono';
+  src: local('Menlo');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Montreal Mono';
+  src: local('Menlo');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Montreal Mono';
+  src: local('Menlo');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Bold.woff') format('woff');
+  font-weight: $font-weight-bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Medium.woff') format('woff');
+  font-weight: $font-weight-medium;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.woff') format('woff');
+  font-weight: $font-weight-normal;
+  font-display: swap;
+}
+
+%kicker,
+.kicker {
+  color: $color-primary;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  gap: baseline(1);
+  margin-bottom: baseline(2);
+  text-transform: none;
+
+  &__icon {
+    color: #747da3;
+    font-size: 12px;
+    flex: 0 0 12px;
+    width: 12px;
+    text-align: center;
+  }
+
+  &-divider {
+    @include hide-visually();
+  }
+}
+
+#{$heading-selectors} {
+  @include break-word();
+
+  font-weight: $font-weight-medium;
+  line-height: 1.275;
+  margin-bottom: 12px;
+  margin-top: 24px;
+
+  .kicker {
+    color: $color-text;
+  }
+
+  a,
+  a:hover,
+  a:focus-visible {
+    color: $color-link;
+    text-decoration: underline;
+  }
+}
+
+%headlineh1,
+h1,
+.h1 {
+  @include unstyled-element('%headlineh1');
+
+  color: $color-headline;
+  font-family: 'moritzfontmer', $font-family-default;
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+  margin-bottom: 16px;
+  margin-top: 20px;
+
+  @media (min-width: $breakpoint-mobile-horizontal) {
+    font-size: 48px;
+  }
+}
+
+%headlineh2,
+h2,
+.h2 {
+  @include unstyled-element('%headlineh2');
+
+  color: #747da3;
+  font-family: 'moritzfontmer', $font-family-default;
+  font-size: 22px;
+  font-weight: $font-weight-normal;
+  margin: 0;
+}
+
+%headlineh3,
+h3,
+.h3 {
+  @include unstyled-element('%headlineh3');
+
+  font-family: 'moritzfontmer', $font-family-default;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-mobile-horizontal) {
+    font-size: 28px;
+  }
+}
+
+%headlineh4,
+h4,
+.h4 {
+  @include unstyled-element('%headlineh4');
+
+  font-size: 24px;
+
+  @media (min-width: $breakpoint-mobile-horizontal) {
+    font-size: 24px;
+  }
+}
+
+%headlineh5,
+h5,
+.h5 {
+  @include unstyled-element('%headlineh5');
+
+  font-size: 20px;
+}
+
+%headlineh6,
+h6,
+.h6 {
+  @include unstyled-element('%headlineh6');
+
+  font-size: 18px;
+}
+
+%lead,
+.lead {
+  font-size: 18px;
+  font-weight: $font-weight-normal;
+  margin-bottom: 8px;
+  margin-top: 20px;
+
+  + {
+    %headlineh1,
+    h1,
+    .h1 {
+      margin-top: 0;
+    }
+
+    %headlineh2,
+    h2,
+    .h2 {
+      margin-top: 0;
+    }
+  }
+}
+
+#{$text-selectors} {
+  @media (max-width: $breakpoint-tablet - 1) {
+    @include break-word();
+  }
+
+  /** (@see https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap) */
+  text-wrap: pretty; 
+}
+
+@mixin anchorlink {
+  @include unstyled-element('%anchorlink');
+
+  color: $color-link;
+}
+
+%anchorlink,
+a {
+  @include anchorlink;
+}
+
+%blockquote,
+blockquote,
+.blockquote {
+  @include unstyled-element('%blockquote');
+  @include reset-content-margins();
+
+  border-left: 4px solid $color-primary;
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: $font-paragraph-spacing * 2;
+  margin-top: $font-paragraph-spacing * 2;
+  padding-left: 16px;
+}
+
+%unorderedlist,
+%orderedlist,
+ul,
+ol,
+.ul,
+.ol {
+  @include unstyled-element('%unorderedlist');
+
+  &:not([class]):not([role]) {
+    li {
+      ul,
+      ol,
+      .ul,
+      .ol {
+        margin-top: 8px;
+      }
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+%table,
+table,
+.table {
+  @include unstyled-element('%table');
+}
+
+%figcaption,
+figcaption,
+.figcaption {
+  @include unstyled-element('%figcaption');
+}

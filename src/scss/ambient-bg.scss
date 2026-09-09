@@ -1,0 +1,185 @@
+:root {
+  --ambient-pad: max(20px, 4vmin);
+}
+
+.ambient-bg {
+  pointer-events: none;
+  position: fixed;
+  inset: var(--ambient-pad);
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.96;
+
+  &::before {
+    background:
+      radial-gradient(circle at 28% 70%, rgba(255, 79, 163, 0.44) 0 18%, rgba(255, 79, 163, 0.22) 32%, transparent 60%),
+      radial-gradient(circle at 62% 34%, rgba(0, 194, 255, 0.24) 0 16%, transparent 48%),
+      #f4f7ff;
+    content: '';
+    inset: 0;
+    position: absolute;
+    z-index: 0;
+  }
+
+  &::after {
+    animation: ambient-noise-drift 0.45s steps(2, end) infinite;
+    background-image:
+      repeating-radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.24) 0 1px, transparent 1px 2px),
+      repeating-radial-gradient(circle at 100% 100%, rgba(36, 92, 255, 0.12) 0 1px, transparent 1px 2px),
+      repeating-linear-gradient(0deg, rgba(255, 79, 163, 0.045) 0 1px, transparent 1px 2px);
+    background-size: 2px 2px, 3px 3px, 2px 2px;
+    content: '';
+    inset: 0;
+    mix-blend-mode: soft-light;
+    opacity: 0.34;
+    position: absolute;
+    z-index: 2;
+  }
+}
+
+.ambient-bg__canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+  filter: contrast(1.06) saturate(1.18);
+  position: relative;
+  z-index: 1;
+}
+
+.ambient-bg__frame {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  inset: 0;
+  mix-blend-mode: difference;
+  position: absolute;
+  z-index: 3;
+}
+
+@media (max-width: 767px) {
+  .ambient-bg {
+    background-color: transparent;
+    inset: 0;
+    min-height: 100lvh;
+    width: 100%;
+  }
+
+  .ambient-bg__canvas {
+    height: calc(100lvh - 96px);
+    left: -28%;
+    margin-top: 48px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 72px, #000 calc(100% - 72px), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 72px, #000 calc(100% - 72px), transparent 100%);
+    max-width: none;
+    min-height: 420px;
+    position: relative;
+    transform: rotate(-7deg);
+    transform-origin: center;
+    width: 156%;
+  }
+
+  .ambient-bg__frame {
+    inset: 8px;
+  }
+
+  @media (max-width: 511.98px) {
+    .ambient-bg {
+      --mobile-ambient-height: min(75lvh, 560px);
+      --mobile-ambient-width: min(460px, 100vw);
+      --mobile-ambient-transform: translate(-50%, -50%);
+    }
+
+    .ambient-bg::before {
+      animation: ambient-mobile-fade 4.8s ease-in-out infinite alternate;
+      background:
+        radial-gradient(circle at 32% 58%, #f3dff0 0 18%, rgba(243, 223, 240, 0.72) 38%, transparent 68%),
+        radial-gradient(circle at 64% 36%, #e2e8f8 0 16%, rgba(226, 232, 248, 0.68) 34%, transparent 58%);
+      height: var(--mobile-ambient-height);
+      inset: auto;
+      left: 50%;
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 0 42%, rgba(0, 0, 0, 0.62) 60%, transparent 88%);
+      mask-image: radial-gradient(ellipse at center, #000 0 42%, rgba(0, 0, 0, 0.62) 60%, transparent 88%);
+      top: 50%;
+      transform: var(--mobile-ambient-transform);
+      width: var(--mobile-ambient-width);
+      will-change: opacity, transform;
+    }
+
+    .ambient-bg::after {
+      display: none;
+    }
+
+    .ambient-bg__canvas {
+      display: none;
+    }
+
+    .ambient-bg__frame {
+      display: none;
+    }
+  }
+
+  :root.theme-dark .ambient-bg {
+    background-color: transparent;
+  }
+
+  :root.theme-dark .ambient-bg::before {
+    background:
+      radial-gradient(circle at 28% 70%, rgba(128, 128, 128, 0.42) 0 18%, rgba(128, 128, 128, 0.18) 34%, transparent 62%),
+      #292c37;
+  }
+
+  @media (max-width: 511.98px) {
+    :root.theme-dark .ambient-bg::before {
+      background:
+        radial-gradient(circle at 32% 58%, rgba(128, 128, 128, 0.42) 0 18%, rgba(128, 128, 128, 0.18) 38%, transparent 68%);
+    }
+  }
+}
+
+@keyframes ambient-noise-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-1px, 1px, 0);
+  }
+  100% {
+    transform: translate3d(1px, -1px, 0);
+  }
+}
+
+@keyframes ambient-mobile-fade {
+  from {
+    opacity: 0.82;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ambient-mobile-canvas-shift {
+  from {
+    filter: contrast(1.04) saturate(1.14) hue-rotate(0deg);
+    opacity: 0.86;
+  }
+
+  to {
+    filter: contrast(1.08) saturate(1.32) hue-rotate(10deg);
+    opacity: 1;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  .ambient-bg::after {
+    animation: none;
+  }
+
+  .ambient-bg::before,
+  .ambient-bg__canvas {
+    animation: none;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}

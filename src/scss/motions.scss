@@ -1,0 +1,27 @@
+// motion.scss contains customisation for animations and transitions to reduce motion effects
+// motion and accessibility
+/// @see {https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/}
+
+// set default durations
+:root {
+  --animation-duration: #{$animation-duration};
+  --transition-duration: #{$transition-duration};
+}
+
+// contextually shorten duration length
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  :root {
+    --animation-duration: 0.001ms !important;
+    --transition-duration: 0.001ms !important;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  // remove duration for all unknown animation when a user requests a reduced animation experience
+  * {
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: 1 !important;
+    scroll-behavior: unset;
+    transition-duration: var(--transition-duration);
+  }
+}
