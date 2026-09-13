@@ -1,29 +1,34 @@
-# Moritz Vollmer Portfolio
+# Portfolio · Moritz Vollmer
 
-Static Vite portfolio.
+Persönliches Portfolio von [Moritz Vollmer](https://moritzvollmer.de/) mit Schwerpunkt auf Frontend- und WordPress-Entwicklung, Accessibility, technischer SEO und nachhaltiger Webentwicklung.
 
-## Commands
+**Live:** [moritzvollmer.de](https://moritzvollmer.de/)
+
+## Technische Basis
+
+- semantisches HTML und progressive Verbesserung
+- JavaScript ohne UI-Framework
+- SCSS und Vite
+- mehrsprachige sowie barrierearme Varianten
+- strukturierte Daten, Canonicals und Sitemaps
+- eigene statische Qualitätschecks für SEO und Accessibility
+
+## Lokal starten
 
 ```sh
+npm install
 npm run dev
 npm run build
 npm run preview
 ```
 
-## Deploy
+Die vollständige Prüfung läuft mit `npm run check`.
 
-Run a dry-run first:
+## Deployment
+
+Das Ziel wird ausschließlich lokal über `DEPLOY_TARGET` übergeben. Zugangsdaten gehören nicht in das Repository.
 
 ```sh
 DEPLOY_TARGET="user@example.com:/absolute/path/to/webroot/" npm run deploy:dry
-```
-
-If the output looks right, deploy:
-
-```sh
 DEPLOY_TARGET="user@example.com:/absolute/path/to/webroot/" npm run deploy
 ```
-
-The deploy command builds the site and syncs `dist/` with `rsync --delete`, so files removed from the build are removed from the server too.
-
-Do not store SSH passwords in this project. Use the interactive SSH password prompt or set up SSH keys locally.
