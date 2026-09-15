@@ -129,6 +129,38 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.projects-group + .projects-group {
+  margin-top: clamp(80px, 11vw, 150px);
+}
+
+.projects-group__intro {
+  display: grid;
+  gap: 14px;
+  margin-bottom: clamp(28px, 4vw, 52px);
+  max-width: 780px;
+}
+
+.projects-group__intro h2 {
+  font-size: clamp(30px, 4vw, 56px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin: 0;
+}
+
+.projects-group__intro p {
+  color: var(--projects-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 68ch;
+}
+
+.projects-group__intro .projects-kicker {
+  color: var(--projects-ink);
+  font-size: 11px;
+}
+
 .project-card {
   border-bottom: 1px solid rgba(32, 33, 38, 0.25);
   border-right: 1px solid rgba(32, 33, 38, 0.25);

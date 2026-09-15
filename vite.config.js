@@ -14,6 +14,7 @@ export default defineConfig({
         datenschutz: resolve(__dirname, 'datenschutz/index.html'),
         lebenslauf: resolve(__dirname, 'lebenslauf/index.html'),
         kundenstimmen: resolve(__dirname, 'kundenstimmen/index.html'),
+        projekte: resolve(__dirname, 'projekte/index.html'),
         notfound: resolve(__dirname, '404.html'),
       },
     },

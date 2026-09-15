@@ -15,6 +15,7 @@ const pages = [
   'datenschutz/index.html',
   'lebenslauf/index.html',
   'kundenstimmen/index.html',
+  'projekte/index.html',
 ]
 
 let hasError = false
