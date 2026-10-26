@@ -6,7 +6,7 @@ Aktueller Stand von [moritzvollmer.de](https://moritzvollmer.de/) mit der Positi
 
 Am 26.10.2026 wurde die bei IONOS ausgelieferte Version übernommen. Zuvor enthielten GitHub und die lokale Kopie denselben älteren Stand vom 15.09.2026.
 
-Die aktuelle `index.html`, die Unterseiten, Stylesheets, JavaScript-Bundles, Schriften, Favicons und SEO-Dateien entsprechen der übernommenen Live-Version. Die veröffentlichten Dateien stehen in `site-files.json`.
+Die übernommene Live-Version ist die Basis dieser Arbeitsfassung. Seitdem wurde das persönliche Profil lokal vereinfacht: Start, Über mich und Kontakt; Skills- und Projektübersichten sind aus der Startseite entfernt. Die eigenständigen Unterseiten bleiben erhalten. Alle Website-Dateien stehen in `site-files.json`. Weiterentwicklungen werden nach lokaler Prüfung zuerst auf GitHub übertragen und anschließend auf IONOS veröffentlicht.
 
 **Wichtig:** Die neueren ursprünglichen JavaScript-/SCSS-Quelldateien befinden sich auf einem momentan nicht zugänglichen Rechner. Deshalb ist dies eine wiederhergestellte statische Arbeitsfassung aus dem Live-Build. Die Dateien unter `src/`, `main.js`, `public/` und die bisherige Vite-Konfiguration bleiben als älterer Quellstand erhalten; sie erzeugen die aktuelle Version noch nicht. Die aktuellen CSS- und JavaScript-Dateien unter `assets/` sind bereits gebündelt.
 

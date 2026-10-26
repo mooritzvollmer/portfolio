@@ -110,6 +110,7 @@
     <link rel="preload" href="/assets/Poppins-Regular-43a5938b-43a5938b.woff" as="font" type="font/woff" crossorigin />
     
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-3cfb730f.js"></script>
+    <script type="module" src="/assets/profile-navigation-902788b9.js"></script>
     <script type="module" crossorigin src="/assets/scripts-c429f938.js"></script>
     <link rel="stylesheet" href="/assets/scripts-64adeb1f.css">
   </head>
@@ -126,8 +127,8 @@
         </h1>
         <div class="site-pill-nav__links" id="pill-navigation-links">
           <a href="#about" data-pill-nav-link="about">About</a>
-        <a href="#skills" data-pill-nav-link="skills">Skills</a>
-        <a href="#work" data-pill-nav-link="work">Work</a>
+        
+        
         <a href="#contact" data-pill-nav-link="contact">Contact</a>
       </div>
         <button
@@ -205,12 +206,8 @@
         <li class="site-nav__item" data-nav-item="about">
           <a class="site-nav__text" href="#about" data-nav-link="about">About</a>
         </li>
-        <li class="site-nav__item" data-nav-item="skills">
-          <a class="site-nav__text" href="#skills" data-nav-link="skills">Skills</a>
-        </li>
-        <li class="site-nav__item" data-nav-item="work">
-          <a class="site-nav__text" href="#work" data-nav-link="work">Work</a>
-        </li>
+        
+        
         <li class="site-nav__item" data-nav-item="contact">
           <a class="site-nav__text" href="#contact" data-nav-link="contact">Contact</a>
         </li>
@@ -252,7 +249,7 @@
       </p>
       <div class="site-nav__mobile-bottom" aria-label="Footer and contact mobile">
         <div class="site-nav__mobile-contact">
-          <p class="site-nav__mobile-contact-text">Good work starts with a conversation.</p>
+          <p class="site-nav__mobile-contact-text">Have a question? Send me a message.</p>
           <a class="site-meta__card site-nav__mobile-card" href="mailto:hello@moritzvollmer.de">
             Write me an email
           </a>
@@ -297,332 +294,22 @@
 
       <section class="site-panel" data-nav-panel="about" aria-label="About content" aria-hidden="true" inert>
         <div class="about-stack">
-          <h2 class="site-panel__title">Education and Experience</h2>
-          <div class="about-stack__stats">
-            <div class="site-meta__card about-stack__stat-card" data-countup-target="8">
-              <span class="about-stack__stat-value">
-                <span class="about-stack__stat-number" data-countup-number>0</span>
-                <span class="about-stack__stat-plus">+</span>
-                <span class="about-stack__stat-unit">Years</span>
-              </span>
-              <span class="about-stack__stat-label" data-mobile-label="Work"><strong>Work Experience</strong></span>
-            </div>
-            <div class="site-meta__card about-stack__stat-card" data-countup-target="12">
-              <span class="about-stack__stat-value">
-                <span class="about-stack__stat-number" data-countup-number>0</span>
-                <span class="about-stack__stat-plus">+</span>
-                <span class="about-stack__stat-unit">Years</span>
-              </span>
-              <span class="about-stack__stat-label" data-mobile-label="Hobby"><strong>Hobby Experience</strong></span>
-            </div>
-            <div class="site-meta__card about-stack__stat-card" data-countup-target="24">
-              <span class="about-stack__stat-value">
-                <span class="about-stack__stat-number" data-countup-number>0</span>
-                <span class="about-stack__stat-plus">+</span>
-              </span>
-              <span class="about-stack__stat-label" data-mobile-label="Projects"><strong>Projects</strong></span>
-            </div>
-          </div>
-
-          <p class="site-meta__about">
-            I trained as a
-            <a href="https://www.ihk.de/koeln/hauptnavigation/ausbildung/ausbildungsberufe-a-bis-z/mediengestalter-in-digital-und-print-5812274" target="_blank" rel="noreferrer">Media Designer Digital and Print</a>.
-            I am also allowed to train people for a job.
-            For this, I passed a test at the
-            <a href="https://www.ihk.de/koeln/hauptnavigation/weiterbildung/fortbildungspruefungen/ausbildungseignungspruefung-aevo--4992822" target="_blank" rel="noreferrer" lang="de">IHK</a>.
-          </p>
-          <div class="site-meta__card about-stack__card" data-job-accordion>
-            <button class="about-stack__accordion-trigger" type="button" aria-expanded="false" aria-controls="job-hottgenroth"><span class="about-stack__meta"><span class="site-meta__label">Since 10.2026</span></span><span class="about-stack__company">Hottgenroth Software AG</span></button>
-            <div class="about-stack__accordion-panel" id="job-hottgenroth" aria-hidden="true"><article class="about-stack__station-card"><span class="site-meta__label">Since October 2026</span><strong>SEO and GEO Manager</strong></article></div>
-          </div>
-          <div class="site-meta__card about-stack__card" data-job-accordion>
-            <button class="about-stack__accordion-trigger" type="button" aria-expanded="false" aria-controls="job-alpha-alpaka">
-              <span class="about-stack__meta">
-                <span class="site-meta__label">05.2025 - 09.2026</span>
-                <span class="about-stack__time">1 year and 4 months</span>
-              </span>
-              <span class="about-stack__company">Alpha Alpaka UX</span>
-            </button>
-            <div class="about-stack__accordion-panel" id="job-alpha-alpaka" aria-hidden="true">
-              <article class="about-stack__station-card">
-                <span class="site-meta__label">05.2025 - 09.2026</span>
-                <strong>Web Developer</strong>
-              </article>
-              <article class="about-stack__station-card">
-                <span class="site-meta__label">12.2025 - 09.2026</span>
-                <strong>Trainer (<span lang="de">IHK AEVO</span>)</strong>
-              </article>
-              <a class="about-stack__website-link" href="https://alpha-alpaka.de" target="_blank" rel="noreferrer" aria-label="Visit the Alpha Alpaka UX website">visit website</a>
-            </div>
-          </div>
-          <div class="site-meta__card about-stack__card" data-job-accordion>
-            <button class="about-stack__accordion-trigger" type="button" aria-expanded="false" aria-controls="job-friendventure">
-              <span class="about-stack__meta">
-                <span class="site-meta__label">07.2021 - 04.2025</span>
-                <span class="about-stack__time">3 years, 9 months</span>
-              </span>
-              <span class="about-stack__company">Friendventure Digitalagentur</span>
-            </button>
-            <div class="about-stack__accordion-panel" id="job-friendventure" aria-hidden="true">
-              <article class="about-stack__station-card">
-                <span class="site-meta__label">01.2024 - 04.2025</span>
-                <strong>Professional WordPress Developer</strong>
-              </article>
-              <article class="about-stack__station-card">
-                <span class="site-meta__label">07.2022 - 12.2023</span>
-                <strong>Junior WordPress Developer</strong>
-              </article>
-              <article class="about-stack__station-card">
-                <span class="site-meta__label">07.2021 - 06.2022</span>
-                <strong>Trainee WordPress Developer</strong>
-              </article>
-              <a class="about-stack__website-link" href="https://friendventure.de" target="_blank" rel="noreferrer" aria-label="Visit the Friendventure Digitalagentur website">visit website</a>
-            </div>
-          </div>
-          <div class="site-meta__card about-stack__card" data-job-accordion>
-            <button class="about-stack__accordion-trigger" type="button" aria-expanded="false" aria-controls="job-line-communication">
-              <span class="about-stack__meta">
-                <span class="site-meta__label">08.2018 - 06.2021</span>
-                <span class="about-stack__time">2 years, 10 months</span>
-              </span>
-              <span class="about-stack__company">line communication GmbH</span>
-            </button>
-            <div class="about-stack__accordion-panel" id="job-line-communication" aria-hidden="true">
-              <article class="about-stack__station-card">
-                <span class="site-meta__label">08.2018 - 06.2021</span>
-                <strong>Web Developer</strong>
-              </article>
-              <article class="about-stack__station-card">
-                <span class="site-meta__label">08.2018 - 06.2021</span>
-                <strong>Apprentice Media Designer Digital &amp; Print</strong>
-              </article>
-              <a class="about-stack__website-link" href="https://line-communication.de" target="_blank" rel="noreferrer" aria-label="Visit the line communication website">visit website</a>
-            </div>
-          </div>
+          <h2 class="site-panel__title">About</h2>
+          <p class="site-meta__about">I am Moritz Vollmer. I live in Cologne. I have worked at Hottgenroth Software AG since October 2026.</p>
+          <p class="site-meta__about">I work in SEO and GEO. SEO helps people find content in search engines. GEO helps AI systems understand content. I look at website content, data and technology.</p>
+          <p class="site-meta__about">I used to build websites. I trained as a Media Designer Digital and Print. I can also train people for a job. I passed a test at the IHK for this.</p>
+          
         </div>
       </section>
 
-      <section class="site-panel" data-nav-panel="skills" aria-label="Skills content" aria-hidden="true" inert>
-        <h2 class="site-panel__title">Skills and Tools</h2>
-        <div class="skills-stack">
-          <p class="site-meta__about">
-            I work with SEO, GEO, content, data and technology.
-            I check how people and AI systems find content.
-            I plan well.
-            I work in a clear structure.
-            I deliver reliable results.
-          </p>
-          <div class="skills-switch" role="tablist" aria-label="Skill areas">
-            <button
-              class="site-meta__card skills-switch__card is-active"
-              type="button"
-              role="tab"
-              data-skills-tab="hard"
-              aria-selected="true"
-              aria-controls="skills-hard-panel"
-              id="skills-hard-tab"
-            >
-              <span class="site-meta__value">Technical skills</span>
-            </button>
-            <button
-              class="site-meta__card skills-switch__card"
-              type="button"
-              role="tab"
-              data-skills-tab="soft"
-              aria-selected="false"
-              aria-controls="skills-soft-panel"
-              id="skills-soft-tab"
-              tabindex="-1"
-            >
-              <span class="site-meta__value">Working together</span>
-            </button>
-          </div>
+      
 
-          <div class="skills-content">
-            <div class="skills-content__panel is-active" data-skills-content="hard" role="tabpanel" id="skills-hard-panel" aria-labelledby="skills-hard-tab" aria-hidden="false">
-              <div class="skills-content__card">
-                <div class="hard-skills-filter" role="radiogroup" aria-label="Technical skill categories">
-                  <button
-                    class="hard-skills-filter__option is-active"
-                    type="button"
-                    role="radio"
-                    aria-checked="true"
-                    data-hard-skills-filter="stack"
-                    aria-controls="hard-skills-stack-panel"
-                  >
-                    SEO, GEO and technology
-                  </button>
-                  <button
-                    class="hard-skills-filter__option"
-                    type="button"
-                    role="radio"
-                    aria-checked="false"
-                    data-hard-skills-filter="tools-workflows"
-                    aria-controls="hard-skills-tools-panel"
-                    tabindex="-1"
-                  >
-                    Setup &amp; Processes
-                  </button>
-                </div>
-
-                <div class="hard-skills-content">
-                  <div class="hard-skills-content__panel is-active" data-hard-skills-content="stack" id="hard-skills-stack-panel" aria-hidden="false">
-                    <div class="tags skills-content__tags">
-                      <span class="tag">Technical SEO</span>
-                      <span class="tag">GEO</span>
-                      <span class="tag">Search terms</span>
-                      <span class="tag">Content planning</span>
-                      <span class="tag">Structured data</span>
-                      <span class="tag">HTML</span>
-                      <span class="tag">SASS/SCSS</span>
-                      <span class="tag">Tailwind</span>
-                      <span class="tag">Bootstrap</span>
-                      <span class="tag">Vanilla JS</span>
-                      <span class="tag">Next JS</span>
-                      <span class="tag">Twig</span>
-                      <span class="tag">Blade</span>
-                      <span class="tag">PHP</span>
-                      <span class="tag">WordPress</span>
-                      <span class="tag">Storyblok</span>
-                      <span class="tag">Adobe CC</span>
-                      <span class="tag">Figma</span>
-                    </div>
-                  </div>
-                  <div class="hard-skills-content__panel" data-hard-skills-content="tools-workflows" id="hard-skills-tools-panel" aria-hidden="true" hidden>
-                    <div class="tags skills-content__tags">
-                      <span class="tag">Visual Studio Code</span>
-                      <span class="tag">Vite</span>
-                      <span class="tag">Bedrock</span>
-                      <span class="tag">Atlassian Bitbucket</span>
-                      <span class="tag">GitHub</span>
-                      <span class="tag">Mamp</span>
-                      <span class="tag">Notion</span>
-                      <span class="tag">Asana</span>
-                      <span class="tag">Harvest</span>
-                      <span class="tag">Moco</span>
-                      <span class="tag">Semrush</span>
-                      <span class="tag">Screaming Frog</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="skills-content__panel" data-skills-content="soft" role="tabpanel" id="skills-soft-panel" aria-labelledby="skills-soft-tab" aria-hidden="true" hidden>
-              <div class="skills-content__card">
-                <div class="hard-skills-filter soft-skills-filter" role="radiogroup" aria-label="Soft skills categories">
-                  <button
-                    class="hard-skills-filter__option is-active"
-                    type="button"
-                    role="radio"
-                    aria-checked="true"
-                    data-soft-skills-filter="individual"
-                    aria-controls="soft-skills-individual-panel"
-                  >
-                    Individual
-                  </button>
-                  <button
-                    class="hard-skills-filter__option"
-                    type="button"
-                    role="radio"
-                    aria-checked="false"
-                    data-soft-skills-filter="team"
-                    aria-controls="soft-skills-team-panel"
-                    tabindex="-1"
-                  >
-                    Team
-                  </button>
-                </div>
-
-                <div class="hard-skills-content soft-skills-content">
-                  <div class="hard-skills-content__panel is-active" data-soft-skills-content="individual" id="soft-skills-individual-panel" aria-hidden="false">
-                    <div class="tags skills-content__tags">
-                      <span class="tag">Ownership</span>
-                      <span class="tag">Problem Solving</span>
-                      <span class="tag">Curiosity</span>
-                      <span class="tag">Attention to Detail</span>
-                      <span class="tag">Self Organization</span>
-                    </div>
-                  </div>
-                  <div class="hard-skills-content__panel" data-soft-skills-content="team" id="soft-skills-team-panel" aria-hidden="true" hidden>
-                    <div class="tags skills-content__tags">
-                      <span class="tag">Team Player</span>
-                      <span class="tag">Patience</span>
-                      <span class="tag">Clear Communication</span>
-                      <span class="tag">Empathy</span>
-                      <span class="tag">Reliability</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p class="skills-content__note skills-content__note--ai">
-            I use AI tools like Codex, Claude Code and Copilot. But I can do more than AI:
-            listen, understand and think ahead.
-          </p>
-          <p class="skills-content__note">
-            Do you want to know more about my skills?
-            And what I enjoy?
-            Then please write to me:
-            <a href="mailto:hello@moritzvollmer.de">hello@moritzvollmer.de</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="site-panel" data-nav-panel="work" aria-label="Work content" aria-hidden="true" inert>
-        <h2 class="site-panel__title">Projects</h2>
-        <p class="site-meta__about">
-          I worked on many different projects.
-          Here is a short selection.
-        </p>
-        <div class="work-cards">
-          <a class="site-meta__card work-card" data-work-case="convista" href="https://www.convista.com" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value">Convista</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="ticketio" href="https://ticket.io" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value">ticket.io</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="starkeperiode" href="https://starke-periode.de" target="_blank" rel="noreferrer"
-          ><span class="site-meta__value" lang="de">Starke Periode</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="buddystar" href="https://buddystar.de" target="_blank" rel="noreferrer"
-          ><span class="site-meta__value">Buddystar</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="lekkerland" href="https://www.karriere.lekkerland.de" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value" lang="de">Lekkerland Karriere</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="faktorzehn" href="https://www.faktorzehn.com/de" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value">FaktorZehn</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="munaplus" href="https://www.munaplus.org" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value">MUNA+</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="pflegeplanet" href="https://www.pflege-planet.de" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value">Pflegeplanet</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="onoffice" href="https://www.onoffice.com" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value">OnOffice</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="eisberg" href="https://eisberg.com" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value">Eisberg </span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="konradgraser" href="https://www.konrad-graser.de" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value">Konrad Graser</span></a
-          >
-          <a class="site-meta__card work-card" data-work-case="smartaware" href="https://www.smart-aware.de/" target="_blank" rel="noreferrer"
-            ><span class="site-meta__value">smartAware</span></a
-          >
-        </div>
-      </section>
+      
 
       <section class="site-panel" data-nav-panel="contact" aria-label="Contact content" aria-hidden="true" inert>
         <div class="contact-stack">
           <h2 class="site-panel__title">Contact</h2>
-          <p class="site-meta__about">
-            Do you have questions?
-            Or do you want to work with me?
-            You can contact me here.
-          </p>
+          <p class="site-meta__about">Do you have a question about SEO, GEO or websites? You can send me a message. Or you can call me.</p>
           <div class="contact-stack__actions" aria-label="Contact options">
             <a class="contact-stack__icon-button" href="mailto:hello@moritzvollmer.de" aria-label="Send an email">
               <svg class="contact-stack__button-icon" aria-hidden="true" viewBox="0 0 24 24">
@@ -653,17 +340,14 @@
               <span>Phone</span>
             </a>
           </div>
-          <p class="contact-stack__closing">
-            Thanks for your interest.
-            I would be happy to talk.
-          </p>
+          <p class="contact-stack__closing">I welcome questions and conversations about my work.</p>
         </div>
       </section>
       <div class="site-progress" aria-label="Switch sections">
         <span class="site-progress__bar" aria-hidden="true">
           <span class="site-progress__fill" data-site-progress-fill></span>
         </span>
-        <span class="site-progress__count" data-site-progress-count aria-live="polite">01 / 05</span>
+        <span class="site-progress__count" data-site-progress-count aria-live="polite">01 / 03</span>
       </div>
     </main>
 
@@ -681,8 +365,8 @@
     <div id="root" aria-hidden="true">
       <div class="site-section" id="start" data-nav-section="start"></div>
       <div class="site-section" id="about" data-nav-section="about"></div>
-      <div class="site-section" id="skills" data-nav-section="skills"></div>
-      <div class="site-section" id="work" data-nav-section="work"></div>
+      
+      
       <div class="site-section" id="contact" data-nav-section="contact"></div>
     </div>
 

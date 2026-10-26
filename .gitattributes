@@ -42,3 +42,4 @@ scripts/*.mjs text eol=lf
 *.md text eol=lf
 package.json text eol=lf
 site-files.json text eol=lf
+assets/profile-navigation-902788b9.js -text
