@@ -5,7 +5,7 @@ Stand: 26.10.2026. Ziel ist ein persoenliches Profil fuer Menschen, die Moritz V
 ## Bereits umgesetzt
 
 - Start, Ueber mich und Kontakt als Hauptstruktur; Skills und Projekte stehen nicht mehr in der Hauptnavigation.
-- Direkte E-Mail-/LinkedIn-Aktionen und eine speicherbare Kontaktkarte auf der Startseite.
+- Dezente E-Mail-/LinkedIn- und Kontaktkarten-Icons oberhalb der Fortschrittsanzeige.
 - Mobil kompakter Einstieg und kuerzere Abstaende; fruehere berufliche Stationen sind bei Bedarf aufklappbar.
 - Wetter- und PageSpeed-Anzeigen entfernt. Die zugehoerigen externen Abfragen werden vom vorhandenen JavaScript ohne diese Ziele nicht mehr angestossen.
 - Eine inhaltliche Hauptueberschrift mit Name und Rolle statt einer Marken-Ueberschrift als H1.

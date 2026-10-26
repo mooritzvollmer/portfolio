@@ -42,4 +42,4 @@ Zugangsdaten und private SSH-Schlüssel gehören nicht in das Repository.
 
 ## Digitale Visitenkarte
 
-Die Startseite bietet direkte Kontaktaktionen und eine speicherbare vCard. Auf Mobilgeraeten sind die Abstaende reduziert; der berufliche Hintergrund und fruehere Stationen sind einklappbar. Weitere priorisierte Empfehlungen stehen unter [docs/SEO-Empfehlungen.md](docs/SEO-Empfehlungen.md).
+Dezente Icons oberhalb der Fortschrittsanzeige bieten E-Mail, LinkedIn und eine speicherbare vCard. Der Name im Einstieg wird animiert unterstrichen. Auf Mobilgeraeten sind die Abstaende reduziert; der berufliche Hintergrund und fruehere Stationen sind einklappbar. Weitere priorisierte Empfehlungen stehen unter [docs/SEO-Empfehlungen.md](docs/SEO-Empfehlungen.md).
