@@ -8,3 +8,5 @@ Use npm run build and npm run check. Keep site-files.json updated for added or r
 
 Do not commit credentials, private keys, local backups or deployment access details. Do not change repository visibility. Keep existing local user edits and avoid force pushes or destructive Git resets.
 For typography, avoid umlaut characters in Moritzfontmer headlines: use ae/oe/ue (and ss where needed). Preserve normal German spelling in body copy, metadata and navigation when they use other fonts. Keep the animated underline on the introductory name. Homepage contact actions should remain discreet icon links above the progress indicator rather than prominent call-to-action buttons.
+
+Use Moritzfontmer for the navigation wordmark as well as display headings. Content pages should use the shared subpage shell with the homepage color palette, frame, navigation and typefaces. The homepage portrait slot must match the introduction text width on desktop and mobile, positioned above the text and below the mobile headline.

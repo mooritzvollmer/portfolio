@@ -47,3 +47,7 @@ Dezente Icons oberhalb der Fortschrittsanzeige bieten E-Mail, LinkedIn und eine 
 ## Portraetbereich
 
 Im Start-Bereich ist rechts oberhalb des Einfuehrungstexts ein Portraetplatz reserviert, mobil unter der Headline und vor dem Text. Momentan ist dort eine rein dekorative Platzhaltergrafik ohne erfundenes Foto. Bei Einsetzen eines echten Fotos das Element .profile-portrait entsprechend mit einem Bild und sinnvoller Alternativbeschreibung versehen, aria-hidden entfernen und die Bilddatei in site-files.json aufnehmen. Die reservierten Abmessungen und object-fit: cover sind vorbereitet.
+
+## Gemeinsames Seitendesign
+
+SEO/GEO, Ueber mich, Kompetenzen, Projekte, Kontakt sowie Rechts- und Fehlerseiten nutzen denselben visuellen Rahmen, dieselbe Farbwelt und die Moritzfontmer-Wortmarke wie die Startseite. Inhaltsseiten verwenden eine native ausklappbare Navigation und respektieren die gespeicherte Theme-Auswahl. Der Portraetplatz ist jetzt in allen Sprachversionen so breit wie der Einfuehrungstext.
