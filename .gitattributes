@@ -43,3 +43,5 @@ scripts/*.mjs text eol=lf
 package.json text eol=lf
 site-files.json text eol=lf
 assets/profile-navigation-902788b9.js -text
+assets/digital-card-d5f0b811.css -text
+moritz-vollmer.vcf -text

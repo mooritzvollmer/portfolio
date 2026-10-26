@@ -30,76 +30,80 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Moritz Vollmer | Easy Read Portfolio" />
     <meta name="twitter:description" content="Easy Read portfolio of Moritz Vollmer." />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://moritzvollmer.de/#website",
-            "url": "https://moritzvollmer.de/",
-            "name": "Moritz Vollmer",
-            "inLanguage": [
-              "de",
-              "en"
-            ],
-            "publisher": {
-              "@id": "https://moritzvollmer.de/#person"
-            }
-          },
-          {
-            "@type": "Person",
-            "@id": "https://moritzvollmer.de/#person",
-            "name": "Moritz Vollmer",
-            "url": "https://moritzvollmer.de/",
-            "email": "hello@moritzvollmer.de",
-            "telephone": "+4917687829152",
-            "jobTitle": "SEO and GEO Manager",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Cologne",
-              "addressRegion": "North Rhine-Westphalia",
-              "addressCountry": "DE"
-            },
-            "homeLocation": {
-              "@type": "Place",
-              "name": "Cologne, Germany",
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 50.9375,
-                "longitude": 6.9603
-              }
-            },
-            "sameAs": [
-              "https://www.linkedin.com/in/moritz-vollmer-7ab7ba1ba"
-            ]
-          },
-          {
-            "@type": "ProfilePage",
-            "@id": "https://moritzvollmer.de/en/easy/#profile",
-            "url": "https://moritzvollmer.de/en/easy/",
-            "name": "Moritz Vollmer | Easy Read Portfolio",
-            "description": "Easy Read portfolio of Moritz Vollmer.",
-            "inLanguage": "en",
-            "isPartOf": {
-              "@id": "https://moritzvollmer.de/#website"
-            },
-            "accessibilityFeature": [
-              "alternativeText",
-              "readingOrder",
-              "structuralNavigation"
-            ],
-            "accessibilitySummary": "Easy Read version with simplified text.",
-            "about": {
-              "@id": "https://moritzvollmer.de/#person"
-            },
-            "mainEntity": {
-              "@id": "https://moritzvollmer.de/#person"
-            }
-          }
-        ]
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://moritzvollmer.de/#website",
+      "url": "https://moritzvollmer.de/",
+      "name": "Moritz Vollmer",
+      "inLanguage": [
+        "de",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://moritzvollmer.de/#person"
       }
-    </script>
+    },
+    {
+      "@type": "Person",
+      "@id": "https://moritzvollmer.de/#person",
+      "name": "Moritz Vollmer",
+      "url": "https://moritzvollmer.de/",
+      "email": "hello@moritzvollmer.de",
+      "telephone": "+4917687829152",
+      "jobTitle": "SEO and GEO Manager",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cologne",
+        "addressRegion": "North Rhine-Westphalia",
+        "addressCountry": "DE"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Cologne, Germany",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 50.9375,
+          "longitude": 6.9603
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/moritz-vollmer-7ab7ba1ba"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Hottgenroth Software AG",
+        "url": "https://www.hottgenroth.de/"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://moritzvollmer.de/en/easy/#profile",
+      "url": "https://moritzvollmer.de/en/easy/",
+      "name": "Moritz Vollmer | Easy Read Portfolio",
+      "description": "Easy Read portfolio of Moritz Vollmer.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://moritzvollmer.de/#website"
+      },
+      "accessibilityFeature": [
+        "alternativeText",
+        "readingOrder",
+        "structuralNavigation"
+      ],
+      "accessibilitySummary": "Easy Read version with simplified text.",
+      "about": {
+        "@id": "https://moritzvollmer.de/#person"
+      },
+      "mainEntity": {
+        "@id": "https://moritzvollmer.de/#person"
+      },
+      "dateModified": "2026-10-26"
+    }
+  ]
+}</script>
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
@@ -113,7 +117,8 @@
     <script type="module" src="/assets/profile-navigation-902788b9.js"></script>
     <script type="module" crossorigin src="/assets/scripts-c429f938.js"></script>
     <link rel="stylesheet" href="/assets/scripts-64adeb1f.css">
-  </head>
+  <link rel="stylesheet" href="/assets/digital-card-d5f0b811.css">
+</head>
   <body>
     <div class="ambient-bg" aria-hidden="true">
       <canvas class="ambient-bg__canvas" data-ambient-canvas></canvas>
@@ -122,9 +127,9 @@
 
     <div class="site-top-nav">
       <nav class="site-pill-nav" aria-label="Quick navigation" data-pill-nav>
-        <h1 class="site-pill-nav__brand">
+        <p class="site-pill-nav__brand">
           <a href="#start" data-pill-nav-link="start">moritz<span class="visuallyHidden"> vollmer</span></a>
-        </h1>
+        </p>
         <div class="site-pill-nav__links" id="pill-navigation-links">
           <a href="#about" data-pill-nav-link="about">About</a>
         
@@ -153,10 +158,10 @@
     </div>
 
     <header class="site-header" aria-label="Page title">
-      <h2 class="site-header__title">
+      <h1 class="site-header__title"><span class="visuallyHidden">Moritz Vollmer – </span>
         <span class="site-header__title-main">SEO &amp; GEO<br />Manager</span>
         <span class="site-header__title-addon">Helping content get found</span>
-      </h2>
+      </h1>
     </header>
 
     <nav class="lang-switch" aria-label="Switch language">
@@ -261,10 +266,7 @@
           </nav>
           <div class="site-nav__mobile-footer-row">
             <p class="site-nav__mobile-copy">&copy; <span data-footer-year-mobile></span> Moritz Vollmer</p>
-            <p class="site-nav__mobile-scores">
-              <span class="site-nav__mobile-pagespeed">PageSpeed: <span id="psi-mobile">loading …</span></span>
-              <span class="site-nav__mobile-pagespeed">A11y: <span id="a11y-mobile">loading …</span></span>
-            </p>
+            
           </div>
         </div>
       </div>
@@ -274,16 +276,11 @@
       <section class="site-panel is-active" data-nav-panel="start" aria-label="Home content" aria-hidden="false">
         <div class="site-meta">
           <p class="site-meta__notice"><em>This is the Easy Read version in English.</em></p>
-          <p class="site-meta__about">
-            Hi, I am <span class="site-meta__intro-mark">Moritz</span>.
-            I work in SEO and GEO.
-            SEO helps people find content in search engines.
-            GEO helps AI systems understand and mention content.
-            My experience in web development helps me do this work.
-          </p>
+          <p class="site-meta__about">Hi, I am <span class="site-meta__intro-mark">Moritz Vollmer from Cologne</span>. I work in SEO and GEO at Hottgenroth Software AG. SEO helps people find content in search engines. GEO helps AI systems understand content.</p>
+          <div class="profile-actions"><a class="profile-action profile-action--primary" href="mailto:hello@moritzvollmer.de">Send an email</a><a class="profile-action" href="https://www.linkedin.com/in/moritz-vollmer-7ab7ba1ba" target="_blank" rel="me noreferrer">LinkedIn</a></div><a class="profile-save" href="/moritz-vollmer.vcf" download>Save contact</a>
           <div class="site-meta__card">
             <span class="site-meta__label">Located:</span>
-            <span class="site-meta__value" data-temperature="cologne" data-city-name="Cologne">Cologne, --°C</span>
+            <span class="site-meta__value">Cologne</span>
           </div>
           <a class="site-meta__card" href="https://www.hottgenroth.de/" target="_blank" rel="noreferrer">
             <span class="site-meta__label">Current:</span>
@@ -292,15 +289,7 @@
         </div>
       </section>
 
-      <section class="site-panel" data-nav-panel="about" aria-label="About content" aria-hidden="true" inert>
-        <div class="about-stack">
-          <h2 class="site-panel__title">About</h2>
-          <p class="site-meta__about">I am Moritz Vollmer. I live in Cologne. I have worked at Hottgenroth Software AG since October 2026.</p>
-          <p class="site-meta__about">I work in SEO and GEO. SEO helps people find content in search engines. GEO helps AI systems understand content. I look at website content, data and technology.</p>
-          <p class="site-meta__about">I used to build websites. I trained as a Media Designer Digital and Print. I can also train people for a job. I passed a test at the IHK for this.</p>
-          
-        </div>
-      </section>
+      <section class="site-panel" data-nav-panel="about" aria-label="About content" aria-hidden="true" inert><div class="about-stack"><h2 class="site-panel__title">About</h2><p class="site-meta__about">I have worked at <strong>Hottgenroth Software AG</strong> since October 2026. I look at website content, data and technology.</p><details class="profile-history"><summary>My training and earlier work</summary><p class="profile-history__qualification">I used to build websites. I trained as a Media Designer Digital and Print. I can also train people for a job. I passed a test at the IHK for this.</p></details></div></section>
 
       
 
@@ -358,7 +347,7 @@
     <nav class="site-legal" aria-label="Legal and performance">
       <a class="site-legal__link" href="/impressum">Imprint</a>
       <a class="site-legal__link" href="/datenschutz">Privacy</a>
-      <span class="site-legal__pagespeed">PageSpeed: <span id="psi-desktop">loading …</span></span>
+      
       <span class="site-legal__pagespeed">A11y: <span id="a11y-desktop">loading …</span></span>
     </nav>
 

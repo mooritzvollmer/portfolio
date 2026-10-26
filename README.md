@@ -39,3 +39,7 @@ Sobald der andere Rechner verfügbar ist, dessen HTML-, JavaScript- und SCSS-Que
 Dieser Abgleich hat die Live-Website nicht verändert. Das vorhandene Deploy-Skript bleibt erhalten. Es nutzt `DEPLOY_TARGET` und `rsync`; vor einem Deployment Zielpfad und Übertragungsumfang mit dem Dry Run prüfen. Unter Windows steht `rsync` nicht automatisch zur Verfügung; alternativ den geprüften `dist/`-Stand per SFTP übertragen.
 
 Zugangsdaten und private SSH-Schlüssel gehören nicht in das Repository.
+
+## Digitale Visitenkarte
+
+Die Startseite bietet direkte Kontaktaktionen und eine speicherbare vCard. Auf Mobilgeraeten sind die Abstaende reduziert; der berufliche Hintergrund und fruehere Stationen sind einklappbar. Weitere priorisierte Empfehlungen stehen unter [docs/SEO-Empfehlungen.md](docs/SEO-Empfehlungen.md).
