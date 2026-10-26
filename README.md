@@ -43,3 +43,7 @@ Zugangsdaten und private SSH-Schlüssel gehören nicht in das Repository.
 ## Digitale Visitenkarte
 
 Dezente Icons oberhalb der Fortschrittsanzeige bieten E-Mail, LinkedIn und eine speicherbare vCard. Der Name im Einstieg wird animiert unterstrichen. Auf Mobilgeraeten sind die Abstaende reduziert; der berufliche Hintergrund und fruehere Stationen sind einklappbar. Weitere priorisierte Empfehlungen stehen unter [docs/SEO-Empfehlungen.md](docs/SEO-Empfehlungen.md).
+
+## Portraetbereich
+
+Im Start-Bereich ist rechts oberhalb des Einfuehrungstexts ein Portraetplatz reserviert, mobil unter der Headline und vor dem Text. Momentan ist dort eine rein dekorative Platzhaltergrafik ohne erfundenes Foto. Bei Einsetzen eines echten Fotos das Element .profile-portrait entsprechend mit einem Bild und sinnvoller Alternativbeschreibung versehen, aria-hidden entfernen und die Bilddatei in site-files.json aufnehmen. Die reservierten Abmessungen und object-fit: cover sind vorbereitet.
