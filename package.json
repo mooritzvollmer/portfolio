@@ -4,15 +4,18 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node scripts/serve-static.mjs",
+    "build": "node scripts/build-static.mjs",
     "deploy": "npm run build && node scripts/deploy.mjs",
     "deploy:dry": "npm run build && DEPLOY_DRY_RUN=1 node scripts/deploy.mjs",
-    "preview": "vite preview",
-    "check": "npm run check:a11y && npm run check:seo && npm run check:perf",
+    "preview": "node scripts/serve-static.mjs --dist",
+    "check": "node scripts/check-live.mjs",
     "check:a11y": "node scripts/check-static.mjs --a11y",
     "check:seo": "node scripts/check-static.mjs --seo",
-    "check:perf": "node scripts/check-static.mjs --perf"
+    "check:perf": "node scripts/check-static.mjs --perf",
+    "dev:legacy": "vite",
+    "build:legacy": "vite build --outDir dist-legacy",
+    "check:legacy": "npm run check:a11y && npm run check:seo && npm run check:perf"
   },
   "devDependencies": {
     "sass": "^1.58.3",

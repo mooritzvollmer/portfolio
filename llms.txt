@@ -1,6 +1,6 @@
 # Moritz Vollmer
 
-> Portfolio of Moritz Vollmer, Frontend Specialist and WordPress Developer from Cologne.
+> Portfolio of Moritz Vollmer, SEO and GEO Manager at Hottgenroth Software AG, based in Cologne, Germany.
 
 ## Canonical Pages
 
@@ -11,7 +11,7 @@
 
 ## About
 
-Moritz Vollmer is based in Cologne, Germany. He works on frontend development, WordPress development, accessible interfaces, sustainable web projects, and clean implementation details.
+Moritz Vollmer is based in Cologne, Germany. Since October 2026, he has worked as SEO and GEO Manager at Hottgenroth Software AG. His focus is technical SEO, generative engine optimization, content strategy, search analytics, structured data, and organic visibility in search engines and AI-generated answers. His professional background in frontend and WordPress development supports technically grounded analysis and implementation.
 
 ## Contact
 

@@ -1,3 +1,19 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Nicht mehr angebotene Profil-Unterseiten auf die aktuelle Positionierung führen.
+  RewriteRule ^(?:lebenslauf|kundenstimmen)/?$ https://moritzvollmer.de/ [R=301,L,NC]
+
+  # Alte Startseitenvarianten direkt auf die kanonische URL führen.
+  RewriteCond %{THE_REQUEST} \s/+index(?:\.html)?(?:[?\s]) [NC]
+  RewriteRule ^index(?:\.html)?$ https://moritzvollmer.de/ [R=301,L]
+
+  # HTTPS und die Hauptdomain ohne www vereinheitlichen.
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} ^www\.moritzvollmer\.de$ [NC]
+  RewriteRule ^ https://moritzvollmer.de%{REQUEST_URI} [R=301,L]
+</IfModule>
+
 <IfModule mod_headers.c>
   <FilesMatch "\.(css|js|woff|woff2|ttf|svg|png|ico|webmanifest)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
@@ -7,6 +23,9 @@
     Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 </IfModule>
+
+# Custom project overview for missing pages
+ErrorDocument 404 /404.html
 
 <IfModule mod_expires.c>
   ExpiresActive On

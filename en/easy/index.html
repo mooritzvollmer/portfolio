@@ -7,7 +7,7 @@
     <title>Moritz Vollmer | Portfolio</title>
     <meta
       name="description"
-      content="Easy Read portfolio of Moritz Vollmer. Moritz builds websites, develops WordPress and cares about good design and accessibility."
+      content="Easy Read portfolio of Moritz Vollmer. Moritz works in SEO and GEO and improves visibility in search engines and AI answers."
     />
     <meta name="author" content="Moritz Vollmer" />
     <meta name="geo.region" content="DE-NW" />
@@ -54,7 +54,7 @@
             "url": "https://moritzvollmer.de/",
             "email": "hello@moritzvollmer.de",
             "telephone": "+4917687829152",
-            "jobTitle": "Frontend Specialist and WordPress Developer",
+            "jobTitle": "SEO and GEO Manager",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Cologne",
@@ -106,9 +106,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Moritz" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
-    <link rel="preload" href="/assets/moritzfontmer-84a1100b.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/assets/Poppins-Regular-43a5938b.woff" as="font" type="font/woff" crossorigin />
-    <script type="module" src="/main.js"></script>
+    <link rel="preload" href="/assets/moritzfontmer-84a1100b-84a1100b.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/Poppins-Regular-43a5938b-43a5938b.woff" as="font" type="font/woff" crossorigin />
+    
+    <script type="module" crossorigin src="/assets/modulepreload-polyfill-3cfb730f.js"></script>
+    <script type="module" crossorigin src="/assets/scripts-c429f938.js"></script>
+    <link rel="stylesheet" href="/assets/scripts-64adeb1f.css">
   </head>
   <body>
     <div class="ambient-bg" aria-hidden="true">
@@ -150,8 +153,8 @@
 
     <header class="site-header" aria-label="Page title">
       <h2 class="site-header__title">
-        <span class="site-header__title-main">Building<br />websites</span>
-        <span class="site-header__title-addon">&amp; WordPress development</span>
+        <span class="site-header__title-main">SEO &amp; GEO<br />Manager</span>
+        <span class="site-header__title-addon">Helping content get found</span>
       </h2>
     </header>
 
@@ -276,16 +279,18 @@
           <p class="site-meta__notice"><em>This is the Easy Read version in English.</em></p>
           <p class="site-meta__about">
             Hi, I am <span class="site-meta__intro-mark">Moritz</span>.
-            I build websites.
-            Good design, clean code and accessibility are important to me.
+            I work in SEO and GEO.
+            SEO helps people find content in search engines.
+            GEO helps AI systems understand and mention content.
+            My experience in web development helps me do this work.
           </p>
           <div class="site-meta__card">
             <span class="site-meta__label">Located:</span>
             <span class="site-meta__value" data-temperature="cologne" data-city-name="Cologne">Cologne, --°C</span>
           </div>
-          <a class="site-meta__card" href="https://alpha-alpaka.de" target="_blank" rel="noreferrer">
+          <a class="site-meta__card" href="https://www.hottgenroth.de/" target="_blank" rel="noreferrer">
             <span class="site-meta__label">Current:</span>
-            <span class="site-meta__value site-meta__link">Alpha Alpaka UX</span>
+            <span class="site-meta__value site-meta__link">Hottgenroth Software AG</span>
           </a>
         </div>
       </section>
@@ -327,20 +332,24 @@
             <a href="https://www.ihk.de/koeln/hauptnavigation/weiterbildung/fortbildungspruefungen/ausbildungseignungspruefung-aevo--4992822" target="_blank" rel="noreferrer" lang="de">IHK</a>.
           </p>
           <div class="site-meta__card about-stack__card" data-job-accordion>
+            <button class="about-stack__accordion-trigger" type="button" aria-expanded="false" aria-controls="job-hottgenroth"><span class="about-stack__meta"><span class="site-meta__label">Since 10.2026</span></span><span class="about-stack__company">Hottgenroth Software AG</span></button>
+            <div class="about-stack__accordion-panel" id="job-hottgenroth" aria-hidden="true"><article class="about-stack__station-card"><span class="site-meta__label">Since October 2026</span><strong>SEO and GEO Manager</strong></article></div>
+          </div>
+          <div class="site-meta__card about-stack__card" data-job-accordion>
             <button class="about-stack__accordion-trigger" type="button" aria-expanded="false" aria-controls="job-alpha-alpaka">
               <span class="about-stack__meta">
-                <span class="site-meta__label">05.2025 - <span data-date-today>today</span></span>
-                <span class="about-stack__time" data-duration-from="2025-05">11 months</span>
+                <span class="site-meta__label">05.2025 - 09.2026</span>
+                <span class="about-stack__time">1 year and 4 months</span>
               </span>
               <span class="about-stack__company">Alpha Alpaka UX</span>
             </button>
             <div class="about-stack__accordion-panel" id="job-alpha-alpaka" aria-hidden="true">
               <article class="about-stack__station-card">
-                <span class="site-meta__label">05.2025 - today</span>
+                <span class="site-meta__label">05.2025 - 09.2026</span>
                 <strong>Web Developer</strong>
               </article>
               <article class="about-stack__station-card">
-                <span class="site-meta__label">12.2025 - today</span>
+                <span class="site-meta__label">12.2025 - 09.2026</span>
                 <strong>Trainer (<span lang="de">IHK AEVO</span>)</strong>
               </article>
               <a class="about-stack__website-link" href="https://alpha-alpaka.de" target="_blank" rel="noreferrer" aria-label="Visit the Alpha Alpaka UX website">visit website</a>
@@ -390,11 +399,6 @@
               <a class="about-stack__website-link" href="https://line-communication.de" target="_blank" rel="noreferrer" aria-label="Visit the line communication website">visit website</a>
             </div>
           </div>
-          <p class="about-stack__cv-note">
-            Do you want to see my CV in more detail?
-            Then please write to me:
-            <a href="mailto:hello@moritzvollmer.de">hello@moritzvollmer.de</a>
-          </p>
         </div>
       </section>
 
@@ -402,7 +406,8 @@
         <h2 class="site-panel__title">Skills and Tools</h2>
         <div class="skills-stack">
           <p class="site-meta__about">
-            I work with design and technology.
+            I work with SEO, GEO, content, data and technology.
+            I check how people and AI systems find content.
             I plan well.
             I work in a clear structure.
             I deliver reliable results.
@@ -445,7 +450,7 @@
                     data-hard-skills-filter="stack"
                     aria-controls="hard-skills-stack-panel"
                   >
-                    Technology
+                    SEO, GEO and technology
                   </button>
                   <button
                     class="hard-skills-filter__option"
@@ -463,6 +468,11 @@
                 <div class="hard-skills-content">
                   <div class="hard-skills-content__panel is-active" data-hard-skills-content="stack" id="hard-skills-stack-panel" aria-hidden="false">
                     <div class="tags skills-content__tags">
+                      <span class="tag">Technical SEO</span>
+                      <span class="tag">GEO</span>
+                      <span class="tag">Search terms</span>
+                      <span class="tag">Content planning</span>
+                      <span class="tag">Structured data</span>
                       <span class="tag">HTML</span>
                       <span class="tag">SASS/SCSS</span>
                       <span class="tag">Tailwind</span>

@@ -1,0 +1,44 @@
+# Preserve the recovered production files byte-for-byte across Git checkouts.
+.htaccess -text
+404.html -text
+assets/detail-7d62972a.css -text
+assets/favicon-84c2c0b2.ico -text
+assets/favicon-8f854614.svg -text
+assets/modulepreload-polyfill-3cfb730f.js -text
+assets/moritzfontmer-84a1100b-84a1100b.ttf -text
+assets/Poppins-Bold-b506e1ae-b506e1ae.woff -text
+assets/Poppins-Medium-e58a717b-e58a717b.woff -text
+assets/Poppins-Regular-43a5938b-43a5938b.woff -text
+assets/scripts-64adeb1f.css -text
+assets/scripts-c429f938.js -text
+assets/site-718165b1-75b32406.js -text
+assets/site-718165b1-db15dbe7.css -text
+datenschutz/index.html -text
+en/easy/index.html -text
+en/index.html -text
+favicon/apple-touch-icon.png -text
+favicon/favicon.ico -text
+favicon/favicon.svg -text
+favicon/favicon-96x96.png -text
+favicon/site.webmanifest -text
+favicon/web-app-manifest-192x192.png -text
+favicon/web-app-manifest-512x512.png -text
+fonts/Poppins-Bold.woff -text
+fonts/Poppins-Medium.woff -text
+fonts/Poppins-Regular.woff -text
+impressum/index.html -text
+index.html -text
+kompetenzen/index.html -text
+kontakt/index.html -text
+leicht/index.html -text
+llms.txt -text
+projekte/index.html -text
+robots.txt -text
+seo-geo/index.html -text
+sitemap.xml -text
+ueber-mich/index.html -text
+
+scripts/*.mjs text eol=lf
+*.md text eol=lf
+package.json text eol=lf
+site-files.json text eol=lf

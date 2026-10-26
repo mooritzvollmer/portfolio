@@ -1,34 +1,41 @@
 # Portfolio · Moritz Vollmer
 
-Persönliches Portfolio von [Moritz Vollmer](https://moritzvollmer.de/) mit Schwerpunkt auf Frontend- und WordPress-Entwicklung, Accessibility, technischer SEO und nachhaltiger Webentwicklung.
+Aktueller Stand von [moritzvollmer.de](https://moritzvollmer.de/) mit der Positionierung **SEO & GEO Manager**.
 
-**Live:** [moritzvollmer.de](https://moritzvollmer.de/)
+## Stand dieser Kopie
 
-## Technische Basis
+Am 26.10.2026 wurde die bei IONOS ausgelieferte Version übernommen. Zuvor enthielten GitHub und die lokale Kopie denselben älteren Stand vom 15.09.2026.
 
-- semantisches HTML und progressive Verbesserung
-- JavaScript ohne UI-Framework
-- SCSS und Vite
-- mehrsprachige sowie barrierearme Varianten
-- strukturierte Daten, Canonicals und Sitemaps
-- eigene statische Qualitätschecks für SEO und Accessibility
+Die aktuelle `index.html`, die Unterseiten, Stylesheets, JavaScript-Bundles, Schriften, Favicons und SEO-Dateien entsprechen der übernommenen Live-Version. Die veröffentlichten Dateien stehen in `site-files.json`.
+
+**Wichtig:** Die neueren ursprünglichen JavaScript-/SCSS-Quelldateien befinden sich auf einem momentan nicht zugänglichen Rechner. Deshalb ist dies eine wiederhergestellte statische Arbeitsfassung aus dem Live-Build. Die Dateien unter `src/`, `main.js`, `public/` und die bisherige Vite-Konfiguration bleiben als älterer Quellstand erhalten; sie erzeugen die aktuelle Version noch nicht. Die aktuellen CSS- und JavaScript-Dateien unter `assets/` sind bereits gebündelt.
 
 ## Lokal starten
 
+Node.js ab Version 20 genügt. Für diese statische Arbeitsfassung müssen keine npm-Abhängigkeiten installiert werden.
+
 ```sh
-npm install
 npm run dev
+```
+
+Anschließend `http://127.0.0.1:5173/` öffnen. HTML-Änderungen erscheinen nach Neuladen. Der lokale Server liefert ausschließlich die freigegebenen Website-Dateien aus; private Repository- und Konfigurationsdateien werden nicht bereitgestellt.
+
+## Build und Prüfung
+
+```sh
 npm run build
+npm run check
 npm run preview
 ```
 
-Die vollständige Prüfung läuft mit `npm run check`.
+Der Build kopiert die in `site-files.json` aufgeführten Dateien unverändert nach `dist/`. Die Prüfung kontrolliert die Dateien, lokale HTML-/CSS-Ressourcen und die Übereinstimmung des Builds. Neue oder entfernte Website-Dateien auch in der Dateiliste berücksichtigen.
+
+## Später die neueren Quellen übernehmen
+
+Sobald der andere Rechner verfügbar ist, dessen HTML-, JavaScript- und SCSS-Quellen zusätzlich sichern, mit diesem Stand abgleichen und den ursprünglichen Vite-Build wieder aktivieren. Den älteren `src/`-Stand nicht unbesehen über die aktuelle Website deployen. Die bisherige Build-Variante ist unter `npm run build:legacy` verfügbar und schreibt getrennt nach `dist-legacy/`.
 
 ## Deployment
 
-Das Ziel wird ausschließlich lokal über `DEPLOY_TARGET` übergeben. Zugangsdaten gehören nicht in das Repository.
+Dieser Abgleich hat die Live-Website nicht verändert. Das vorhandene Deploy-Skript bleibt erhalten. Es nutzt `DEPLOY_TARGET` und `rsync`; vor einem Deployment Zielpfad und Übertragungsumfang mit dem Dry Run prüfen. Unter Windows steht `rsync` nicht automatisch zur Verfügung; alternativ den geprüften `dist/`-Stand per SFTP übertragen.
 
-```sh
-DEPLOY_TARGET="user@example.com:/absolute/path/to/webroot/" npm run deploy:dry
-DEPLOY_TARGET="user@example.com:/absolute/path/to/webroot/" npm run deploy
-```
+Zugangsdaten und private SSH-Schlüssel gehören nicht in das Repository.
