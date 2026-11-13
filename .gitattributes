@@ -46,3 +46,6 @@ assets/profile-navigation-902788b9.js -text
 assets/digital-card-7a51acda.css -text
 moritz-vollmer.vcf -text
 assets/subpage-navigation-0ba9999c.js -text
+
+# Preserve vendored Prettier distribution files byte-for-byte.
+code-formatierer/vendor/** -text

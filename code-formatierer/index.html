@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code formatieren – HTML, CSS, JS & JSON | Moritz Vollmer</title>
+  <meta name="description" content="HTML, CSS, JavaScript, TypeScript, JSON, Markdown und YAML übersichtlich formatieren. Direkt im Browser, ohne Code-Upload. Mit Kopieren und Datei-Export.">
+  <link rel="canonical" href="https://moritzvollmer.de/code-formatierer/">
+  <link rel="icon" href="/favicon/favicon.svg">
+  <link rel="stylesheet" href="/assets/detail-7d62972a.css">
+  <link rel="stylesheet" href="/assets/digital-card-7a51acda.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="subpage-shell formatter-page">
+  <a class="skip-link" href="#formatter">Zum Formatierer</a>
+  <div class="subpage-ambient" aria-hidden="true"></div>
+  <header class="subpage-header">
+    <a class="subpage-brand" href="/" aria-label="Zur Startseite von Moritz Vollmer">moritz<span class="visuallyHidden"> vollmer</span></a>
+    <a class="portfolio-link" href="/">Zur Visitenkarte</a>
+  </header>
+  <main id="formatter" class="formatter-main">
+    <header class="intro">
+      <div><p class="eyebrow">Frontend / Werkzeug</p><h1>Code. In Ordnung.</h1></div>
+      <p>Code einfügen, Sprache wählen, formatieren.<br>Alles bleibt in Deinem Browser.</p>
+    </header>
+
+    <form id="controls" class="toolbar">
+      <label>Sprache<select id="language" name="language">
+        <option value="html">HTML</option><option value="css">CSS</option><option value="scss">SCSS</option>
+        <option value="babel">JavaScript / JSX</option><option value="typescript">TypeScript / TSX</option>
+        <option value="json">JSON</option><option value="markdown">Markdown</option><option value="yaml">YAML</option>
+      </select></label>
+      <label>Einrückung<select id="indent"><option value="2">2 Leerzeichen</option><option value="4">4 Leerzeichen</option><option value="tab">Tabs</option></select></label>
+      <label>Zeilenbreite<select id="width"><option>80</option><option selected>100</option><option>120</option></select></label>
+      <button class="primary" id="format" type="submit">Formatieren <kbd>Ctrl ↵</kbd></button>
+    </form>
+
+    <div class="workspace">
+      <section class="editor" aria-labelledby="input-label">
+        <div class="editor-head"><label id="input-label" for="input">Eingabe</label><div><button id="open-file" type="button">Datei öffnen</button><button id="clear" type="button">Leeren</button></div></div>
+        <input id="file" type="file" accept=".html,.htm,.css,.scss,.js,.mjs,.cjs,.jsx,.ts,.tsx,.json,.md,.markdown,.yml,.yaml" hidden>
+        <div class="code-field"><pre class="gutter" id="input-lines" aria-hidden="true">1</pre><textarea id="input" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off" aria-describedby="input-info" placeholder="Dein Code …"></textarea></div>
+        <p class="editor-info" id="input-info">Bis 500 KB · Code wird nicht ausgeführt.</p>
+      </section>
+      <section class="editor" aria-labelledby="output-label">
+        <div class="editor-head"><label id="output-label" for="output">Formatiert</label><div><button id="copy" type="button" disabled>Kopieren</button><button id="download" type="button" disabled>Speichern</button></div></div>
+        <div class="code-field"><pre class="gutter" id="output-lines" aria-hidden="true">1</pre><textarea id="output" readonly spellcheck="false" wrap="off" placeholder="Hier erscheint der formatierte Code."></textarea></div>
+        <p class="editor-info" id="output-info">Zeilennummern werden nicht mitkopiert.</p>
+      </section>
+    </div>
+    <p id="status" role="status" aria-live="polite">Bereit für Deinen Code.</p>
+    <p class="note">Formatierung vereinheitlicht Einrückung, Abstände und Zeilenumbrüche. Sie ersetzt keine Fehlerprüfung oder Code-Review. Die Zeilenbreite ist ein Richtwert.</p>
+    <details class="help"><summary>Was unterstützt wird</summary><p>HTML (auch mit CSS und JavaScript), CSS, SCSS, JavaScript/JSX, TypeScript/TSX, JSON, Markdown und YAML. Ungültiger Code wird mit einer Fehlermeldung zurückgegeben. Dein Original bleibt im Eingabefeld erhalten. Bei eingebetteten Sprachen können Parser zusätzliche Einschränkungen haben.</p><p>Formatierung mit <a href="https://prettier.io/docs/browser" target="_blank" rel="noopener noreferrer">Prettier 3.10.1</a>. Alle benötigten Module werden von dieser Website geladen. Keine Speicherung Deiner Eingabe und kein Upload an einen Formatierungsdienst.</p></details>
+  </main>
+  <footer class="subpage-footer"><p>© Moritz Vollmer · Köln</p><p><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></p></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

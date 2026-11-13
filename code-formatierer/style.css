@@ -1,0 +1,57 @@
+.formatter-page { color: #233147; }
+.formatter-main { width: min(1440px, calc(100% - 80px)); margin: 34px auto 0; padding-top: 64px; position: relative; z-index: 1; }
+.intro { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 26px; }
+.eyebrow { font: 12px/1.6 ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 12px; }
+.intro h1 { font: 400 clamp(36px, 5vw, 65px)/1.15 moritzfontmer, sans-serif; margin: 0; }
+.intro > p { font: 15px/1.7 Poppins, system-ui, sans-serif; margin: 0 0 3px; }
+.toolbar { display: flex; align-items: end; flex-wrap: wrap; gap: 16px; padding: 20px 0; border-top: 1px solid #23314735; }
+.toolbar label { display: flex; flex-direction: column; gap: 7px; font-size: 12px; }
+.toolbar select { background: #ffffffb5; border: 1px solid #23314750; border-radius: 6px; padding: 9px 30px 9px 12px; color: #233147; min-height: 44px; font: 14px/1.4 system-ui, sans-serif; }
+.formatter-page button { min-height: 44px; font: 14px/1.4 system-ui, sans-serif; cursor: pointer; border-radius: 6px; }
+.toolbar .primary { margin-left: auto; padding: 10px 20px; background: #233147; color: white; border: 1px solid #233147; }
+kbd { font: 12px/1.4 ui-monospace, monospace; margin-left: 18px; opacity: .8; }
+.workspace { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #233147; border-radius: 10px; overflow: hidden; background: #152132; }
+.editor { min-width: 0; }
+.editor + .editor { border-left: 1px solid #46536a; }
+.editor-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; padding: 8px 16px; background: #202f44; color: #f2f5fa; }
+.editor-head label { font: 600 14px/1.5 system-ui, sans-serif; }
+.editor-head > div { display: flex; gap: 4px; }
+.editor-head button { background: transparent; color: #d9e5f6; border: 0; padding: 8px 10px; }
+.editor-head button:hover:not(:disabled) { background: #ffffff14; }
+.code-field { display: flex; height: clamp(320px, 48vh, 640px); position: relative; }
+.gutter, .code-field textarea { box-sizing: border-box; margin: 0; padding: 20px 12px; font: 14px/24px ui-monospace, 'Cascadia Code', Consolas, monospace; tab-size: 2; }
+.gutter { flex: 0 0 55px; background: #111c2c; color: #93a4be; text-align: right; user-select: none; overflow: hidden; white-space: pre; border: 0; }
+.code-field textarea { display: block; width: 100%; min-width: 0; flex: 1; border: 0; border-radius: 0; resize: none; background: #152132; color: #edf3ff; overflow: auto; outline-offset: -3px; }
+.code-field textarea::placeholder { color: #98a9c4; }
+.editor-info { margin: 0; padding: 10px 16px; background: #202f44; color: #c5d1e2; font: 12px/1.6 system-ui, sans-serif; }
+#status { font: 14px/1.7 system-ui, sans-serif; min-height: 24px; padding: 6px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+#status.error { color: #971d32; }
+.note, .help { font: 13px/1.8 system-ui, sans-serif; max-width: 85ch; }
+.help summary { cursor: pointer; padding: 12px 0; }
+.help a, .portfolio-link { color: inherit; text-underline-offset: 4px; }
+.portfolio-link { font: 14px/1.6 system-ui, sans-serif; padding: 12px 0; }
+.formatter-page :focus-visible { outline: 3px solid #c57025; outline-offset: 3px; }
+.formatter-page textarea:focus-visible { outline-offset: -3px; }
+.formatter-page button:disabled { cursor: default; opacity: .45; }
+.skip-link { position: fixed; top: -100px; left: 20px; background: #fff; color: #233147; padding: 12px; z-index: 100; }
+.skip-link:focus { top: 12px; }
+@media (max-width: 900px) {
+  .formatter-main { width: calc(100% - 40px); margin-top: 24px; padding-top: 54px; }
+  .intro { align-items: start; flex-direction: column; gap: 14px; }
+  .workspace { grid-template-columns: 1fr; }
+  .editor + .editor { border-left: 0; border-top: 1px solid #46536a; }
+  .code-field { height: 340px; }
+  .toolbar { gap: 12px; }
+  .toolbar .primary { margin-left: 0; }
+}
+@media (max-width: 480px) {
+  .formatter-main { width: calc(100% - 32px); }
+  .toolbar label:first-child { width: 100%; }
+  .toolbar .primary { width: 100%; }
+  .toolbar label:not(:first-child) { flex: 1; min-width: 0; }
+  .toolbar select { width: 100%; font-size: 16px; }
+  .editor-head { padding: 8px; }
+  .editor-head button { font-size: 12px; }
+  .code-field textarea { font-size: 16px; }
+  .gutter { font-size: 16px; flex-basis: 42px; padding-inline: 8px; }
+}

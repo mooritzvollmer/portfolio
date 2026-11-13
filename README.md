@@ -51,3 +51,9 @@ Im Start-Bereich ist rechts oberhalb des Einfuehrungstexts ein Portraetplatz res
 ## Gemeinsames Seitendesign
 
 SEO/GEO, Ueber mich, Kompetenzen, Projekte, Kontakt sowie Rechts- und Fehlerseiten nutzen denselben visuellen Rahmen, dieselbe Farbwelt und die Moritzfontmer-Wortmarke wie die Startseite. Inhaltsseiten verwenden eine native ausklappbare Navigation und respektieren die gespeicherte Theme-Auswahl. Der Portraetplatz ist jetzt in allen Sprachversionen so breit wie der Einfuehrungstext.
+
+## Code-Formatierer
+
+Unter `/code-formatierer/` liegt ein eigenständiges Browserwerkzeug für HTML, CSS/SCSS, JavaScript/JSX, TypeScript/TSX, JSON, Markdown und YAML. Eingabe und Ausgabe mit Zeilennummern; lokale Datei öffnen, Kopieren und Download. Formatierung mit lokal ausgeliefertem Prettier 3.10.1 im Web Worker. Keine Eingabespeicherung oder Übermittlung an Formatierungsdienste. Größenlimit 500 KB / 15.000 Zeilen, Laufzeitlimit 20 Sekunden.
+
+Nach `npm run dev` unter `http://127.0.0.1:5173/code-formatierer/` aufrufen. Ein Doppelklick auf die HTML-Datei unterstützt ES-Module/Worker nicht zuverlässig. Prettier und alle Plugin-Dateien sind fest versioniert; Lizenz unter `code-formatierer/vendor/LICENSE`.
