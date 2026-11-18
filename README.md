@@ -43,4 +43,10 @@ Werkzeuge werden im persönlichen Profil vorerst nicht vorgestellt oder verlinkt
 
 ## Profilfotos
 
-Die Startseite nutzt das nahe Porträt, /ueber-mich/ die weiter gefasste Aufnahme. Beide stammen aus den vom Inhaber bereitgestellten Fotos. Responsive WebP-Varianten und JPEG-Fallbacks werden lokal ausgeliefert; die Originaldateien und ihre Metadaten werden nicht veröffentlicht. Zusätzliche Darstellung ausschließlich in assets/portrait-20261118.css. Der Ausschnitt im bestehenden Startseiten-Platz ist per object-position auf das Gesicht abgestimmt.
+Auf der Startseite wird kein Foto gezeigt. /ueber-mich/ nutzt die weiter gefasste Aufnahme. Beide stammen aus den vom Inhaber bereitgestellten Fotos. Responsive WebP-Varianten und JPEG-Fallbacks werden lokal ausgeliefert; die Originaldateien und ihre Metadaten werden nicht veröffentlicht. Zusätzliche Darstellung ausschließlich in assets/portrait-20261118.css. Der Ausschnitt im bestehenden Startseiten-Platz ist per object-position auf das Gesicht abgestimmt.
+
+## Hauptbereiche als Fenster
+
+Start, Über mich und Kontakt liegen auf dem Desktop in drei versetzten Programmfenstern. Aktive Fenster kommen mit einer räumlichen Transition nach vorn. Die ursprüngliche Navigation, URL-Hashes, Pfeile und Kontakticons bleiben erhalten. Zusätzlich können die hinteren Fensterleisten und die Bereichsauswahl genutzt werden. Mobil und auf schmalen Tablets wird eine einzelne Lesefläche mit kompakter Bereichsauswahl und horizontalem Übergang verwendet. Die Startseite enthält auf ausdrücklichen Wunsch kein Foto. Die Profilseite bleibt unverändert.
+
+Ergänzende Darstellung und Interaktion in assets/desktop-windows-20261118.css und .js. Die alte Navigation bleibt für Abschnittsstatus und History zuständig; das neue Modul synchronisiert Fenster, ARIA und mobile Höhen nach dem Ereignis site-panel-change. Bewegungsreduktion wird respektiert.
