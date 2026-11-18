@@ -60,3 +60,7 @@ Die Fenster sind auf ausdrücklichen Wunsch gerade ausgerichtet, auch während d
 ## Interaktionszustände
 
 Korrigierte Hover- und Fokusfarben des Arbeitgeberlinks, zentrierte Menüpunkte und stabile Link-Unterstreichungen. Im geöffneten mobilen Menü sind die darunterliegenden Hauptinhalte und Kontakticons inert; der Tastaturfokus bleibt im Menü und kehrt bei Escape zum Schalter zurück. Aktuelle Styles: desktop-windows-20261118d.css. Ergänzende Menüzustände: interaction-states-20261118.js. Zusätzliche Design-/Codefenster sind nur als Konzept besprochen, noch nicht Bestandteil dieser Veröffentlichung.
+
+## Zusätzliche Mac-Fenster
+
+Über mich verwendet eine Notizen-Ansicht mit Profil und Werdegang. Von dort öffnen sich native modale Dialoge für Bildstudio und Code. Bildstudio: Zoom, Ausschnittwahl, Auswahlrahmen, Ebenen und Arbeitsflächenfarbe. Code: drei Quelldateien, Zeilennummern, Syntaxfarben, Kopieren und tatsächlich bedienbare Vorschau. Der angezeigte JavaScript-Ausschnitt ist die tatsächlich genutzte Vorschaufunktion. Kontakt übernimmt eine Apple-Mail-inspirierte Werkzeugleiste mit echten Mail-/Kopier-/vCard-Aktionen. Mobil sind die Zusatzfenster Vollbildansichten mit Zurück. Escape, Fokus-Rückgabe und unterbundene Hintergrund-Swipe-Steuerung sind berücksichtigt. Die bisherigen drei Hauptbereiche und das Browser-Startfenster bleiben erhalten.
