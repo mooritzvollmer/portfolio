@@ -1,0 +1,60 @@
+/* Fill the original reserved image area without changing the homepage layout. */
+.profile-portrait {
+  position: relative;
+}
+.profile-portrait > picture {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.profile-portrait > picture > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 10%;
+}
+.profile-editorial .essay-intro-context {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 30px;
+}
+.profile-editorial .essay-profile-photo {
+  margin: 0;
+  justify-self: end;
+  width: 100%;
+  max-width: 260px;
+}
+.profile-editorial .essay-profile-photo picture,
+.profile-editorial .essay-profile-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.profile-editorial .essay-profile-photo img {
+  border-radius: 2px;
+}
+@media (max-width: 1000px) and (min-width: 768px) {
+  .profile-editorial .essay-intro-context {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+  .profile-editorial .essay-profile-photo {
+    grid-row: 1;
+    max-width: 180px;
+  }
+}
+@media (max-width: 767px) {
+  .profile-editorial .essay-intro-context {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+  .profile-editorial .essay-profile-photo {
+    grid-row: 1;
+    max-width: 180px;
+    width: 58%;
+  }
+}

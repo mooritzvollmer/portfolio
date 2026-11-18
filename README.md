@@ -8,7 +8,7 @@ Digital Strategist – Design, Technik und Sichtbarkeit. Die aktuelle berufliche
 
 Das ursprüngliche Design und Setup sind die verbindliche Basis: animierter Hintergrund, Rahmen, schwebende Navigation, Moritzfontmer, Light-/Dark- und Schriftwahl sowie die drei Bereiche Start, Über mich und Kontakt. Die Ausrichtung wurde am 18.11.2026 inhaltlich angepasst, ohne daraus eine neue Landingpage zu machen. Künftige Änderungen am Seitenaufbau und visuellen Konzept nur auf ausdrücklichen Wunsch.
 
-Die dezenten Kontakticons oberhalb der Sektionsanzeige, die animierte Unterstreichung des Namens und der Porträtplatz bleiben unverändert. Ein echtes Porträt ist noch nicht hinterlegt. Der Platz hat dieselbe Breite wie der Einleitungstext; mobil steht er unter der Headline und vor dem Text.
+Die dezenten Kontakticons oberhalb der Sektionsanzeige, die animierte Unterstreichung des Namens und der Porträtplatz bleiben unverändert. Die bereitgestellten Profilfotos sind eingebunden. Der Platz hat dieselbe Breite wie der Einleitungstext; mobil steht er unter der Headline und vor dem Text.
 
 Die Unterseiten behalten den vorhandenen gemeinsamen Rahmen. /arbeitsweise/ vertieft das Profil innerhalb desselben Designs. Englische und vereinfachte Versionen folgen dem gleichen Drei-Bereiche-Aufbau.
 
@@ -40,3 +40,7 @@ Die bestehende Route /code-formatierer/ bleibt technisch erhalten; die separate 
 Die Startseite und ihre Bedienung bleiben unverändert. Die Inhaltsseiten verwenden eine offene Lesestruktur mit seitlichem Inhaltsverzeichnis, nummerierten Abschnitten und einer aufklappbaren beruflichen Chronologie. Die zusätzlichen Styles liegen ausschließlich in assets/profile-detail-20261118.css und greifen nur auf .profile-editorial. Die ursprüngliche Farbwelt, Bildmarke, Moritzfontmer und schwebende Navigation bleiben erhalten.
 
 Werkzeuge werden im persönlichen Profil vorerst nicht vorgestellt oder verlinkt. /projekte/ leitet vorübergehend mit HTTP 302 auf /ueber-mich/ weiter; die eigenständigen Projekte selbst werden dadurch nicht verändert.
+
+## Profilfotos
+
+Die Startseite nutzt das nahe Porträt, /ueber-mich/ die weiter gefasste Aufnahme. Beide stammen aus den vom Inhaber bereitgestellten Fotos. Responsive WebP-Varianten und JPEG-Fallbacks werden lokal ausgeliefert; die Originaldateien und ihre Metadaten werden nicht veröffentlicht. Zusätzliche Darstellung ausschließlich in assets/portrait-20261118.css. Der Ausschnitt im bestehenden Startseiten-Platz ist per object-position auf das Gesicht abgestimmt.
