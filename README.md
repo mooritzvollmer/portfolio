@@ -50,3 +50,7 @@ Auf der Startseite wird kein Foto gezeigt. /ueber-mich/ nutzt die weiter gefasst
 Start, Über mich und Kontakt liegen auf dem Desktop in drei versetzten Programmfenstern. Aktive Fenster kommen mit einer räumlichen Transition nach vorn. Die ursprüngliche Navigation, URL-Hashes, Pfeile und Kontakticons bleiben erhalten. Zusätzlich können die hinteren Fensterleisten und die Bereichsauswahl genutzt werden. Mobil und auf schmalen Tablets wird eine einzelne Lesefläche mit kompakter Bereichsauswahl und horizontalem Übergang verwendet. Die Startseite enthält auf ausdrücklichen Wunsch kein Foto. Die Profilseite bleibt unverändert.
 
 Ergänzende Darstellung und Interaktion in assets/desktop-windows-20261118.css und .js. Die alte Navigation bleibt für Abschnittsstatus und History zuständig; das neue Modul synchronisiert Fenster, ARIA und mobile Höhen nach dem Ereignis site-panel-change. Bewegungsreduktion wird respektiert.
+
+## Fensterverfeinerung
+
+Der große Titel bleibt in allen Bereichen vollständig sichtbar. Die Fenster haben individuelle Abmessungen, leicht versetzte Positionen und unterschiedliche Gestaltung: Browser (Start), warmes Profil-Dokument (Über mich), Mail-Fenster (Kontakt). Desktopwechsel nutzen eine unterbrechbare Animation mit kurzem Anheben und sanftem Einfedern. Mobile Darstellung und Bewegungsreduktion bleiben erhalten. Ergänzungen in desktop-windows-20261118b.css und .js; die ältere Version ist nicht mehr in den Startseiten eingebunden. Hintere Titelleisten sind anklickbar; nur der Inhalt inaktiver Fenster wird inert geschaltet.
