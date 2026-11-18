@@ -1,28 +1,22 @@
 # Portfolio · Moritz Vollmer
 
-Persönliche Website unter https://moritzvollmer.de/.
+Persönliche Website: https://moritzvollmer.de/
 
-Positionierung: **Digital Strategist – Design. Technik. Sichtbarkeit.**
-Die aktuelle berufliche Position bleibt davon getrennt: SEO & GEO Manager bei Hottgenroth Software AG, seit Oktober 2026.
+## Positionierung und Aufbau
 
-## Aktuelle Arbeitsfassung
+Digital Strategist – Design, Technik und Sichtbarkeit. Die aktuelle berufliche Stelle bleibt SEO & GEO Manager bei Hottgenroth Software AG.
 
-Die Website basiert auf dem am 26.10.2026 gesicherten Live-Build. Die neuere ursprüngliche SCSS-/JavaScript-Quelle ist weiterhin nicht verfügbar. Die alten Dateien in src/, public/, main.js und die Vite-Konfiguration bleiben erhalten und dürfen die aktuelle Website nicht ersetzen.
+Das ursprüngliche Design und Setup sind die verbindliche Basis: animierter Hintergrund, Rahmen, schwebende Navigation, Moritzfontmer, Light-/Dark- und Schriftwahl sowie die drei Bereiche Start, Über mich und Kontakt. Die Ausrichtung wurde am 18.11.2026 inhaltlich angepasst, ohne daraus eine neue Landingpage zu machen. Künftige Änderungen am Seitenaufbau und visuellen Konzept nur auf ausdrücklichen Wunsch.
 
-Die überarbeiteten Seiten vom 17.11.2026 sind direkt editierbares HTML. Ihr gemeinsames Design und Verhalten liegen in assets/strategist-20261117.css und assets/strategist-20261117.js. Dateinamen von geänderten Assets bei künftigen Veröffentlichungen versionieren: IONOS liefert sie mit langfristigem Cache aus.
+Die dezenten Kontakticons oberhalb der Sektionsanzeige, die animierte Unterstreichung des Namens und der Porträtplatz bleiben unverändert. Ein echtes Porträt ist noch nicht hinterlegt. Der Platz hat dieselbe Breite wie der Einleitungstext; mobil steht er unter der Headline und vor dem Text.
 
-## Seiten und Inhalte
+Die Unterseiten behalten den vorhandenen gemeinsamen Rahmen. /arbeitsweise/ vertieft das Profil innerhalb desselben Designs. Englische und vereinfachte Versionen folgen dem gleichen Drei-Bereiche-Aufbau.
 
-- Startseite: Positionierung, drei Perspektiven, Arbeitsweise und eine kleine Auswahl eigener Tools.
-- /ueber-mich/: kompakter Werdegang, fachliches Profil und Qualifikationen.
-- /arbeitsweise/: Vorgehen und typische Fragestellungen; keine erfundenen Kundenresultate.
-- /seo-geo/: vertiefender Blick auf organische Sichtbarkeit.
-- /kontakt/: E-Mail, LinkedIn, GitHub und vCard.
-- /en/, /leicht/ und /en/easy/: englische bzw. vereinfachte Fassungen. Die vereinfachten Texte sind keine zertifizierte Leichte Sprache.
-- /kompetenzen/ und /projekte/: bestehende Adressen mit dem gleichen Design und aktualisierten Inhalten.
-- /404.html: Fehlerseite, über Apache mit HTTP 404 ausgeliefert.
+## Statische Arbeitsfassung
 
-Das Original-Favicon, die Moritzfontmer-Wortmarke, die animierte Namensunterstreichung und die dezenten Kontakticons oberhalb der Fortschrittsanzeige bleiben erhalten. Die Bildmarkenfläche oberhalb des Einleitungstextes kann später durch ein echtes Porträt ersetzt werden. Sie hat dieselbe Breite wie der Text; mobil folgt sie auf die Überschrift. Es liegt noch kein echtes Porträt vor.
+Die Basis wurde am 26.10.2026 aus dem Live-Build gesichert. Die neuere ursprüngliche SCSS-/JavaScript-Quelle ist nicht verfügbar. src/, public/, main.js und die alte Vite-Konfiguration sind kein Ersatz für die aktuelle Arbeitsfassung.
+
+Veröffentlichte Dateien stehen in site-files.json. HTML direkt bearbeiten; gemeinsame Styles und Verhalten liegen in assets/. Das ursprüngliche Stylesheet digital-card-7a51acda.css und die vorhandenen Navigationsskripte bleiben die Designbasis. Die Dateien strategist-20261117.css und strategist-20261117.js aus dem verworfenen Umbau werden nicht mehr ausgeliefert oder eingebunden.
 
 ## Lokal arbeiten
 
@@ -33,17 +27,10 @@ Node.js ab Version 20 genügt. Keine Installation von Abhängigkeiten erforderli
     npm run check
     npm run preview
 
-Der lokale Server läuft auf http://127.0.0.1:5173/ und liefert nur Dateien aus site-files.json. Der Build kopiert dieselben Dateien nach dist/. Neue veröffentlichte Dateien immer in die Liste aufnehmen.
+Der lokale Server läuft auf http://127.0.0.1:5173/. Neue veröffentlichte Dateien in site-files.json aufnehmen. Der Build kopiert genau diese Dateien nach dist/.
 
-## Veröffentlichen
+## Veröffentlichung
 
-1. Lokal umsetzen, Build und Prüfung abschließen.
-2. Änderungen auf main committen und pushen; GitHub-Commit vergleichen.
-3. Den identischen dist/-Build mit dem bestehenden Werkzeuge/Deploy-Portfolio.ps1 veröffentlichen.
-4. Hashes und HTTP-Auslieferung prüfen; Deployment-Datensatz aktualisieren.
+Lokal prüfen, auf main committen und pushen, GitHub-Commit vergleichen. Anschließend denselben Build mit dem bestehenden lokalen Werkzeuge/Deploy-Portfolio.ps1 nach IONOS übertragen. Das Werkzeug sichert den vorherigen Stand und prüft Dateihashes und HTTP-Auslieferung. Nur das bestätigte Portfolio-Ziel ändern. Zugangsdaten und Schlüssel niemals committen.
 
-Das Deploymentwerkzeug liegt außerhalb dieses Repositorys im lokalen Arbeitsbereich. Es schützt den vorherigen Live-Stand und ersetzt ausschließlich das bestätigte Portfolio-Ziel. Zugangsdaten und Schlüssel gehören nicht ins Repository.
-
-## Eigenständiger Code-Formatierer
-
-Die bestehende Route /code-formatierer/ bleibt technisch erhalten, ist aber kein Bestandteil der Profilnavigation. Sie enthält lokal ausgeliefertes Prettier 3.10.1 mit MIT-Lizenz und formatiert Code im Browser-Worker. Eine spätere eigenständige Veröffentlichung des Tools ist separat vorbereitet; sie wird durch dieses Portfolio-Update nicht vorweggenommen.
+Die bestehende Route /code-formatierer/ bleibt technisch erhalten; die separate Veröffentlichung des Tools ist ein eigener Arbeitsschritt.
