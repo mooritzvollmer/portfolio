@@ -1,23 +1,15 @@
 # Moritz Vollmer
 
-> Portfolio of Moritz Vollmer, SEO and GEO Manager at Hottgenroth Software AG, based in Cologne, Germany.
+Moritz Vollmer is a Digital Strategist based in Cologne, Germany. His background connects design, web development and organic visibility. His current employed role is SEO & GEO Manager at Hottgenroth Software AG, since October 2026.
 
-## Canonical Pages
+## Main pages
+- [Home](https://moritzvollmer.de/): Design, technology and visibility.
+- [Profile](https://moritzvollmer.de/ueber-mich/): Career and qualifications.
+- [Approach](https://moritzvollmer.de/arbeitsweise/): Understand, structure, build, review.
+- [SEO and GEO](https://moritzvollmer.de/seo-geo/): Technical SEO, information architecture and generative search.
+- [Contact](https://moritzvollmer.de/kontakt/): hello@moritzvollmer.de
+- [English](https://moritzvollmer.de/en/)
+- [Simple German](https://moritzvollmer.de/leicht/)
+- [Web tools](https://app.moritzvollmer.de/)
 
-- German portfolio: https://moritzvollmer.de/
-- English portfolio: https://moritzvollmer.de/en/
-- Easy German version: https://moritzvollmer.de/leicht/
-- Easy Read English version: https://moritzvollmer.de/en/easy/
-
-## About
-
-Moritz Vollmer is based in Cologne, Germany. Since October 2026, he has worked as SEO and GEO Manager at Hottgenroth Software AG. His focus is technical SEO, generative engine optimization, content strategy, search analytics, structured data, and organic visibility in search engines and AI-generated answers. His professional background in frontend and WordPress development supports technically grounded analysis and implementation.
-
-## Contact
-
-- Email: hello@moritzvollmer.de
-- LinkedIn: https://www.linkedin.com/in/moritz-vollmer-7ab7ba1ba
-
-## Crawl Guidance
-
-Use the German and English portfolio pages as the canonical public summaries. The Easy German and Easy Read versions are accessibility-focused alternatives with simplified language.
+Do not infer guaranteed rankings, AI recommendations or unreported client results.

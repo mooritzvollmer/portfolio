@@ -1,59 +1,49 @@
 # Portfolio · Moritz Vollmer
 
-Aktueller Stand von [moritzvollmer.de](https://moritzvollmer.de/) mit der Positionierung **SEO & GEO Manager**.
+Persönliche Website unter https://moritzvollmer.de/.
 
-## Stand dieser Kopie
+Positionierung: **Digital Strategist – Design. Technik. Sichtbarkeit.**
+Die aktuelle berufliche Position bleibt davon getrennt: SEO & GEO Manager bei Hottgenroth Software AG, seit Oktober 2026.
 
-Am 26.10.2026 wurde die bei IONOS ausgelieferte Version übernommen. Zuvor enthielten GitHub und die lokale Kopie denselben älteren Stand vom 15.09.2026.
+## Aktuelle Arbeitsfassung
 
-Die übernommene Live-Version ist die Basis dieser Arbeitsfassung. Seitdem wurde das persönliche Profil lokal vereinfacht: Start, Über mich und Kontakt; Skills- und Projektübersichten sind aus der Startseite entfernt. Die eigenständigen Unterseiten bleiben erhalten. Alle Website-Dateien stehen in `site-files.json`. Weiterentwicklungen werden nach lokaler Prüfung zuerst auf GitHub übertragen und anschließend auf IONOS veröffentlicht.
+Die Website basiert auf dem am 26.10.2026 gesicherten Live-Build. Die neuere ursprüngliche SCSS-/JavaScript-Quelle ist weiterhin nicht verfügbar. Die alten Dateien in src/, public/, main.js und die Vite-Konfiguration bleiben erhalten und dürfen die aktuelle Website nicht ersetzen.
 
-**Wichtig:** Die neueren ursprünglichen JavaScript-/SCSS-Quelldateien befinden sich auf einem momentan nicht zugänglichen Rechner. Deshalb ist dies eine wiederhergestellte statische Arbeitsfassung aus dem Live-Build. Die Dateien unter `src/`, `main.js`, `public/` und die bisherige Vite-Konfiguration bleiben als älterer Quellstand erhalten; sie erzeugen die aktuelle Version noch nicht. Die aktuellen CSS- und JavaScript-Dateien unter `assets/` sind bereits gebündelt.
+Die überarbeiteten Seiten vom 17.11.2026 sind direkt editierbares HTML. Ihr gemeinsames Design und Verhalten liegen in assets/strategist-20261117.css und assets/strategist-20261117.js. Dateinamen von geänderten Assets bei künftigen Veröffentlichungen versionieren: IONOS liefert sie mit langfristigem Cache aus.
 
-## Lokal starten
+## Seiten und Inhalte
 
-Node.js ab Version 20 genügt. Für diese statische Arbeitsfassung müssen keine npm-Abhängigkeiten installiert werden.
+- Startseite: Positionierung, drei Perspektiven, Arbeitsweise und eine kleine Auswahl eigener Tools.
+- /ueber-mich/: kompakter Werdegang, fachliches Profil und Qualifikationen.
+- /arbeitsweise/: Vorgehen und typische Fragestellungen; keine erfundenen Kundenresultate.
+- /seo-geo/: vertiefender Blick auf organische Sichtbarkeit.
+- /kontakt/: E-Mail, LinkedIn, GitHub und vCard.
+- /en/, /leicht/ und /en/easy/: englische bzw. vereinfachte Fassungen. Die vereinfachten Texte sind keine zertifizierte Leichte Sprache.
+- /kompetenzen/ und /projekte/: bestehende Adressen mit dem gleichen Design und aktualisierten Inhalten.
+- /404.html: Fehlerseite, über Apache mit HTTP 404 ausgeliefert.
 
-```sh
-npm run dev
-```
+Das Original-Favicon, die Moritzfontmer-Wortmarke, die animierte Namensunterstreichung und die dezenten Kontakticons oberhalb der Fortschrittsanzeige bleiben erhalten. Die Bildmarkenfläche oberhalb des Einleitungstextes kann später durch ein echtes Porträt ersetzt werden. Sie hat dieselbe Breite wie der Text; mobil folgt sie auf die Überschrift. Es liegt noch kein echtes Porträt vor.
 
-Anschließend `http://127.0.0.1:5173/` öffnen. HTML-Änderungen erscheinen nach Neuladen. Der lokale Server liefert ausschließlich die freigegebenen Website-Dateien aus; private Repository- und Konfigurationsdateien werden nicht bereitgestellt.
+## Lokal arbeiten
 
-## Build und Prüfung
+Node.js ab Version 20 genügt. Keine Installation von Abhängigkeiten erforderlich.
 
-```sh
-npm run build
-npm run check
-npm run preview
-```
+    npm run dev
+    npm run build
+    npm run check
+    npm run preview
 
-Der Build kopiert die in `site-files.json` aufgeführten Dateien unverändert nach `dist/`. Die Prüfung kontrolliert die Dateien, lokale HTML-/CSS-Ressourcen und die Übereinstimmung des Builds. Neue oder entfernte Website-Dateien auch in der Dateiliste berücksichtigen.
+Der lokale Server läuft auf http://127.0.0.1:5173/ und liefert nur Dateien aus site-files.json. Der Build kopiert dieselben Dateien nach dist/. Neue veröffentlichte Dateien immer in die Liste aufnehmen.
 
-## Später die neueren Quellen übernehmen
+## Veröffentlichen
 
-Sobald der andere Rechner verfügbar ist, dessen HTML-, JavaScript- und SCSS-Quellen zusätzlich sichern, mit diesem Stand abgleichen und den ursprünglichen Vite-Build wieder aktivieren. Den älteren `src/`-Stand nicht unbesehen über die aktuelle Website deployen. Die bisherige Build-Variante ist unter `npm run build:legacy` verfügbar und schreibt getrennt nach `dist-legacy/`.
+1. Lokal umsetzen, Build und Prüfung abschließen.
+2. Änderungen auf main committen und pushen; GitHub-Commit vergleichen.
+3. Den identischen dist/-Build mit dem bestehenden Werkzeuge/Deploy-Portfolio.ps1 veröffentlichen.
+4. Hashes und HTTP-Auslieferung prüfen; Deployment-Datensatz aktualisieren.
 
-## Deployment
+Das Deploymentwerkzeug liegt außerhalb dieses Repositorys im lokalen Arbeitsbereich. Es schützt den vorherigen Live-Stand und ersetzt ausschließlich das bestätigte Portfolio-Ziel. Zugangsdaten und Schlüssel gehören nicht ins Repository.
 
-Dieser Abgleich hat die Live-Website nicht verändert. Das vorhandene Deploy-Skript bleibt erhalten. Es nutzt `DEPLOY_TARGET` und `rsync`; vor einem Deployment Zielpfad und Übertragungsumfang mit dem Dry Run prüfen. Unter Windows steht `rsync` nicht automatisch zur Verfügung; alternativ den geprüften `dist/`-Stand per SFTP übertragen.
+## Eigenständiger Code-Formatierer
 
-Zugangsdaten und private SSH-Schlüssel gehören nicht in das Repository.
-
-## Digitale Visitenkarte
-
-Dezente Icons oberhalb der Fortschrittsanzeige bieten E-Mail, LinkedIn und eine speicherbare vCard. Der Name im Einstieg wird animiert unterstrichen. Auf Mobilgeraeten sind die Abstaende reduziert; der berufliche Hintergrund und fruehere Stationen sind einklappbar. Weitere priorisierte Empfehlungen stehen unter [docs/SEO-Empfehlungen.md](docs/SEO-Empfehlungen.md).
-
-## Portraetbereich
-
-Im Start-Bereich ist rechts oberhalb des Einfuehrungstexts ein Portraetplatz reserviert, mobil unter der Headline und vor dem Text. Momentan ist dort eine rein dekorative Platzhaltergrafik ohne erfundenes Foto. Bei Einsetzen eines echten Fotos das Element .profile-portrait entsprechend mit einem Bild und sinnvoller Alternativbeschreibung versehen, aria-hidden entfernen und die Bilddatei in site-files.json aufnehmen. Die reservierten Abmessungen und object-fit: cover sind vorbereitet.
-
-## Gemeinsames Seitendesign
-
-SEO/GEO, Ueber mich, Kompetenzen, Projekte, Kontakt sowie Rechts- und Fehlerseiten nutzen denselben visuellen Rahmen, dieselbe Farbwelt und die Moritzfontmer-Wortmarke wie die Startseite. Inhaltsseiten verwenden eine native ausklappbare Navigation und respektieren die gespeicherte Theme-Auswahl. Der Portraetplatz ist jetzt in allen Sprachversionen so breit wie der Einfuehrungstext.
-
-## Code-Formatierer
-
-Unter `/code-formatierer/` liegt ein eigenständiges Browserwerkzeug für HTML, CSS/SCSS, JavaScript/JSX, TypeScript/TSX, JSON, Markdown und YAML. Eingabe und Ausgabe mit Zeilennummern; lokale Datei öffnen, Kopieren und Download. Formatierung mit lokal ausgeliefertem Prettier 3.10.1 im Web Worker. Keine Eingabespeicherung oder Übermittlung an Formatierungsdienste. Größenlimit 500 KB / 15.000 Zeilen, Laufzeitlimit 20 Sekunden.
-
-Nach `npm run dev` unter `http://127.0.0.1:5173/code-formatierer/` aufrufen. Ein Doppelklick auf die HTML-Datei unterstützt ES-Module/Worker nicht zuverlässig. Prettier und alle Plugin-Dateien sind fest versioniert; Lizenz unter `code-formatierer/vendor/LICENSE`.
+Die bestehende Route /code-formatierer/ bleibt technisch erhalten, ist aber kein Bestandteil der Profilnavigation. Sie enthält lokal ausgeliefertes Prettier 3.10.1 mit MIT-Lizenz und formatiert Code im Browser-Worker. Eine spätere eigenständige Veröffentlichung des Tools ist separat vorbereitet; sie wird durch dieses Portfolio-Update nicht vorweggenommen.
