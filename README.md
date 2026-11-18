@@ -34,3 +34,9 @@ Der lokale Server läuft auf http://127.0.0.1:5173/. Neue veröffentlichte Datei
 Lokal prüfen, auf main committen und pushen, GitHub-Commit vergleichen. Anschließend denselben Build mit dem bestehenden lokalen Werkzeuge/Deploy-Portfolio.ps1 nach IONOS übertragen. Das Werkzeug sichert den vorherigen Stand und prüft Dateihashes und HTTP-Auslieferung. Nur das bestätigte Portfolio-Ziel ändern. Zugangsdaten und Schlüssel niemals committen.
 
 Die bestehende Route /code-formatierer/ bleibt technisch erhalten; die separate Veröffentlichung des Tools ist ein eigener Arbeitsschritt.
+
+## Detailseiten vom 18.11.2026
+
+Die Startseite und ihre Bedienung bleiben unverändert. Die Inhaltsseiten verwenden eine offene Lesestruktur mit seitlichem Inhaltsverzeichnis, nummerierten Abschnitten und einer aufklappbaren beruflichen Chronologie. Die zusätzlichen Styles liegen ausschließlich in assets/profile-detail-20261118.css und greifen nur auf .profile-editorial. Die ursprüngliche Farbwelt, Bildmarke, Moritzfontmer und schwebende Navigation bleiben erhalten.
+
+Werkzeuge werden im persönlichen Profil vorerst nicht vorgestellt oder verlinkt. /projekte/ leitet vorübergehend mit HTTP 302 auf /ueber-mich/ weiter; die eigenständigen Projekte selbst werden dadurch nicht verändert.
