@@ -56,3 +56,7 @@ Ergänzende Darstellung und Interaktion in assets/desktop-windows-20261118.css u
 Der große Titel bleibt in allen Bereichen vollständig sichtbar. Die Fenster haben individuelle Abmessungen, leicht versetzte Positionen und unterschiedliche Gestaltung: Browser (Start), warmes Profil-Dokument (Über mich), Mail-Fenster (Kontakt). Desktopwechsel nutzen eine unterbrechbare Animation mit kurzem Anheben und sanftem Einfedern. Mobile Darstellung und Bewegungsreduktion bleiben erhalten. Ergänzungen in desktop-windows-20261118b.css und .js; die ältere Version ist nicht mehr in den Startseiten eingebunden. Hintere Titelleisten sind anklickbar; nur der Inhalt inaktiver Fenster wird inert geschaltet.
 
 Die Fenster sind auf ausdrücklichen Wunsch gerade ausgerichtet, auch während des Wechsels. Überlappung, individuelle Größen, Positionen und das federnde Anheben bleiben erhalten. Aktuelle Styles: desktop-windows-20261118c.css.
+
+## Interaktionszustände
+
+Korrigierte Hover- und Fokusfarben des Arbeitgeberlinks, zentrierte Menüpunkte und stabile Link-Unterstreichungen. Im geöffneten mobilen Menü sind die darunterliegenden Hauptinhalte und Kontakticons inert; der Tastaturfokus bleibt im Menü und kehrt bei Escape zum Schalter zurück. Aktuelle Styles: desktop-windows-20261118d.css. Ergänzende Menüzustände: interaction-states-20261118.js. Zusätzliche Design-/Codefenster sind nur als Konzept besprochen, noch nicht Bestandteil dieser Veröffentlichung.
