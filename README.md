@@ -68,3 +68,5 @@ Korrigierte Hover- und Fokusfarben des Arbeitgeberlinks, zentrierte Menüpunkte 
 Bildstudio und Codeansicht sind als optionale Anhänge im kompakten Menü der Notizen-Werkzeugleiste erreichbar. Im Profiltext gibt es keine hervorgehobenen Startkacheln mehr. Nach dem Schließen kehrt der Fokus zum sichtbaren Anhänge-Schalter zurück.
 
 Die drei Hauptfenster richten ihre Höhe am tatsächlichen Dokumentinhalt aus. Die maximale Desktophöhe bleibt auf den vorhandenen Bühnenbereich begrenzt; längere Inhalte scrollen innerhalb des Fensters. Hintergrundfenster werden auf die aktive Höhe begrenzt, die Bereichsauswahl folgt dem Fensterrand. Mobil bleibt die natürliche Dokumenthöhe erhalten.
+
+Die Desktopfenster berücksichtigen den tatsächlich verbleibenden Platz bis zur Bereichsauswahl und zum unteren Rahmen. Im Kontaktfenster bleiben Werkzeugleiste und Adresszeilen stehen; nur der Nachrichtentext scrollt bei Platzmangel. Deutsche Navigation und Profilüberschriften heißen Profil bzw. Erfahrung. Bestehende URLs bleiben bestehen.
