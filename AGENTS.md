@@ -12,3 +12,5 @@ For typography, avoid umlaut characters in Moritzfontmer headlines: use ae/oe/ue
 Use Moritzfontmer for the navigation wordmark as well as display headings. Content pages should use the shared subpage shell with the homepage color palette, frame, navigation and typefaces. Use a restrained portrait directly in Profile; do not restore an automatic portrait on Start or image-editing/code-demo windows.
 
 The three pillar labels are always exactly Design, Technik, Sichtbarkeit, including the capabilities navigation. Work contains the twelve original frontend website references (Convista, ticket.io, Starke Periode, Buddystar, Lekkerland Karriere, FaktorZehn, MUNA+, Pflegeplanet, OnOffice, Eisberg, Konrad Graser, smartAware), not personal tools or subdomain apps unless the owner requests that change.
+
+Capabilities belong to the third Notes sidebar entry (Kompetenzen), alongside profile and experience. Keep Design, Technik, Sichtbarkeit as compact expandable sections in that note, not in an extra dialog or toolbar launcher.
