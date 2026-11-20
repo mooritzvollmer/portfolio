@@ -100,7 +100,14 @@
     "assets/notes-competencies-20261120.css",
     "assets/notes-competencies-20261120.js",
     "assets/notes-skills-cv-20261120.css",
-    "assets/career-stations-20261120.css"
+    "assets/career-stations-20261120.css",
+    "assets/responsive-base-20261120.css",
+    "assets/responsive-navigation-20261120.js",
+    "assets/responsive-windows-20261120.js",
+    "assets/responsive-menu-20261120.js",
+    "assets/responsive-height-20261120.js",
+    "assets/responsive-notes-20261120.js",
+    "assets/responsive-apps-20261120.css"
   ],
-  "lastEdited": "2026-11-18"
+  "lastEdited": "2026-11-20"
 }

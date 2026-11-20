@@ -80,3 +80,7 @@ Die drei Säulen heißen durchgehend Design, Technik, Sichtbarkeit. Kompetenzen 
 Kompetenzen ist die dritte Notiz neben Mein Profil und Erfahrung. Die drei Säulen stehen als kompakte, einzeln aufklappbare Abschnitte mit Fähigkeiten, Erfahrung und heutiger Anwendung direkt im Notizen-Fenster. Es gibt keinen separaten Kompetenzdialog oder Toolbar-Startknopf mehr. Mobil stehen die drei Notizen als gleichwertige Tabs nebeneinander.
 
 Kompetenzen benennt konkrete Sprachen, Templates, Frameworks, CMS, Werkzeuge und betreute Themen. Quelle: ursprüngliche Hard-Skill-Liste und bisheriger Lebenslauf; GA4 und Search Console aus dem dokumentierten Projektkontext. Erfahrung ist ein chronologischer Lebenslauf mit vier Arbeitgeberstationen, sichtbaren Zeiträumen und Rollen sowie ausklappbaren Aufgaben. Friendventure und line communication enthalten die belegten einzelnen Rollen mit Zeiträumen. Die Profil-Detailseite verwendet dieselben Stationen.
+
+## Responsive Darstellungsregeln
+
+Ab 1200 CSS-Pixeln: überlappende Desktopfenster. Darunter: ein eingerahmtes App-Fenster, natürliche Seitenhöhe, kompakte Identität oben und eine feste Dock-Navigation unten. Bis 600 Pixel: drei Profil-Notizen nebeneinander. Ab 601 Pixel: Notizen mit Seitenleiste. Kontakt-Icons und rechtliche Links stehen im Seitenfluss; Inhalte erhalten Abstand zur Dock-Navigation einschließlich Safe Area. Breakpoints in CSS, Hauptnavigation, Fenstersteuerung und Höhenberechnung sind aufeinander abgestimmt.
