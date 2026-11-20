@@ -72,3 +72,5 @@ Die drei Hauptfenster richten ihre Höhe am tatsächlichen Dokumentinhalt aus. D
 Die Desktopfenster berücksichtigen den tatsächlich verbleibenden Platz bis zur Bereichsauswahl und zum unteren Rahmen. Im Kontaktfenster bleiben Werkzeugleiste und Adresszeilen stehen; nur der Nachrichtentext scrollt bei Platzmangel. Deutsche Navigation und Profilüberschriften heißen Profil bzw. Erfahrung. Bestehende URLs bleiben bestehen.
 
 Work ist der vierte Hauptbereich zwischen Profil und Kontakt. Das Finder-Fenster bündelt aktive Webprojekte aus dem Projektindex. Suche, Kategorien und Symbol-/Listenansicht arbeiten lokal. Ein Klick zeigt die Beschreibung und einen echten Projektlink; Doppelklick öffnet direkt. Archivierte Projekte, Attraktor und private Zugänge werden nicht eingebunden. #work ist wieder ein eigenständiges Sprungziel.
+
+Work zeigt die zwölf externen Website-Projekte aus der ursprünglichen Portfoliofassung (Commit 459c181), keine eigenen Tools. Die ursprünglichen Namen und Projektadressen bleiben erhalten; individuelle Leistungen werden ohne belegte Angaben nicht ergänzt. Kompaktere Ordner: vier Spalten am Desktop, drei auf schmalen Geräten.
