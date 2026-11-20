@@ -14,3 +14,5 @@ Use Moritzfontmer for the navigation wordmark as well as display headings. Conte
 The three pillar labels are always exactly Design, Technik, Sichtbarkeit, including the capabilities navigation. Work contains the twelve original frontend website references (Convista, ticket.io, Starke Periode, Buddystar, Lekkerland Karriere, FaktorZehn, MUNA+, Pflegeplanet, OnOffice, Eisberg, Konrad Graser, smartAware), not personal tools or subdomain apps unless the owner requests that change.
 
 Capabilities belong to the third Notes sidebar entry (Kompetenzen), alongside profile and experience. Keep Design, Technik, Sichtbarkeit as compact expandable sections in that note, not in an extra dialog or toolbar launcher.
+
+Keep capabilities concrete: languages, templates, CMS/frameworks, tools and topics supported by the existing CV. Experience is a chronological CV with individual employer stations, dates, role progression and qualifications; keep the Notes CV and detailed profile consistent. Do not invent skill ratings or certification dates.

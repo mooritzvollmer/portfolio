@@ -1,0 +1,20 @@
+.career-cv { --career-line:color-mix(in srgb,var(--c-text) 15%,transparent); font:13px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--c-text); }
+.career-cv .career-group-title { font:600 12px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; text-transform:none; letter-spacing:0; margin:0 0 14px; }
+.career-stations { padding-left:13px; border-left:1px solid var(--career-line); }
+.career-cv .career-station { margin:0; padding:0; border:0; border-radius:0; position:relative; background:none; }
+.career-station::before { content:""; position:absolute; width:7px; height:7px; border:2px solid var(--c-bg); border-radius:50%; background:color-mix(in srgb,var(--c-text) 45%,var(--c-bg)); top:19px; left:-19px; box-sizing:content-box; }
+.career-station.is-current::before { background:#2878b8; }
+.career-cv .career-station > summary { display:flex; gap:12px; align-items:center; padding:12px 0 15px; cursor:pointer; list-style:none; border:0; }
+.career-station > summary::-webkit-details-marker { display:none; }.career-station > summary::before,.career-station > summary::after { display:none!important; }
+.career-station + .career-station { border-top:1px solid var(--career-line); }
+.career-station-heading { display:block; min-width:0; flex:1; }.career-period { display:block; font-size:12px; opacity:.65; margin-bottom:5px; font-variant-numeric:tabular-nums; }
+.career-station-heading strong { display:block; font-size:15px; font-weight:600; line-height:1.5; }.career-position { display:block; font-size:12px; opacity:.8; margin-top:3px; }
+.career-station summary svg { width:13px; height:13px; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:1.6; opacity:.5; transition:transform .15s; }
+.career-station[open] summary svg { transform:rotate(90deg); }
+.career-station summary:hover strong { text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px; }
+.career-station summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; border-radius:2px; }
+.career-station-body { padding:0 0 17px; }.career-station-body ul { margin:10px 0 0; padding-left:16px; }.career-station-body li { font-size:12px; line-height:1.8; margin-bottom:6px; }
+.career-roles { margin:0 0 15px; }.career-roles > div { margin-bottom:10px; }.career-roles dt { font-size:12px; opacity:.65; }.career-roles dd { font-size:12px; margin:2px 0 0; font-weight:500; }
+.career-qualifications { margin-top:26px; padding-top:19px; border-top:1px solid var(--career-line); }.career-qualifications dl { margin:0; }.career-qualifications dl > div + div { margin-top:16px; }.career-qualifications dt { font-size:13px; font-weight:600; }.career-qualifications dd { margin:4px 0 0; font-size:12px; opacity:.7; }
+.profile-editorial .career-cv { margin-top:28px; }.profile-editorial .career-station-heading strong { font-size:21px; }.profile-editorial .career-position { font-size:14px; }.profile-editorial .career-station-body li { font-size:14px; }
+@media(prefers-reduced-motion:reduce) { .career-station summary svg { transition:none; } }
