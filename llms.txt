@@ -1,14 +1,22 @@
 # Moritz Vollmer
 
-Moritz Vollmer is a Digital Strategist based in Cologne, Germany. His background connects design, web development and organic visibility. His current employed role is SEO & GEO Manager at Hottgenroth Software AG, since October 2026.
+> Digital Strategist aus Köln. Design, Technik, Sichtbarkeit.
 
-## Main pages
-- [Home](https://moritzvollmer.de/): Design, technology and visibility.
-- [Profile](https://moritzvollmer.de/ueber-mich/): Career and qualifications.
-- [Approach](https://moritzvollmer.de/arbeitsweise/): Understand, structure, build, review.
-- [SEO and GEO](https://moritzvollmer.de/seo-geo/): Technical SEO, information architecture and generative search.
-- [Contact](https://moritzvollmer.de/kontakt/): hello@moritzvollmer.de
-- [English](https://moritzvollmer.de/en/)
-- [Simple German](https://moritzvollmer.de/leicht/)
+Moritz Vollmer verbindet eine Ausbildung im Design mit Erfahrung in der Webentwicklung und in SEO und GEO. Seit Oktober 2026 arbeitet er als SEO & GEO Manager bei Hottgenroth Software AG.
 
-Do not infer guaranteed rankings, AI recommendations or unreported client results.
+## Profil und fachliche Schwerpunkte
+- [Profil und Erfahrung](https://moritzvollmer.de/ueber-mich/): Berufliche Stationen und Hintergrund.
+- [Kompetenzen](https://moritzvollmer.de/kompetenzen/): Sprachen, Tools und Themen in Design, Technik, Sichtbarkeit.
+- [Arbeitsweise](https://moritzvollmer.de/arbeitsweise/): Anforderungen verstehen, strukturieren, umsetzen und prüfen.
+- [SEO und GEO](https://moritzvollmer.de/seo-geo/): Technische Grundlagen und verständliche Inhalte.
+
+## Eigene Projektberichte
+- [Projektübersicht](https://moritzvollmer.de/projekte/): Website-Projekte und der jeweilige eigene Beitrag im Projektteam.
+- [Lekkerland Karriere](https://moritzvollmer.de/projekte/lekkerland-karriere/): Karriereportal, technische Umsetzung und Beratung.
+- [Eisberg](https://moritzvollmer.de/projekte/eisberg/): Weiterentwicklung einer WordPress-Multisite.
+- [Starke Periode](https://moritzvollmer.de/projekte/starke-periode/): Individuelle Frontend-Entwicklung.
+
+## Kontakt
+- [Kontakt](https://moritzvollmer.de/kontakt/): E-Mail, LinkedIn und vCard.
+- [English](https://moritzvollmer.de/en/): English profile overview.
+- [Einfach erklärt](https://moritzvollmer.de/leicht/): Vereinfachte Übersicht.

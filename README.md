@@ -2,85 +2,47 @@
 
 Persönliche Website: https://moritzvollmer.de/
 
-## Positionierung und Aufbau
+## Aktuelle Ausrichtung
 
-Digital Strategist – Design, Technik und Sichtbarkeit. Die aktuelle berufliche Stelle bleibt SEO & GEO Manager bei Hottgenroth Software AG.
+Digital Strategist – **Design, Technik, Sichtbarkeit**. Beruflich seit Oktober 2026 SEO & GEO Manager bei Hottgenroth Software AG. Die Website präsentiert Profil, Erfahrung, konkrete Kompetenzen und bisherige Frontend-Website-Projekte. Eigene Webtools werden hier nicht vorgestellt.
 
-Das ursprüngliche Design und Setup sind die verbindliche Basis: animierter Hintergrund, Rahmen, schwebende Navigation, Moritzfontmer, Light-/Dark- und Schriftwahl sowie die drei Bereiche Start, Über mich und Kontakt. Die Ausrichtung wurde am 18.11.2026 inhaltlich angepasst, ohne daraus eine neue Landingpage zu machen. Künftige Änderungen am Seitenaufbau und visuellen Konzept nur auf ausdrücklichen Wunsch.
+Die ursprüngliche Bildmarke, Moritzfontmer, animierte Namensunterstreichung, Farbwelt und Mac-Optik bleiben erhalten. Kein Foto auf Start, ein kleines Porträt im Profil. Keine Bildeditor- oder Code-Demofenster.
 
-Die dezenten Kontakticons oberhalb der Sektionsanzeige, die animierte Unterstreichung des Namens und der Porträtplatz bleiben unverändert. Die bereitgestellten Profilfotos sind eingebunden. Der Platz hat dieselbe Breite wie der Einleitungstext; mobil steht er unter der Headline und vor dem Text.
+## Aufbau
 
-Die Unterseiten behalten den vorhandenen gemeinsamen Rahmen. /arbeitsweise/ vertieft das Profil innerhalb desselben Designs. Englische und vereinfachte Versionen folgen dem gleichen Drei-Bereiche-Aufbau.
+Vier Fenster: Start, Profil (Notizen), Work (Finder), Kontakt (Mail). In Notizen stehen Mein Profil, Erfahrung und Kompetenzen als drei Tabs. Die Kompetenzbereiche Design, Technik, Sichtbarkeit enthalten konkrete Sprachen, Tools und Themen. Erfahrung zeigt einzelne Arbeitgeberstationen und Rollen.
+
+Work enthält genau die zwölf ursprünglichen externen Frontend-Website-Referenzen. Ein Klick auf einen Ordner öffnet die Website direkt in einem neuen Tab. Suche und Symbol-/Listenansicht bleiben erhalten; es gibt keinen Auswahl- oder Bestätigungsschritt.
+
+/projekte/ bietet drei eigene, sachliche Projektberichte: Lekkerland Karriere, Eisberg und Starke Periode. Sie beschreiben belegte Beiträge im Projektteam, keine erfundenen Kennzahlen. Der Bericht-Link steht separat im Finder-Fuß. Die frühere Weiterleitung von /projekte/ wurde entfernt. /lebenslauf/ führt zum Erfahrungsabschnitt von /ueber-mich/.
+
+Weitere redaktionelle Seiten: /ueber-mich/, /kompetenzen/, /arbeitsweise/, /seo-geo/, /kontakt/. Englische und vereinfachte Startfassungen bleiben erhalten. Projektberichte sind deutsch und werden in englischen Fassungen entsprechend gekennzeichnet.
+
+## Responsive und Bedienung
+
+Ab 1200 CSS-Pixeln gerade, überlappende Desktopfenster. Darunter eine einzelne App-Fläche mit festem unterem Dock und natürlichem Dokumentfluss. Notizen wechseln bei 600 Pixeln zwischen horizontalen Tabs und Seitenleiste. Kontakticons und rechtliche Links bleiben mobil im Dokumentfluss. Sichere Bildschirmränder werden berücksichtigt.
+
+Systemseitig reduzierte Bewegung wird respektiert. Tastaturfokus bleibt sichtbar; ein Sprunglink führt in das aktive Fenster. Ohne JavaScript steht eine Navigation zu den eigenständigen Inhaltsseiten bereit. Gezielt korrigierte gemeinsame Regeln liegen in assets/portfolio-quality-20261123.css und .js, direkte Finderlinks in assets/project-links-20261123.js.
 
 ## Statische Arbeitsfassung
 
-Die Basis wurde am 26.10.2026 aus dem Live-Build gesichert. Die neuere ursprüngliche SCSS-/JavaScript-Quelle ist nicht verfügbar. src/, public/, main.js und die alte Vite-Konfiguration sind kein Ersatz für die aktuelle Arbeitsfassung.
+Dies ist eine aus dem Live-Build gesicherte statische Fassung. Die neuere ursprüngliche SCSS-/JavaScript-Quelle ist derzeit nicht verfügbar. **src/, public/, main.js und die alte Vite-Konfiguration nicht anstelle dieser Fassung bauen oder veröffentlichen.**
 
-Veröffentlichte Dateien stehen in site-files.json. HTML direkt bearbeiten; gemeinsame Styles und Verhalten liegen in assets/. Das ursprüngliche Stylesheet digital-card-7a51acda.css und die vorhandenen Navigationsskripte bleiben die Designbasis. Die Dateien strategist-20261117.css und strategist-20261117.js aus dem verworfenen Umbau werden nicht mehr ausgeliefert oder eingebunden.
+Veröffentlichte Dateien stehen in site-files.json. HTML wird direkt bearbeitet; gemeinsame Styles und Verhalten liegen in assets/. Bei Änderungen an langfristig gecachten Assets neue Dateinamen verwenden. Alte nicht eingebundene Assets sind kein Hinweis auf den aktuellen Seitenaufbau.
 
-## Lokal arbeiten
+## Lokal prüfen
 
-Node.js ab Version 20 genügt. Keine Installation von Abhängigkeiten erforderlich.
+Node.js ab Version 20, keine Installation von Abhängigkeiten nötig.
 
     npm run dev
     npm run build
     npm run check
     npm run preview
 
-Der lokale Server läuft auf http://127.0.0.1:5173/. Neue veröffentlichte Dateien in site-files.json aufnehmen. Der Build kopiert genau diese Dateien nach dist/.
+Der lokale Server läuft auf http://127.0.0.1:5173/. Der Build kopiert ausschließlich die Manifestdateien nach dist/. Die separat erhaltene Route /code-formatierer/ ist kein Bestandteil des persönlichen Work-Fensters.
 
 ## Veröffentlichung
 
-Lokal prüfen, auf main committen und pushen, GitHub-Commit vergleichen. Anschließend denselben Build mit dem bestehenden lokalen Werkzeuge/Deploy-Portfolio.ps1 nach IONOS übertragen. Das Werkzeug sichert den vorherigen Stand und prüft Dateihashes und HTTP-Auslieferung. Nur das bestätigte Portfolio-Ziel ändern. Zugangsdaten und Schlüssel niemals committen.
+Lokal prüfen, auf main committen und pushen, GitHub-Commit abgleichen, anschließend genau denselben Build mit Werkzeuge/Deploy-Portfolio.ps1 auf das bestehende IONOS-Ziel übertragen. Der Ablauf sichert den vorherigen Live-Stand und prüft Datei- sowie HTTP-Hashes. Keine Zugangsdaten, Schlüssel, privaten Backups oder lokalen Prüfwerkzeuge committen.
 
-Die bestehende Route /code-formatierer/ bleibt technisch erhalten; die separate Veröffentlichung des Tools ist ein eigener Arbeitsschritt.
-
-## Detailseiten vom 18.11.2026
-
-Die Startseite und ihre Bedienung bleiben unverändert. Die Inhaltsseiten verwenden eine offene Lesestruktur mit seitlichem Inhaltsverzeichnis, nummerierten Abschnitten und einer aufklappbaren beruflichen Chronologie. Die zusätzlichen Styles liegen ausschließlich in assets/profile-detail-20261118.css und greifen nur auf .profile-editorial. Die ursprüngliche Farbwelt, Bildmarke, Moritzfontmer und schwebende Navigation bleiben erhalten.
-
-Werkzeuge werden im persönlichen Profil vorerst nicht vorgestellt oder verlinkt. /projekte/ leitet vorübergehend mit HTTP 302 auf /ueber-mich/ weiter; die eigenständigen Projekte selbst werden dadurch nicht verändert.
-
-## Profilfotos
-
-Auf der Startseite wird kein Foto gezeigt. /ueber-mich/ nutzt die weiter gefasste Aufnahme. Beide stammen aus den vom Inhaber bereitgestellten Fotos. Responsive WebP-Varianten und JPEG-Fallbacks werden lokal ausgeliefert; die Originaldateien und ihre Metadaten werden nicht veröffentlicht. Zusätzliche Darstellung ausschließlich in assets/portrait-20261118.css. Der Ausschnitt im bestehenden Startseiten-Platz ist per object-position auf das Gesicht abgestimmt.
-
-## Hauptbereiche als Fenster
-
-Start, Über mich und Kontakt liegen auf dem Desktop in drei versetzten Programmfenstern. Aktive Fenster kommen mit einer räumlichen Transition nach vorn. Die ursprüngliche Navigation, URL-Hashes, Pfeile und Kontakticons bleiben erhalten. Zusätzlich können die hinteren Fensterleisten und die Bereichsauswahl genutzt werden. Mobil und auf schmalen Tablets wird eine einzelne Lesefläche mit kompakter Bereichsauswahl und horizontalem Übergang verwendet. Die Startseite enthält auf ausdrücklichen Wunsch kein Foto. Die Profilseite bleibt unverändert.
-
-Ergänzende Darstellung und Interaktion in assets/desktop-windows-20261118.css und .js. Die alte Navigation bleibt für Abschnittsstatus und History zuständig; das neue Modul synchronisiert Fenster, ARIA und mobile Höhen nach dem Ereignis site-panel-change. Bewegungsreduktion wird respektiert.
-
-## Fensterverfeinerung
-
-Der große Titel bleibt in allen Bereichen vollständig sichtbar. Die Fenster haben individuelle Abmessungen, leicht versetzte Positionen und unterschiedliche Gestaltung: Browser (Start), warmes Profil-Dokument (Über mich), Mail-Fenster (Kontakt). Desktopwechsel nutzen eine unterbrechbare Animation mit kurzem Anheben und sanftem Einfedern. Mobile Darstellung und Bewegungsreduktion bleiben erhalten. Ergänzungen in desktop-windows-20261118b.css und .js; die ältere Version ist nicht mehr in den Startseiten eingebunden. Hintere Titelleisten sind anklickbar; nur der Inhalt inaktiver Fenster wird inert geschaltet.
-
-Die Fenster sind auf ausdrücklichen Wunsch gerade ausgerichtet, auch während des Wechsels. Überlappung, individuelle Größen, Positionen und das federnde Anheben bleiben erhalten. Aktuelle Styles: desktop-windows-20261118c.css.
-
-## Interaktionszustände
-
-Korrigierte Hover- und Fokusfarben des Arbeitgeberlinks, zentrierte Menüpunkte und stabile Link-Unterstreichungen. Im geöffneten mobilen Menü sind die darunterliegenden Hauptinhalte und Kontakticons inert; der Tastaturfokus bleibt im Menü und kehrt bei Escape zum Schalter zurück. Aktuelle Styles: desktop-windows-20261118d.css. Ergänzende Menüzustände: interaction-states-20261118.js. Zusätzliche Design-/Codefenster sind nur als Konzept besprochen, noch nicht Bestandteil dieser Veröffentlichung.
-
-## Zusätzliche Mac-Fenster
-
-Über mich verwendet eine Notizen-Ansicht mit Profil und Werdegang. Von dort öffnen sich native modale Dialoge für Bildstudio und Code. Bildstudio: Zoom, Ausschnittwahl, Auswahlrahmen, Ebenen und Arbeitsflächenfarbe. Code: drei Quelldateien, Zeilennummern, Syntaxfarben, Kopieren und tatsächlich bedienbare Vorschau. Der angezeigte JavaScript-Ausschnitt ist die tatsächlich genutzte Vorschaufunktion. Kontakt übernimmt eine Apple-Mail-inspirierte Werkzeugleiste mit echten Mail-/Kopier-/vCard-Aktionen. Mobil sind die Zusatzfenster Vollbildansichten mit Zurück. Escape, Fokus-Rückgabe und unterbundene Hintergrund-Swipe-Steuerung sind berücksichtigt. Die bisherigen drei Hauptbereiche und das Browser-Startfenster bleiben erhalten.
-
-Bildstudio und Codeansicht sind als optionale Anhänge im kompakten Menü der Notizen-Werkzeugleiste erreichbar. Im Profiltext gibt es keine hervorgehobenen Startkacheln mehr. Nach dem Schließen kehrt der Fokus zum sichtbaren Anhänge-Schalter zurück.
-
-Die drei Hauptfenster richten ihre Höhe am tatsächlichen Dokumentinhalt aus. Die maximale Desktophöhe bleibt auf den vorhandenen Bühnenbereich begrenzt; längere Inhalte scrollen innerhalb des Fensters. Hintergrundfenster werden auf die aktive Höhe begrenzt, die Bereichsauswahl folgt dem Fensterrand. Mobil bleibt die natürliche Dokumenthöhe erhalten.
-
-Die Desktopfenster berücksichtigen den tatsächlich verbleibenden Platz bis zur Bereichsauswahl und zum unteren Rahmen. Im Kontaktfenster bleiben Werkzeugleiste und Adresszeilen stehen; nur der Nachrichtentext scrollt bei Platzmangel. Deutsche Navigation und Profilüberschriften heißen Profil bzw. Erfahrung. Bestehende URLs bleiben bestehen.
-
-Work ist der vierte Hauptbereich zwischen Profil und Kontakt. Das Finder-Fenster bündelt aktive Webprojekte aus dem Projektindex. Suche, Kategorien und Symbol-/Listenansicht arbeiten lokal. Ein Klick zeigt die Beschreibung und einen echten Projektlink; Doppelklick öffnet direkt. Archivierte Projekte, Attraktor und private Zugänge werden nicht eingebunden. #work ist wieder ein eigenständiges Sprungziel.
-
-Work zeigt die zwölf externen Website-Projekte aus der ursprünglichen Portfoliofassung (Commit 459c181), keine eigenen Tools. Die ursprünglichen Namen und Projektadressen bleiben erhalten; individuelle Leistungen werden ohne belegte Angaben nicht ergänzt. Kompaktere Ordner: vier Spalten am Desktop, drei auf schmalen Geräten.
-
-Die drei Säulen heißen durchgehend Design, Technik, Sichtbarkeit. Kompetenzen öffnet sich als Systemeinstellungen-inspiriertes Fenster aus der Profil-Werkzeugleiste. Fähigkeiten, Erfahrung und heutige Anwendung sind beschrieben; keine Prozentwerte. Das Porträt steht klein direkt im Profil. Bildstudio, Code-Demo und Anhänge-Menü sind aus den vier Startfassungen entfernt. Work behält ausschließlich die zwölf Frontend-Website-Referenzen aus der ursprünglichen Version.
-
-Kompetenzen ist die dritte Notiz neben Mein Profil und Erfahrung. Die drei Säulen stehen als kompakte, einzeln aufklappbare Abschnitte mit Fähigkeiten, Erfahrung und heutiger Anwendung direkt im Notizen-Fenster. Es gibt keinen separaten Kompetenzdialog oder Toolbar-Startknopf mehr. Mobil stehen die drei Notizen als gleichwertige Tabs nebeneinander.
-
-Kompetenzen benennt konkrete Sprachen, Templates, Frameworks, CMS, Werkzeuge und betreute Themen. Quelle: ursprüngliche Hard-Skill-Liste und bisheriger Lebenslauf; GA4 und Search Console aus dem dokumentierten Projektkontext. Erfahrung ist ein chronologischer Lebenslauf mit vier Arbeitgeberstationen, sichtbaren Zeiträumen und Rollen sowie ausklappbaren Aufgaben. Friendventure und line communication enthalten die belegten einzelnen Rollen mit Zeiträumen. Die Profil-Detailseite verwendet dieselben Stationen.
-
-## Responsive Darstellungsregeln
-
-Ab 1200 CSS-Pixeln: überlappende Desktopfenster. Darunter: ein eingerahmtes App-Fenster, natürliche Seitenhöhe, kompakte Identität oben und eine feste Dock-Navigation unten. Bis 600 Pixel: drei Profil-Notizen nebeneinander. Ab 601 Pixel: Notizen mit Seitenleiste. Kontakt-Icons und rechtliche Links stehen im Seitenfluss; Inhalte erhalten Abstand zur Dock-Navigation einschließlich Safe Area. Breakpoints in CSS, Hauptnavigation, Fenstersteuerung und Höhenberechnung sind aufeinander abgestimmt.
+Details zu Prüfung und Grenzen: [QUALITY.md](QUALITY.md).

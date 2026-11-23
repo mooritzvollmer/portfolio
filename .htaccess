@@ -1,11 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Projektübersicht vorerst aus dem persönlichen Profil ausklammern.
-  RewriteRule ^projekte(?:/index\.html)?/?$ https://moritzvollmer.de/ueber-mich/ [R=302,L,NC]
 
   # Nicht mehr angebotene Profil-Unterseiten auf die aktuelle Positionierung führen.
-  RewriteRule ^(?:lebenslauf|kundenstimmen)/?$ https://moritzvollmer.de/ [R=301,L,NC]
+  RewriteRule ^lebenslauf(?:/index\.html)?/?$ https://moritzvollmer.de/ueber-mich/#stationen [R=301,L,NE,NC]
+  RewriteRule ^kundenstimmen/?$ https://moritzvollmer.de/ [R=301,L,NC]
 
   # Alte Startseitenvarianten direkt auf die kanonische URL führen.
   RewriteCond %{THE_REQUEST} \s/+index(?:\.html)?(?:[?\s]) [NC]

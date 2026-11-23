@@ -1,0 +1,257 @@
+/* Targeted contrast and interaction corrections; keep the Mac window layout. */
+.window-experience
+  :is(
+    .window-number,
+    .window-tab-number,
+    .notes-toolbar > span:last-child,
+    .profile-person p span,
+    .finder-sidebar > span,
+    .finder-status > span:last-child,
+    .site-progress__count,
+    .career-note-heading p
+  ) {
+  opacity: 1;
+}
+.window-experience
+  :is(
+    .window-number,
+    .notes-toolbar > span:last-child,
+    .profile-person p span,
+    .finder-sidebar > span,
+    .site-progress__count
+  ) {
+  color: #535762;
+}
+.theme-dark
+  .window-experience
+  :is(
+    .window-number,
+    .notes-toolbar > span:last-child,
+    .profile-person p span,
+    .finder-sidebar > span,
+    .site-progress__count
+  ) {
+  color: #d2d5dd;
+}
+.window-experience .window-tab-number {
+  color: inherit;
+  opacity: 1;
+}
+.window-experience :is(.site-legal__link, .site-copyright, .site-copyright p) {
+  color: var(--c-text);
+  opacity: 1;
+  text-shadow: none;
+}
+.window-experience .window-mail-head a {
+  color: #0758ac;
+}
+.theme-dark .window-experience .window-mail-head a {
+  color: #9bceff;
+}
+.window-experience .notes-sidebar button span {
+  opacity: 1;
+}
+.window-experience .notes-sidebar button[aria-selected="true"] span {
+  color: inherit;
+}
+.theme-dark .window-experience .notes-sidebar button[aria-selected="true"] {
+  color: #fff;
+}
+.window-experience .finder-project {
+  color: var(--c-text);
+  text-decoration: none;
+  cursor: pointer;
+}
+.window-experience .finder-project:hover .finder-project-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.window-experience .finder-project:active .finder-folder {
+  transform: translateY(1px);
+}
+.window-experience .finder-status {
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.window-experience .finder-status a {
+  color: var(--c-text);
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-underline-offset: 3px;
+}
+.window-experience :is(a, button, input, summary):focus-visible,
+.profile-editorial :is(a, button, input, summary):focus-visible {
+  outline: 3px solid #075eb5;
+  outline-offset: 3px;
+}
+.theme-dark .window-experience :is(a, button, input, summary):focus-visible {
+  outline-color: #a7d8ff;
+}
+.portfolio-skip {
+  position: fixed;
+  z-index: 200;
+  top: 12px;
+  left: 16px;
+  padding: 12px 18px;
+  background: #fff;
+  color: #152336;
+  border: 2px solid #075eb5;
+  border-radius: 6px;
+  transform: translateY(-180%);
+  font:
+    14px/1.5 system-ui,
+    sans-serif;
+}
+.portfolio-skip:focus {
+  transform: none;
+}
+.profile-editorial .essay-contents a > span {
+  opacity: 1;
+  color: #535968;
+}
+.profile-editorial .career-period,
+.window-experience .career-period {
+  opacity: 1;
+  color: #535968;
+}
+.theme-dark .window-experience .career-period {
+  color: #d2d5dd;
+}
+.case-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 30px 0 0;
+  padding: 24px 0;
+  border-block: 1px solid var(--projects-line, #b9bdc8);
+}
+.case-facts dt {
+  font:
+    600 12px/1.5 Poppins,
+    sans-serif;
+  margin-bottom: 8px;
+}
+.case-facts dd {
+  margin: 0;
+  font:
+    14px/1.7 Poppins,
+    sans-serif;
+}
+.case-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.case-list li {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--projects-line, #b9bdc8);
+}
+.case-list h3 {
+  font:
+    500 22px/1.4 Poppins,
+    sans-serif;
+  margin: 0 0 10px;
+}
+.case-list p {
+  margin: 0 0 12px;
+}
+.case-list a {
+  text-underline-offset: 4px;
+}
+@media (max-width: 1199px) {
+  html {
+    scroll-padding-block: 85px 110px;
+  }
+  .window-experience .window-tabs > button {
+    opacity: 1;
+  }
+  .window-experience :is(a, button, input, summary) {
+    scroll-margin-block: 90px 115px;
+  }
+}
+@media (max-width: 480px) {
+  .case-facts {
+    grid-template-columns: 1fr;
+  }
+  .window-experience .finder-status {
+    gap: 3px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .window-experience *,
+  .window-experience *::before,
+  .window-experience *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (forced-colors: active) {
+  .window-experience .site-panel,
+  .window-experience .window-tabs {
+    border: 1px solid CanvasText;
+    background: Canvas;
+  }
+  .window-experience .window-tabs > button[aria-selected="true"],
+  .window-experience .notes-sidebar button[aria-selected="true"] {
+    outline: 2px solid Highlight;
+    outline-offset: -3px;
+  }
+  .window-experience .finder-folder {
+    forced-color-adjust: none;
+  }
+  .portfolio-skip {
+    background: Canvas;
+    color: CanvasText;
+  }
+  .window-experience :is(a, button, input, summary):focus-visible {
+    outline-color: Highlight;
+  }
+}
+
+.window-experience .site-legal {
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+.portfolio-fallback {
+  position: relative;
+  z-index: 100;
+  margin: 80px 20px 20px;
+  padding: 18px;
+  background: var(--c-bg);
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  font:
+    14px/1.6 system-ui,
+    sans-serif;
+}
+.portfolio-fallback a {
+  display: inline-block;
+  padding: 8px;
+  color: inherit;
+}
+
+.window-experience .site-copyright {
+  mix-blend-mode: normal;
+}
+.window-experience .site-copyright p {
+  font-size: 12px;
+}
+
+.window-experience .career-roles dt,
+.profile-editorial .career-roles dt {
+  color: #535968;
+  opacity: 1;
+}
+.theme-dark .window-experience .career-roles dt {
+  color: #d2d5dd;
+}
+.window-experience .competencies-more {
+  color: #0758ac;
+}
+.theme-dark .window-experience .competencies-more {
+  color: #b5d9ff;
+}
