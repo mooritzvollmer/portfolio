@@ -185,7 +185,7 @@
       content="Moritz Vollmer · Digital Strategist · Design, Technik, Sichtbarkeit"
     />
     <link rel="stylesheet" href="/assets/responsive-apps-20261120.css" />
-    <script type="module" src="/assets/responsive-windows-20261120.js"></script>
+    <script type="module" src="/assets/chat-windows-20261123.js"></script>
     <script type="module" src="/assets/responsive-menu-20261120.js"></script>
     <script type="module" src="/assets/responsive-notes-20261120.js"></script>
     <script type="module" src="/assets/responsive-height-20261120.js"></script>
@@ -193,13 +193,16 @@
     <link rel="stylesheet" href="/assets/career-stations-20261120.css" />
     <link rel="stylesheet" href="/assets/portfolio-quality-20261123.css" />
     <script type="module" src="/assets/portfolio-quality-20261123.js"></script>
+    <link rel="stylesheet" href="/assets/profile-chat-20261123.css" />
+    <script type="module" src="/assets/profile-chat-20261123.js"></script>
   </head>
   <body class="window-experience">
     <a class="portfolio-skip" href="#portfolio-inhalt">Zum Inhalt</a
     ><noscript
       ><nav class="portfolio-fallback" aria-label="Seiten ohne JavaScript">
         <a href="/ueber-mich/">Profil</a><a href="/kompetenzen/">Kompetenzen</a
-        ><a href="/projekte/">Work</a><a href="/kontakt/">Kontakt</a>
+        ><a href="/projekte/">Work</a><a href="/frag-moritz/">Chat</a
+        ><a href="/kontakt/">Kontakt</a>
       </nav></noscript
     >
     <div class="ambient-bg" aria-hidden="true">
@@ -218,7 +221,8 @@
           <a href="#about" data-pill-nav-link="about">Profil</a>
 
           <a href="#work" data-pill-nav-link="work">Work</a>
-          <a href="#contact" data-pill-nav-link="contact">Kontakt</a>
+          <a class="site-pill-nav__link" href="#chat" data-pill-nav-link="chat">Chat</a
+          ><a href="#contact" data-pill-nav-link="contact">Kontakt</a>
         </div>
         <button
           class="site-pill-nav__toggle"
@@ -322,6 +326,9 @@
 
         <li class="site-nav__item" data-nav-item="work">
           <a class="site-nav__text" href="#work" data-nav-link="work">Work</a>
+        </li>
+        <li class="site-nav__item" data-nav-item="chat">
+          <a class="site-nav__text" href="#chat" data-nav-link="chat">Chat</a>
         </li>
         <li class="site-nav__item" data-nav-item="contact">
           <a class="site-nav__text" href="#contact" data-nav-link="contact">Kontakt</a>
@@ -460,6 +467,21 @@
             <path d="M3 7h7l2 3h9v11H3Z" /></svg
           ><span class="window-tab-number" aria-hidden="true">03</span><span>Work</span></button
         ><button
+          id="window-tab-chat"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="window-chat"
+          tabindex="-1"
+          data-window-tab="chat"
+        >
+          <svg class="window-dock-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"
+            />
+            <path d="M7 9h10M7 12h7" /></svg
+          ><span class="window-tab-number" aria-hidden="true">04</span><span>Chat</span></button
+        ><button
           type="button"
           role="tab"
           id="window-tab-contact"
@@ -471,7 +493,7 @@
           <svg class="window-dock-icon" viewBox="0 0 24 24" aria-hidden="true">
             <rect x="3" y="5" width="18" height="14" rx="3" />
             <path d="m3 6 9 7 9-7" /></svg
-          ><span class="window-tab-number" aria-hidden="true">04</span><span>Kontakt</span>
+          ><span class="window-tab-number" aria-hidden="true">05</span><span>Kontakt</span>
         </button>
       </div>
       <div class="window-stage">
@@ -1334,6 +1356,104 @@
           </div>
         </section>
         <section
+          id="window-chat"
+          role="tabpanel"
+          aria-labelledby="window-tab-chat"
+          tabindex="-1"
+          data-window-depth="3"
+          class="site-panel"
+          data-nav-panel="chat"
+          aria-hidden="true"
+          inert
+        >
+          <div class="window-chrome" aria-hidden="true">
+            <span class="window-dots"><i></i><i></i><i></i></span
+            ><span class="window-name"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"
+                />
+                <path d="M7 9h10M7 12h7" /></svg
+              ><span>Nachrichten — Frag Moritz</span></span
+            ><span class="window-number">04</span>
+          </div>
+          <div class="window-content">
+            <div class="fm-chat" data-profile-chat data-chat-language="de">
+              <header class="fm-chat-header">
+                <img src="/favicon/favicon.svg" alt="" width="34" height="34" />
+                <div>
+                  <h2>Frag Moritz</h2>
+                  <p data-chat-status role="status">Profilwissen wird geladen …</p>
+                </div>
+                <button
+                  class="fm-reset"
+                  type="button"
+                  data-chat-reset
+                  aria-label="Unterhaltung leeren"
+                  title="Unterhaltung leeren"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 10v6m4-6v6" />
+                  </svg>
+                </button>
+              </header>
+              <div
+                class="fm-thread"
+                data-chat-thread
+                role="log"
+                aria-label="Chatverlauf"
+                aria-live="polite"
+                aria-relevant="additions"
+              >
+                <div class="fm-welcome" data-chat-welcome>
+                  <p class="fm-intro">Erfahrung, Projekte und Arbeitsweise.</p>
+                  <p>
+                    Antworten aus freigegebenen Profilinfos. Hier antwortet ein Assistent, nicht
+                    Moritz persönlich.
+                  </p>
+                  <div class="fm-starters">
+                    <button type="button" data-chat-prompt disabled>
+                      Wie verbindet Moritz Design, Technik, Sichtbarkeit?</button
+                    ><button type="button" data-chat-prompt disabled>
+                      Mit welchen Sprachen arbeitet er?</button
+                    ><button type="button" data-chat-prompt disabled>
+                      Was war sein Beitrag bei Lekkerland?</button
+                    ><button type="button" data-chat-prompt disabled>
+                      Wie erreiche ich Moritz?
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <form class="fm-composer" data-chat-form>
+                <label class="visuallyHidden" for="fm-question">Deine Frage über Moritz</label>
+                <div class="fm-input-row">
+                  <textarea
+                    id="fm-question"
+                    data-chat-question
+                    rows="1"
+                    maxlength="800"
+                    placeholder="Was möchtest Du wissen?"
+                    required
+                    disabled
+                  ></textarea
+                  ><button class="fm-send" type="submit" data-chat-send disabled>Senden</button>
+                </div>
+                <p class="fm-disclosure" data-chat-disclosure>
+                  Noch keine KI aktiv. Antworten kommen direkt aus dem Profilwissen.
+                  <a href="/datenschutz/#profilchat">Datenschutz</a>
+                </p>
+                <p class="fm-error" data-chat-error role="status"></p>
+              </form>
+              <noscript
+                ><p class="fm-noscript">
+                  Aktiviere JavaScript für den Chat oder schreib an
+                  <a href="mailto:hello@moritzvollmer.de">hello@moritzvollmer.de</a>.
+                </p></noscript
+              >
+            </div>
+          </div>
+        </section>
+        <section
           id="window-contact"
           role="tabpanel"
           aria-labelledby="window-tab-contact"
@@ -1352,7 +1472,7 @@
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <path d="m3 6 9 7 9-7" /></svg
               ><span>Neue Nachricht</span></span
-            ><span class="window-number">04</span>
+            ><span class="window-number">05</span>
           </div>
           <div class="window-content">
             <div class="mac-mail-toolbar">
@@ -1477,7 +1597,7 @@
           <span class="site-progress__fill" data-site-progress-fill></span>
         </span>
         <span class="site-progress__count" data-site-progress-count aria-live="polite"
-          >01 / 04</span
+          >01 / 05</span
         >
       </div>
     </div>
@@ -1496,6 +1616,7 @@
       <div class="site-section" id="about" data-nav-section="about"></div>
 
       <div class="site-section" id="work" data-nav-section="work"></div>
+      <div class="site-section" id="chat" data-nav-section="chat"></div>
       <div class="site-section" id="contact" data-nav-section="contact"></div>
     </div>
   </body>

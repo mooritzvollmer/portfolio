@@ -6,11 +6,16 @@
   "files": [
     ".htaccess",
     "404.html",
+    "api/.htaccess",
+    "api/frag-moritz-core.php",
+    "api/frag-moritz-knowledge.json",
+    "api/frag-moritz.php",
     "arbeitsweise/index.html",
     "assets/Poppins-Bold-b506e1ae-b506e1ae.woff",
     "assets/Poppins-Medium-e58a717b-e58a717b.woff",
     "assets/Poppins-Regular-43a5938b-43a5938b.woff",
     "assets/career-stations-20261120.css",
+    "assets/chat-windows-20261123.js",
     "assets/desktop-finder-20261119.css",
     "assets/desktop-finder-20261119.js",
     "assets/desktop-websites-20261120.css",
@@ -51,6 +56,9 @@
     "assets/portfolio-quality-20261123.css",
     "assets/portfolio-quality-20261123.js",
     "assets/portrait-20261118.css",
+    "assets/profile-chat-20261123.css",
+    "assets/profile-chat-20261123.js",
+    "assets/profile-chat-admin-20261123.js",
     "assets/profile-detail-20261118.css",
     "assets/profile-navigation-20261119.js",
     "assets/profile-navigation-902788b9.js",
@@ -100,6 +108,9 @@
     "fonts/Poppins-Bold.woff",
     "fonts/Poppins-Medium.woff",
     "fonts/Poppins-Regular.woff",
+    "frag-moritz/admin/.htaccess",
+    "frag-moritz/admin/index.html",
+    "frag-moritz/index.html",
     "impressum/index.html",
     "index.html",
     "kompetenzen/index.html",
@@ -116,5 +127,19 @@
     "sitemap.xml",
     "ueber-mich/index.html"
   ],
-  "lastEdited": "2026-11-20"
+  "lastEdited": "2026-11-20",
+  "serverEndpoints": [
+    {
+      "file": "api/frag-moritz.php",
+      "path": "/api/frag-moritz.php?action=status",
+      "status": 200,
+      "kind": "profile-chat-status"
+    },
+    {
+      "file": "api/frag-moritz-core.php",
+      "path": "/api/frag-moritz-core.php",
+      "status": 403,
+      "kind": "denied"
+    }
+  ]
 }

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Frag Moritz · Admin</title>
+    <link rel="icon" href="/favicon/favicon.svg" />
+    <link rel="stylesheet" href="/assets/profile-chat-20261123.css" />
+    <script type="module" src="/assets/profile-chat-admin-20261123.js"></script>
+  </head>
+  <body class="fa-page">
+    <main class="fa-shell">
+      <header class="fa-top">
+        <img src="/favicon/favicon.svg" alt="" width="35" height="35" /><strong>Frag Moritz</strong
+        ><a href="/#chat">Zum Chat</a
+        ><button type="button" class="fa-logout" data-admin-logout hidden>Abmelden</button>
+      </header>
+      <section class="fa-login" data-admin-login>
+        <h1>Frag Moritz Admin</h1>
+        <form method="post" data-admin-login-form>
+          <label for="admin-password"
+            >Passwort<input
+              type="password"
+              id="admin-password"
+              name="password"
+              autocomplete="current-password"
+              required
+              maxlength="160"
+              disabled /></label
+          ><button class="fa-primary" type="submit" disabled>Anmelden</button>
+        </form>
+        <p class="fa-message" data-login-message role="status">Zugang wird geladen …</p>
+      </section>
+      <section data-admin-app hidden>
+        <h1>Profilassistent verwalten</h1>
+        <div class="fa-tabs" role="tablist" aria-label="Verwaltung">
+          <button
+            type="button"
+            id="fa-tab-knowledge"
+            role="tab"
+            aria-controls="fa-knowledge"
+            aria-selected="true"
+            data-admin-tab="knowledge"
+          >
+            Profilwissen</button
+          ><button
+            type="button"
+            id="fa-tab-settings"
+            role="tab"
+            aria-controls="fa-settings"
+            aria-selected="false"
+            tabindex="-1"
+            data-admin-tab="settings"
+          >
+            KI-Anbindung</button
+          ><button
+            type="button"
+            id="fa-tab-test"
+            role="tab"
+            aria-controls="fa-test"
+            aria-selected="false"
+            tabindex="-1"
+            data-admin-tab="test"
+          >
+            Testen
+          </button>
+        </div>
+        <section
+          id="fa-knowledge"
+          role="tabpanel"
+          aria-labelledby="fa-tab-knowledge"
+          data-admin-panel="knowledge"
+        >
+          <p class="fa-help">
+            Hier legst Du fest, was der Assistent über Dich wissen darf. Hinterlege ausschließlich
+            Informationen, die öffentlich beantwortet werden dürfen. Änderungen gelten nach dem
+            Speichern sofort. Das ist eine Wissensbasis, kein Training der Modellgewichte.
+          </p>
+          <div class="fa-toolbar">
+            <p data-record-count></p>
+            <button type="button" data-record-add>Eintrag ergänzen</button
+            ><button type="button" data-record-export>Exportieren</button
+            ><label class="fa-visually-hidden" for="record-import"
+              >Wissen aus JSON importieren</label
+            ><input
+              id="record-import"
+              type="file"
+              accept="application/json,.json"
+              data-record-import
+            />
+          </div>
+          <div data-record-list></div>
+          <div class="fa-savebar">
+            <button class="fa-primary" type="button" data-record-save>Wissen speichern</button>
+            <p data-save-message role="status"></p>
+          </div>
+        </section>
+        <section
+          id="fa-settings"
+          role="tabpanel"
+          aria-labelledby="fa-tab-settings"
+          data-admin-panel="settings"
+          hidden
+        >
+          <div class="fa-settings">
+            <div class="fa-box">
+              <h2>OpenAI verbinden</h2>
+              <p class="fa-help" data-api-status></p>
+              <ol class="fa-help">
+                <li>
+                  Aktiviere gegebenenfalls Dein API-Guthaben in der ChatGPT-Abrechnung. Prüfe dabei
+                  das verknüpfte API-Konto.
+                  <a
+                    href="https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Anleitung zum Pro-Guthaben</a
+                  >
+                </li>
+                <li>
+                  Erstelle im passenden API-Projekt einen Schlüssel.
+                  <a
+                    href="https://platform.openai.com/api-keys"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >API-Schlüssel verwalten</a
+                  >
+                </li>
+                <li>
+                  Setze ihn hier ein und aktiviere die KI. Der Schlüssel wird nur auf dem Server
+                  gespeichert und nicht wieder angezeigt.
+                </li>
+              </ol>
+              <form method="post" data-settings-form>
+                <label for="api-key"
+                  >OpenAI-API-Schlüssel<input
+                    type="password"
+                    id="api-key"
+                    name="api-key"
+                    autocomplete="off"
+                    spellcheck="false"
+                    maxlength="512"
+                    placeholder="sk-…" /></label
+                ><label for="daily-limit"
+                  >Maximale KI-Anfragen pro Tag (UTC)<input
+                    type="number"
+                    id="daily-limit"
+                    min="1"
+                    max="200"
+                    step="1"
+                    value="50"
+                    required
+                /></label>
+                <p class="fa-help">
+                  Voreingestelltes Modell: GPT-6.1 Terra. Antworten sind auf 650 Ausgabetokens
+                  begrenzt. Das Anfragenlimit begrenzt die Nutzung, ist aber kein Geldbetrag.
+                  API-Nutzung kann Kosten verursachen, wenn Dein Guthaben aufgebraucht ist.
+                </p>
+                <label class="fa-check"
+                  ><input type="checkbox" id="ai-enabled" />KI-Antworten über OpenAI
+                  aktivieren</label
+                ><label class="fa-check"
+                  ><input type="checkbox" id="remove-key" />Gespeicherten Schlüssel entfernen</label
+                ><button class="fa-primary" type="submit">Anbindung speichern</button>
+              </form>
+              <p class="fa-message" data-settings-message role="status"></p>
+            </div>
+            <div class="fa-box">
+              <h2>Was gespeichert wird</h2>
+              <p class="fa-help">
+                Gespeichert werden Deine Wissenseinträge, die vorherige Fassung, Konfiguration und
+                zeitlich begrenzte Nutzungszähler. Der Server speichert keine Chattexte. Bei
+                aktivierter KI werden Fragen, der kurze Verlauf und passende Profilinfos an OpenAI
+                übermittelt. Der Chat behauptet niemals, Moritz persönlich zu sein.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section
+          id="fa-test"
+          role="tabpanel"
+          aria-labelledby="fa-tab-test"
+          data-admin-panel="test"
+          hidden
+        >
+          <div class="fa-settings fa-box">
+            <h2>Antwort prüfen</h2>
+            <p class="fa-help">
+              Teste Fakten, Quellen und unbekannte Fragen. Auch diese Modellaufrufe zählen zum
+              Tageslimit. Ohne aktivierte Anbindung wird direkt aus dem Profilwissen geantwortet.
+            </p>
+            <form method="post" data-test-form>
+              <label for="test-question"
+                >Deine Testfrage<textarea id="test-question" maxlength="800" required>
+Was war Moritz’ Beitrag bei Lekkerland?</textarea></label
+              ><button class="fa-primary" type="submit">Antwort testen</button>
+            </form>
+            <p class="fa-message" data-test-state role="status"></p>
+            <div class="fa-test-output" data-test-output></div>
+            <p class="fa-help" data-test-sources></p>
+          </div>
+        </section>
+      </section>
+      <noscript><p>Für die Verwaltung ist JavaScript erforderlich.</p></noscript>
+    </main>
+  </body>
+</html>

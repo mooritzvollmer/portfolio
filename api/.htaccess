@@ -1,0 +1,9 @@
+Options -Indexes
+AddHandler x-mapp-php8.4 .php
+<Files "frag-moritz-core.php">
+Require all denied
+</Files>
+<IfModule mod_headers.c>
+Header always set X-Robots-Tag "noindex, nofollow"
+Header always set Cache-Control "no-store"
+</IfModule>

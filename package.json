@@ -15,7 +15,8 @@
     "check:perf": "node scripts/check-static.mjs --perf",
     "dev:legacy": "vite",
     "build:legacy": "vite build --outDir dist-legacy",
-    "check:legacy": "npm run check:a11y && npm run check:seo && npm run check:perf"
+    "check:legacy": "npm run check:a11y && npm run check:seo && npm run check:perf",
+    "test:chat": "php scripts/test-profile-chat.php"
   },
   "devDependencies": {
     "sass": "^1.58.3",

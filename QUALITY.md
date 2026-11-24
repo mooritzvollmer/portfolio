@@ -29,3 +29,11 @@ Es wurden keine Core-Web-Vitals-Felddaten, Rankingveränderungen oder Erwähnung
 - [Google: KI-Funktionen und Websites](https://developers.google.com/search/docs/appearance/ai-features)
 - [Google: ProfilePage](https://developers.google.com/search/docs/appearance/structured-data/profile-page)
 - [W3C: Focus Not Obscured](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum/)
+
+## Ergänzung: Frag Moritz · 23.11.2026
+
+- 203 Browser-/API-Prüfungen für Chat, fünf Fenster, mobile Ansichten, echte PHP-Endpunkte, Anmeldung, CSRF, fremde Origins, Wissensänderungen und unbekannte Fragen ohne Fehler.
+- 35 isolierte PHP-Tests für Suche, englische Fragen, Kontextbegrenzung, sichere Quellen, Antwortschema und Anfragegrenzen ohne Fehler. Reproduzierbar unter scripts/test-profile-chat.php.
+- 14 zusätzliche axe-Prüfzustände des Chats und der Verwaltung ohne automatisch gemeldete Verstöße.
+- Kein OpenAI-API-Schlüssel eingerichtet; eine echte Modellantwort und das Pro-API-Guthaben sind deshalb noch nicht verifiziert. Ohne Schlüssel ist der klar gekennzeichnete Profilwissen-Modus aktiv.
+- Die lokale Vorschau nutzt dieselbe PHP-Version wie IONOS (8.4.28). Die portable Testlaufzeit und private Zugangsdaten werden nicht veröffentlicht.

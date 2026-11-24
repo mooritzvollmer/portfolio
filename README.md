@@ -10,7 +10,7 @@ Die ursprüngliche Bildmarke, Moritzfontmer, animierte Namensunterstreichung, Fa
 
 ## Aufbau
 
-Vier Fenster: Start, Profil (Notizen), Work (Finder), Kontakt (Mail). In Notizen stehen Mein Profil, Erfahrung und Kompetenzen als drei Tabs. Die Kompetenzbereiche Design, Technik, Sichtbarkeit enthalten konkrete Sprachen, Tools und Themen. Erfahrung zeigt einzelne Arbeitgeberstationen und Rollen.
+Fünf Fenster: Start, Profil (Notizen), Work (Finder), Chat (Nachrichten), Kontakt (Mail). In Notizen stehen Mein Profil, Erfahrung und Kompetenzen als drei Tabs. Die Kompetenzbereiche Design, Technik, Sichtbarkeit enthalten konkrete Sprachen, Tools und Themen. Erfahrung zeigt einzelne Arbeitgeberstationen und Rollen.
 
 Work enthält genau die zwölf ursprünglichen externen Frontend-Website-Referenzen. Ein Klick auf einen Ordner öffnet die Website direkt in einem neuen Tab. Suche und Symbol-/Listenansicht bleiben erhalten; es gibt keinen Auswahl- oder Bestätigungsschritt.
 
@@ -32,7 +32,7 @@ Veröffentlichte Dateien stehen in site-files.json. HTML wird direkt bearbeitet;
 
 ## Lokal prüfen
 
-Node.js ab Version 20, keine Installation von Abhängigkeiten nötig.
+Für die statischen Seiten genügt Node.js ab Version 20, ohne zusätzliche Abhängigkeiten. Der Profilchat benötigt PHP 8.4 mit mbstring und cURL.
 
     npm run dev
     npm run build
@@ -46,3 +46,9 @@ Der lokale Server läuft auf http://127.0.0.1:5173/. Der Build kopiert ausschlie
 Lokal prüfen, auf main committen und pushen, GitHub-Commit abgleichen, anschließend genau denselben Build mit Werkzeuge/Deploy-Portfolio.ps1 auf das bestehende IONOS-Ziel übertragen. Der Ablauf sichert den vorherigen Live-Stand und prüft Datei- sowie HTTP-Hashes. Keine Zugangsdaten, Schlüssel, privaten Backups oder lokalen Prüfwerkzeuge committen.
 
 Details zu Prüfung und Grenzen: [QUALITY.md](QUALITY.md).
+
+## Frag Moritz
+
+Der fünfte Bereich ist ein Nachrichtenfenster mit freigegebenem Profilwissen, eigenen Quellenlinks und vorbereiteter OpenAI-Anbindung. Ohne API-Schlüssel antwortet er ausdrücklich ohne KI direkt aus der Wissensbasis. /frag-moritz/ ist die eigenständige Ansicht, /frag-moritz/admin/ die geschützte Verwaltung.
+
+Details zu Einrichtung, Wissenspflege, Nutzungsgrenzen und Prüfgrenzen: [CHAT.md](CHAT.md). Sicherheitsregeln sind mit PHP überprüfbar: php scripts/test-profile-chat.php beziehungsweise npm run test:chat, wenn PHP im PATH liegt.

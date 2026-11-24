@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "id": "profil",
+      "title": "Profil",
+      "text": "Moritz Vollmer ist Digital Strategist aus Köln. Er verbindet Design, Technik, Sichtbarkeit: seine Ausbildung im Design, Erfahrung in der Webentwicklung und seine heutige Arbeit in SEO und GEO. Seit Oktober 2026 ist er SEO & GEO Manager bei Hottgenroth Software AG.",
+      "textEn": "Moritz Vollmer is a Digital Strategist based in Cologne. He combines Design, Technik, Sichtbarkeit: a design education, experience in web development, and work in SEO and GEO. Since October 2026, he has worked as SEO & GEO Manager at Hottgenroth Software AG.",
+      "keywords": "profil vorstellen person strategist sa eulen saeulen verbindung verbindet design technik sichtbarkeit background introduction pillars connect combines profile introduction pillars background skills expertise",
+      "url": "/ueber-mich/",
+      "enabled": true
+    },
+    {
+      "id": "design",
+      "title": "Design",
+      "text": "Moritz hat eine Ausbildung zum Mediengestalter absolviert und bei line Erfahrungen in Kreation und Entwicklung gesammelt. Zu seinen Design-Themen gehören Typografie, Layout, UI/UX und die Umsetzung von Gestaltung im Web. Er arbeitet mit Figma und Adobe Creative Cloud.",
+      "textEn": "Moritz trained as a media designer and gained experience in creative work and development at line. His design topics include typography, layout, UI/UX, and implementing designs for the web. He works with Figma and Adobe Creative Cloud.",
+      "keywords": "design ausbildung mediengestalter gestaltung figma adobe photoshop illustrator indesign typografie layout ui ux ",
+      "url": "/kompetenzen/#design",
+      "enabled": true
+    },
+    {
+      "id": "technik",
+      "title": "Technik",
+      "text": "Moritz arbeitet mit HTML, CSS, Sass/SCSS, JavaScript, PHP, Twig und Blade. Zu seiner Erfahrung gehören WordPress, Storyblok, Tailwind und Bootstrap. Weitere Erfahrung hat er mit Next.js, React.js und AngularJS. Seine Themen sind responsive Frontends, Themes, Komponenten, CMS-Anbindungen, Barrierefreiheit und Performance.",
+      "textEn": "Moritz works with HTML, CSS, Sass/SCSS, JavaScript, PHP, Twig and Blade. His experience includes WordPress, Storyblok, Tailwind and Bootstrap, with additional experience in Next.js, React.js and AngularJS. His topics include responsive frontends, themes, components, CMS integration, accessibility and performance.",
+      "keywords": "technik sprachen programmiersprachen programmierung code developer entwicklung frontend html css sass javascript php twig blade wordpress cms storyblok react next angular tailwind bootstrap frameworks languages programming development frameworks accessibility performance",
+      "url": "/kompetenzen/#technik",
+      "enabled": true
+    },
+    {
+      "id": "tools",
+      "title": "Entwicklungswerkzeuge",
+      "text": "Zu Moritz’ Entwicklungswerkzeugen gehören Git, GitHub, Bitbucket, Visual Studio Code, Vite, Bedrock und MAMP. Die Liste beschreibt vorhandene Erfahrung und ist keine Einstufung in Kompetenzstufen.",
+      "textEn": "Moritz has experience using Git, GitHub, Bitbucket, Visual Studio Code, Vite, Bedrock and MAMP. This is an experience list, not a skills rating.",
+      "keywords": "tools werkzeuge git github bitbucket vscode visual studio vite bedrock mamp workflow tools tooling version control editors",
+      "url": "/kompetenzen/#technik",
+      "enabled": true
+    },
+    {
+      "id": "sichtbarkeit",
+      "title": "Sichtbarkeit",
+      "text": "Moritz betreut SEO und GEO, technische Analysen, Informationsarchitektur, Inhaltsbewertung und Relaunch-Themen einschließlich URL-Erfassung und Weiterleitungsplanung. Er arbeitet mit Semrush, Screaming Frog, Google Analytics 4 und Google Search Console.",
+      "textEn": "Moritz works on SEO and GEO, technical analysis, information architecture, content evaluation, and relaunch topics including URL inventories and redirect planning. His tools include Semrush, Screaming Frog, Google Analytics 4 and Google Search Console.",
+      "keywords": "sichtbarkeit seo geo suchmaschinenoptimierung suchmaschinen analyse relaunch migration redirects weiterleitungen semrush screaming frog analytics ga4 search console ki suche visibility search engines strategy analytics migration redirects",
+      "url": "/seo-geo/",
+      "enabled": true
+    },
+    {
+      "id": "hottgenroth",
+      "title": "Hottgenroth",
+      "text": "Seit Oktober 2026 arbeitet Moritz als SEO & GEO Manager bei Hottgenroth Software AG. Seine heutige Ausrichtung verbindet Design, Technik, Sichtbarkeit.",
+      "textEn": "Since October 2026, Moritz has worked as SEO & GEO Manager at Hottgenroth Software AG. His approach connects Design, Technik, Sichtbarkeit.",
+      "keywords": "hottgenroth aktuell arbeit arbeitgeber heute taetigkeit manager job current employer position role company",
+      "url": "/ueber-mich/#stationen",
+      "enabled": true
+    },
+    {
+      "id": "alphaalpaka",
+      "title": "AlphaAlpaka",
+      "text": "Von Mai 2025 bis September 2026 war Moritz bei AlphaAlpaka als Web Developer und Ausbilder tätig.",
+      "textEn": "From May 2025 to September 2026, Moritz worked at AlphaAlpaka as a Web Developer and trainer.",
+      "keywords": "alphaalpaka alpha alpaka aa ausbilder 2025 2026 ",
+      "url": "/ueber-mich/#stationen",
+      "enabled": true
+    },
+    {
+      "id": "friendventure",
+      "title": "Friendventure",
+      "text": "Moritz war von Juli 2021 bis April 2025 bei Friendventure tätig: zunächst als Trainee von Juli 2021 bis Juni 2022, anschließend als Junior von Juli 2022 bis Dezember 2023 und als Professional von Januar 2024 bis April 2025.",
+      "textEn": "Moritz worked at Friendventure from July 2021 to April 2025: as a trainee from July 2021 to June 2022, a junior from July 2022 to December 2023, and a professional from January 2024 to April 2025.",
+      "keywords": "friendventure fv erfahrung developer trainee junior professional 2021 2022 2023 2024 ",
+      "url": "/ueber-mich/#stationen",
+      "enabled": true
+    },
+    {
+      "id": "line",
+      "title": "line",
+      "text": "Bei line absolvierte Moritz von August 2018 bis Juli 2020 seine Ausbildung zum Mediengestalter. Anschließend arbeitete er dort von August 2020 bis Juni 2021 in Kreation und Entwicklung.",
+      "textEn": "At line, Moritz trained as a media designer from August 2018 to July 2020. He then worked there in creative work and development from August 2020 to June 2021.",
+      "keywords": "line ausbildung mediengestalter kreation 2018 2019 2020 2021 education apprenticeship training",
+      "url": "/ueber-mich/#stationen",
+      "enabled": true
+    },
+    {
+      "id": "lekkerland",
+      "title": "Lekkerland Karriere",
+      "text": "Beim Karriereportal Lekkerland Karriere hat Moritz im Projektteam an technischer Umsetzung, Beratung und Projektorganisation gearbeitet. Er strukturierte Anforderungen mit den Beteiligten und übersetzte sie in Einstiegspfade, Nutzerführung, Content-Logik, Frontend und eine WordPress-Lösung. Es sind keine gemessenen Erfolgskennzahlen hinterlegt.",
+      "textEn": "For the Lekkerland Karriere career portal, Moritz contributed to technical implementation, consulting and project organisation as part of the project team. He structured requirements with stakeholders and translated them into entry paths, user journeys, content logic, frontend implementation and a WordPress solution. No measured results are documented here.",
+      "keywords": "lekkerland karriere karriereportal bewerber projekt stellensuche beitrag wordpress ",
+      "url": "/projekte/lekkerland-karriere/",
+      "enabled": true
+    },
+    {
+      "id": "eisberg",
+      "title": "Eisberg",
+      "text": "Bei Eisberg hat Moritz ein WordPress-Multisite-System in Abstimmung mit mehreren Marketingteams weiterentwickelt. Er bündelte und priorisierte Anforderungen und setzte sie in Content-Struktur, Nutzerführung, Frontend und Backend um. Das beschreibt seinen Beitrag im Projektteam.",
+      "textEn": "At Eisberg, Moritz contributed to the development of a WordPress multisite system in coordination with several marketing teams. He consolidated and prioritised requirements and implemented changes in content structure, user journeys, frontend and backend as part of the project team.",
+      "keywords": "eisberg multisite marketing teams projekt wordpress ",
+      "url": "/projekte/eisberg/",
+      "enabled": true
+    },
+    {
+      "id": "starke-periode",
+      "title": "Starke Periode",
+      "text": "Beim Projekt Starke Periode war Moritz im Projektteam an der individuellen Frontend-Entwicklung beteiligt. Klare Sprache, zugängliche Nutzerführung und eine gestalterisch sorgfältige Umsetzung waren bei diesem sensiblen Thema besonders wichtig.",
+      "textEn": "For Starke Periode, Moritz contributed individual frontend development as part of the project team. Clear language, accessible user journeys and careful design implementation were particularly important for this sensitive topic.",
+      "keywords": "starke periode frontend projekt sensible themen ",
+      "url": "/projekte/starke-periode/",
+      "enabled": true
+    },
+    {
+      "id": "projekte",
+      "title": "Website-Projekte",
+      "text": "Moritz’ Work-Auswahl umfasst Convista, ticket.io, Starke Periode, Buddystar, Lekkerland Karriere, FaktorZehn, MUNA+, Pflegeplanet, OnOffice, Eisberg, Konrad Graser und smartAware. Die Ordner öffnen die jeweiligen Websites direkt. Zu Lekkerland Karriere, Eisberg und Starke Periode gibt es zusätzlich eigene Projektberichte.",
+      "textEn": "The Work selection includes Convista, ticket.io, Starke Periode, Buddystar, Lekkerland Karriere, FaktorZehn, MUNA+, Pflegeplanet, OnOffice, Eisberg, Konrad Graser and smartAware. Folders open the websites directly. Separate project reports cover Lekkerland Karriere, Eisberg and Starke Periode.",
+      "keywords": "projekte referenzen websites portfolio work convista ticket buddystar faktorzehn muna pflegeplanet onoffice konrad graser smartaware projects websites references examples",
+      "url": "/projekte/",
+      "enabled": true
+    },
+    {
+      "id": "arbeitsweise",
+      "title": "Arbeitsweise",
+      "text": "Moritz’ Arbeitsweise gliedert sich in Verstehen, Strukturieren, Umsetzen und Prüfen. Er verbindet gestalterische Entscheidungen mit technischer Machbarkeit, verständlichen Inhalten und digitaler Sichtbarkeit.",
+      "textEn": "Moritz describes his working process as understanding, structuring, implementing and reviewing. He connects design decisions with technical feasibility, clear content and digital visibility.",
+      "keywords": "arbeitsweise prozess zusammenarbeit vorgehen arbeitet strukturieren pruefen verstehen umsetzen process approach collaboration working style",
+      "url": "/arbeitsweise/",
+      "enabled": true
+    },
+    {
+      "id": "kontakt",
+      "title": "Kontakt",
+      "text": "Du erreichst Moritz unter hello@moritzvollmer.de. Auf seiner Kontaktseite findest Du auch sein LinkedIn-Profil, seine Telefonnummer und eine vCard zum Speichern.",
+      "textEn": "You can reach Moritz at hello@moritzvollmer.de. His contact page also includes his LinkedIn profile, telephone number and a downloadable vCard.",
+      "keywords": "kontakt kontaktieren mail email erreichen telefon linkedin contact hire zusammenarbeiten anfrage contact email reach telephone",
+      "url": "/kontakt/",
+      "enabled": true
+    }
+  ]
+}
