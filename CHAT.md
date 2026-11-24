@@ -20,4 +20,4 @@ Die reinen Hilfsfunktionen zur Aufbereitung strukturierter Antworten sind nicht 
 
 Current public release: visual chat preview only. No backend files or admin pages are published. Input, starter questions and send controls remain disabled; no requests are sent. API integration is a later, separately verified step. Preserve the unpublished backend source for that step.
 
-Public assistant name: MoBot. The small avatar is a deliberately doodled version of the owner’s supplied portrait, generated with the built-in image editing tool. Brief: preserve identity and photo; add visibly fake felt-tip glasses and a curled scribbled moustache. Asset: assets/mobot-avatar-20261124.jpg. This does not activate any AI functionality.
+Public assistant name: Moritz Vollmair. The letters ai are subtly blue; the avatar renders at 52 × 52 CSS pixels. The small avatar is a deliberately doodled version of the owner’s supplied portrait, generated with the built-in image editing tool. Brief: preserve identity and photo; add visibly fake felt-tip glasses and a curled scribbled moustache. Asset: assets/mobot-avatar-20261124.jpg. This does not activate any AI functionality.
