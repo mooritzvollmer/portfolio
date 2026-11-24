@@ -1,5 +1,7 @@
 Options -Indexes
-AddHandler x-mapp-php8.4 .php
+AddHandler cgi-script .cgi
+RewriteEngine On
+RewriteRule ^frag-moritz\.php$ frag-moritz.cgi [END]
 <Files "frag-moritz-core.php">
 Require all denied
 </Files>

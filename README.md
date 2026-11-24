@@ -49,6 +49,6 @@ Details zu Prüfung und Grenzen: [QUALITY.md](QUALITY.md).
 
 ## Frag Moritz
 
-Der fünfte Bereich ist ein Nachrichtenfenster mit freigegebenem Profilwissen, eigenen Quellenlinks und vorbereiteter OpenAI-Anbindung. Ohne API-Schlüssel antwortet er ausdrücklich ohne KI direkt aus der Wissensbasis. /frag-moritz/ ist die eigenständige Ansicht, /frag-moritz/admin/ die geschützte Verwaltung.
+Der fünfte Bereich ist ein Nachrichtenfenster mit freigegebenem Profilwissen, eigenen Quellenlinks. Er antwortet ausdrücklich ohne KI direkt aus der Wissensbasis. Externe KI-Dienste sind technisch gesperrt. /frag-moritz/ ist die eigenständige Ansicht, /frag-moritz/admin/ die geschützte Verwaltung.
 
 Details zu Einrichtung, Wissenspflege, Nutzungsgrenzen und Prüfgrenzen: [CHAT.md](CHAT.md). Sicherheitsregeln sind mit PHP überprüfbar: php scripts/test-profile-chat.php beziehungsweise npm run test:chat, wenn PHP im PATH liegt.

@@ -27,5 +27,10 @@ check(fm_validate_answer(['status'=>'incomplete'],$context)===null,'Reject incom
 check(count(fm_context([],$records,'de'))===15,'Small approved knowledge base supports semantic questions');
 check(fm_context([],array_merge($records,$records),'de')===[],'Large unknown context is not sent unbounded');
 check(fm_validate_answer(response(['answer'=>'test','answerable'=>true,'source_ids'=>[['nested']]]),$context)===null,'Reject non-string source IDs');
+$configured=fm_config();$configured['api_key']='unit-test-only';$configured['ai_enabled']=true;
+check(!fm_allow_ai($configured,false),'No silent AI activation for an open visitor tab');
+check(!fm_allow_ai($configured,true),'Cost lock overrides client opt-in');
+check(!fm_allow_ai($configured,false,true),'Cost lock also covers admin tests');
+$configured['ai_enabled']=false;check(!fm_allow_ai($configured,true,true),'Server disabling AI takes precedence');
 $allowed=0;$bucket='unit-'.bin2hex(random_bytes(4));for($i=0;$i<12;$i++)if(fm_limit($bucket,'unit',600,5))$allowed++;check($allowed===5,'Atomic usage cap');
 echo json_encode(['checks'=>$checks,'failures'=>$failures],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n";exit($failures?1:0);

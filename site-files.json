@@ -9,6 +9,7 @@
     "api/.htaccess",
     "api/frag-moritz-core.php",
     "api/frag-moritz-knowledge.json",
+    "api/frag-moritz.cgi",
     "api/frag-moritz.php",
     "arbeitsweise/index.html",
     "assets/Poppins-Bold-b506e1ae-b506e1ae.woff",
@@ -58,7 +59,9 @@
     "assets/portrait-20261118.css",
     "assets/profile-chat-20261123.css",
     "assets/profile-chat-20261123.js",
+    "assets/profile-chat-20261124.js",
     "assets/profile-chat-admin-20261123.js",
+    "assets/profile-chat-admin-20261124.js",
     "assets/profile-detail-20261118.css",
     "assets/profile-navigation-20261119.js",
     "assets/profile-navigation-902788b9.js",
@@ -140,6 +143,15 @@
       "path": "/api/frag-moritz-core.php",
       "status": 403,
       "kind": "denied"
+    },
+    {
+      "file": "api/frag-moritz.cgi",
+      "path": "/api/frag-moritz.cgi?action=status",
+      "status": 200,
+      "kind": "profile-chat-status"
     }
+  ],
+  "executables": [
+    "api/frag-moritz.cgi"
   ]
 }

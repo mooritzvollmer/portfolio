@@ -27,8 +27,10 @@ function fm_json_write(string $name, array $data): void {
 function fm_config(): array {
     return fm_json_read('config') + ['admin_hash'=>'', 'salt'=>'', 'api_key'=>'', 'ai_enabled'=>false, 'model'=>'gpt-6.1-terra', 'daily_limit'=>50];
 }
-function fm_key(array $config): string { return (string)(getenv('OPENAI_API_KEY') ?: ($config['api_key'] ?? '')); }
-function fm_ready(array $config): bool { return !empty($config['ai_enabled']) && fm_key($config) !== '' && function_exists('curl_init'); }
+// Cost lock: external AI cannot be activated by configuration or an API request.
+function fm_key(array $config): string { return ''; }
+function fm_ready(array $config): bool { return false; }
+function fm_allow_ai(array $config, bool $allowedByClient, bool $adminTest = false): bool { return false; }
 function fm_reply(array $data, int $status = 200): never {
     http_response_code($status); header('Content-Type: application/json; charset=utf-8');
     echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR); exit;
@@ -136,10 +138,4 @@ function fm_validate_answer(array $response, array $records, string $lang = 'de'
     if (!$sources) return null;
     return ['answer'=>trim($answer['answer']),'sources'=>$sources,'mode'=>'ai','reason'=>''];
 }
-function fm_generate(array $payload, string $key): ?array {
-    $curl=curl_init('https://api.openai.com/v1/responses');
-    curl_setopt_array($curl,[CURLOPT_POST=>true,CURLOPT_POSTFIELDS=>json_encode($payload,JSON_THROW_ON_ERROR),CURLOPT_RETURNTRANSFER=>true,CURLOPT_CONNECTTIMEOUT=>5,CURLOPT_TIMEOUT=>22,CURLOPT_FOLLOWLOCATION=>false,CURLOPT_HTTPHEADER=>['Content-Type: application/json','Authorization: Bearer '.$key]]);
-    $raw=curl_exec($curl); $status=curl_getinfo($curl,CURLINFO_RESPONSE_CODE); curl_close($curl);
-    if ($raw===false||$status!==200) return null;
-    try { $data=json_decode($raw,true,64,JSON_THROW_ON_ERROR); return is_array($data)?$data:null; } catch(Throwable $e) { return null; }
-}
+function fm_generate(array $payload, string $key): ?array { return null; }

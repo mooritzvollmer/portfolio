@@ -126,3 +126,5 @@ assets/responsive-height-20261120.js -text
 assets/responsive-notes-20261120.js -text
 
 assets/responsive-apps-20261120.css -text
+
+*.cgi text eol=lf

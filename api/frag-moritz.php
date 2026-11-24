@@ -36,17 +36,7 @@ try {
         fm_admin(); fm_csrf(); $records=fm_validate_knowledge($input['records']??null); $old=fm_knowledge();
         fm_json_write('knowledge-previous',['records'=>$old,'savedAt'=>gmdate('c')]); fm_json_write('knowledge',['records'=>$records,'savedAt'=>gmdate('c')]); fm_reply(['ok'=>true,'count'=>count($records)]);
     }
-    if ($action==='save-settings') {
-        fm_admin(); fm_csrf(); $config=fm_config(); $key=fm_text($input['apiKey']??'',512);
-        if ($key!=='' && !preg_match('/^sk-[a-zA-Z0-9_-]{20,500}$/D',$key)) throw new InvalidArgumentException('Bitte einen gültigen OpenAI-API-Schlüssel eingeben.');
-        if ($key!=='') $config['api_key']=$key;
-        if (($input['removeKey']??false)===true) { $config['api_key']=''; $config['ai_enabled']=false; }
-        $limit=$input['dailyLimit']??50;
-        if (!is_int($limit)||$limit<1||$limit>200) throw new InvalidArgumentException('Das Tageslimit muss zwischen 1 und 200 liegen.');
-        $config['daily_limit']=$limit; $config['ai_enabled']=($input['aiEnabled']??false)===true;
-        if ($config['ai_enabled'] && fm_key($config)==='') throw new InvalidArgumentException('Für die Aktivierung fehlt noch der API-Schlüssel.');
-        fm_json_write('config',$config); fm_reply(['ok'=>true,'ready'=>fm_ready($config)]);
-    }
+    if ($action==='save-settings') { fm_admin(); fm_csrf(); fm_reply(['error'=>'Externe KI-Dienste sind aus Kostengründen gesperrt.'],403); }
     if ($action==='ask' || $action==='test') {
         $test=$action==='test'; if ($test) { fm_admin(); fm_csrf(); }
         if (strlen($raw)>16000) fm_reply(['error'=>'Anfrage zu groß.'],413);
@@ -61,13 +51,13 @@ try {
             foreach (array_reverse($history) as $turn) if ($turn['role']==='user') { $context=fm_retrieve($turn['content'],$records); break; }
         }
         $sensitive=(bool)preg_match('/passwo(?:e|r)|password|api[ -]?(?:key|schluessel)|system[ -]?prompt|private[ -]?key|ignore.*instruction|ignoriere.*anweisung/ui',fm_normalize($question)); if($sensitive)$context=[];
-        $config=fm_config(); $fallback=fm_fallback($context,$lang);
-        if (!fm_ready($config) || $sensitive) fm_reply($fallback);
+        $config=fm_config(); $fallback=fm_fallback($context,$lang); $ready=fm_ready($config); $fallback['availableAi']=$ready;
+        if (!fm_allow_ai($config,($input['allowAi']??false)===true,$test) || $sensitive) fm_reply($fallback);
         $modelContext=fm_context($context,$records,$lang); if(!$modelContext)fm_reply($fallback);
-        if (!fm_limit('api-daily','all',86400,(int)$config['daily_limit'])) fm_reply(fm_fallback($context,$lang,'daily-limit'));
+        if (!fm_limit('api-daily','all',86400,(int)$config['daily_limit'])) fm_reply(fm_fallback($context,$lang,'daily-limit')+['availableAi'=>$ready]);
         $payload=fm_model_payload($question,$modelContext,$lang,$history,$config['model']);
         $response=fm_generate($payload,fm_key($config)); $answer=$response?fm_validate_answer($response,$modelContext,$lang):null;
-        fm_reply($answer ?? fm_fallback($context,$lang,'provider-unavailable'));
+        fm_reply(($answer ?? fm_fallback($context,$lang,'provider-unavailable'))+['availableAi'=>$ready]);
     }
     fm_reply(['error'=>'Nicht gefunden.'],404);
 } catch(InvalidArgumentException $e) { fm_reply(['error'=>$e->getMessage()],400); }

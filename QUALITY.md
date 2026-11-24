@@ -37,3 +37,7 @@ Es wurden keine Core-Web-Vitals-Felddaten, Rankingveränderungen oder Erwähnung
 - 14 zusätzliche axe-Prüfzustände des Chats und der Verwaltung ohne automatisch gemeldete Verstöße.
 - Kein OpenAI-API-Schlüssel eingerichtet; eine echte Modellantwort und das Pro-API-Guthaben sind deshalb noch nicht verifiziert. Ohne Schlüssel ist der klar gekennzeichnete Profilwissen-Modus aktiv.
 - Die lokale Vorschau nutzt dieselbe PHP-Version wie IONOS (8.4.28). Die portable Testlaufzeit und private Zugangsdaten werden nicht veröffentlicht.
+
+## Kostenregel · 24.11.2026
+
+Externe KI ist im Backend unveränderlich durch Konfiguration gesperrt; der Providertransport wurde entfernt. Auch Admin-Tests bleiben im lokalen Profilwissen-Modus. Es werden keine API-Schlüssel benötigt und keine zusätzlichen kostenpflichtigen Dienste aktiviert.

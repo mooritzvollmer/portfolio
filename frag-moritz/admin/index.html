@@ -7,7 +7,7 @@
     <title>Frag Moritz · Admin</title>
     <link rel="icon" href="/favicon/favicon.svg" />
     <link rel="stylesheet" href="/assets/profile-chat-20261123.css" />
-    <script type="module" src="/assets/profile-chat-admin-20261123.js"></script>
+    <script type="module" src="/assets/profile-chat-admin-20261124.js"></script>
   </head>
   <body class="fa-page">
     <main class="fa-shell">
@@ -53,7 +53,7 @@
             tabindex="-1"
             data-admin-tab="settings"
           >
-            KI-Anbindung</button
+            Betrieb</button
           ><button
             type="button"
             id="fa-tab-test"
@@ -96,88 +96,7 @@
             <p data-save-message role="status"></p>
           </div>
         </section>
-        <section
-          id="fa-settings"
-          role="tabpanel"
-          aria-labelledby="fa-tab-settings"
-          data-admin-panel="settings"
-          hidden
-        >
-          <div class="fa-settings">
-            <div class="fa-box">
-              <h2>OpenAI verbinden</h2>
-              <p class="fa-help" data-api-status></p>
-              <ol class="fa-help">
-                <li>
-                  Aktiviere gegebenenfalls Dein API-Guthaben in der ChatGPT-Abrechnung. Prüfe dabei
-                  das verknüpfte API-Konto.
-                  <a
-                    href="https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Anleitung zum Pro-Guthaben</a
-                  >
-                </li>
-                <li>
-                  Erstelle im passenden API-Projekt einen Schlüssel.
-                  <a
-                    href="https://platform.openai.com/api-keys"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >API-Schlüssel verwalten</a
-                  >
-                </li>
-                <li>
-                  Setze ihn hier ein und aktiviere die KI. Der Schlüssel wird nur auf dem Server
-                  gespeichert und nicht wieder angezeigt.
-                </li>
-              </ol>
-              <form method="post" data-settings-form>
-                <label for="api-key"
-                  >OpenAI-API-Schlüssel<input
-                    type="password"
-                    id="api-key"
-                    name="api-key"
-                    autocomplete="off"
-                    spellcheck="false"
-                    maxlength="512"
-                    placeholder="sk-…" /></label
-                ><label for="daily-limit"
-                  >Maximale KI-Anfragen pro Tag (UTC)<input
-                    type="number"
-                    id="daily-limit"
-                    min="1"
-                    max="200"
-                    step="1"
-                    value="50"
-                    required
-                /></label>
-                <p class="fa-help">
-                  Voreingestelltes Modell: GPT-6.1 Terra. Antworten sind auf 650 Ausgabetokens
-                  begrenzt. Das Anfragenlimit begrenzt die Nutzung, ist aber kein Geldbetrag.
-                  API-Nutzung kann Kosten verursachen, wenn Dein Guthaben aufgebraucht ist.
-                </p>
-                <label class="fa-check"
-                  ><input type="checkbox" id="ai-enabled" />KI-Antworten über OpenAI
-                  aktivieren</label
-                ><label class="fa-check"
-                  ><input type="checkbox" id="remove-key" />Gespeicherten Schlüssel entfernen</label
-                ><button class="fa-primary" type="submit">Anbindung speichern</button>
-              </form>
-              <p class="fa-message" data-settings-message role="status"></p>
-            </div>
-            <div class="fa-box">
-              <h2>Was gespeichert wird</h2>
-              <p class="fa-help">
-                Gespeichert werden Deine Wissenseinträge, die vorherige Fassung, Konfiguration und
-                zeitlich begrenzte Nutzungszähler. Der Server speichert keine Chattexte. Bei
-                aktivierter KI werden Fragen, der kurze Verlauf und passende Profilinfos an OpenAI
-                übermittelt. Der Chat behauptet niemals, Moritz persönlich zu sein.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section
+        <section id="fa-settings" role="tabpanel" aria-labelledby="fa-tab-settings" data-admin-panel="settings" hidden><div class="fa-settings fa-box"><h2>Betrieb ohne externe KI</h2><p data-api-status>Ausschließlich Profilwissen. Keine externen KI-Aufrufe und keine API-Kosten.</p><p class="fa-help">Der Chat sucht in Deinen freigegebenen Einträgen und gibt passende Informationen mit Quellen aus. Unbekannte Fragen bleiben unbeantwortet. Es ist kein Sprachmodell aktiv.</p></div></section><section
           id="fa-test"
           role="tabpanel"
           aria-labelledby="fa-tab-test"
@@ -186,10 +105,7 @@
         >
           <div class="fa-settings fa-box">
             <h2>Antwort prüfen</h2>
-            <p class="fa-help">
-              Teste Fakten, Quellen und unbekannte Fragen. Auch diese Modellaufrufe zählen zum
-              Tageslimit. Ohne aktivierte Anbindung wird direkt aus dem Profilwissen geantwortet.
-            </p>
+            <p class="fa-help">Teste Fakten, Quellen und unbekannte Fragen. Antworten werden ausschließlich aus Deinem freigegebenen Profilwissen zusammengestellt.</p>
             <form method="post" data-test-form>
               <label for="test-question"
                 >Deine Testfrage<textarea id="test-question" maxlength="800" required>
