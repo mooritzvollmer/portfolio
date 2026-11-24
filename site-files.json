@@ -6,11 +6,6 @@
   "files": [
     ".htaccess",
     "404.html",
-    "api/.htaccess",
-    "api/frag-moritz-core.php",
-    "api/frag-moritz-knowledge.json",
-    "api/frag-moritz.cgi",
-    "api/frag-moritz.php",
     "arbeitsweise/index.html",
     "assets/Poppins-Bold-b506e1ae-b506e1ae.woff",
     "assets/Poppins-Medium-e58a717b-e58a717b.woff",
@@ -58,10 +53,7 @@
     "assets/portfolio-quality-20261123.js",
     "assets/portrait-20261118.css",
     "assets/profile-chat-20261123.css",
-    "assets/profile-chat-20261123.js",
-    "assets/profile-chat-20261124.js",
-    "assets/profile-chat-admin-20261123.js",
-    "assets/profile-chat-admin-20261124.js",
+    "assets/profile-chat-preview-20261124.js",
     "assets/profile-detail-20261118.css",
     "assets/profile-navigation-20261119.js",
     "assets/profile-navigation-902788b9.js",
@@ -111,8 +103,6 @@
     "fonts/Poppins-Bold.woff",
     "fonts/Poppins-Medium.woff",
     "fonts/Poppins-Regular.woff",
-    "frag-moritz/admin/.htaccess",
-    "frag-moritz/admin/index.html",
     "frag-moritz/index.html",
     "impressum/index.html",
     "index.html",
@@ -131,27 +121,6 @@
     "ueber-mich/index.html"
   ],
   "lastEdited": "2026-11-20",
-  "serverEndpoints": [
-    {
-      "file": "api/frag-moritz.php",
-      "path": "/api/frag-moritz.php?action=status",
-      "status": 200,
-      "kind": "profile-chat-status"
-    },
-    {
-      "file": "api/frag-moritz-core.php",
-      "path": "/api/frag-moritz-core.php",
-      "status": 403,
-      "kind": "denied"
-    },
-    {
-      "file": "api/frag-moritz.cgi",
-      "path": "/api/frag-moritz.cgi?action=status",
-      "status": 200,
-      "kind": "profile-chat-status"
-    }
-  ],
-  "executables": [
-    "api/frag-moritz.cgi"
-  ]
+  "serverEndpoints": [],
+  "executables": []
 }

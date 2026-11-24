@@ -17,3 +17,5 @@ PHP 8.4 wird für die API über einen expliziten CGI-Einstieg ausgeführt, weil 
 Die Verwaltung ist durch Passwort-Hash, sichere Sitzung, CSRF-Token, Origin-Prüfung und Anmeldegrenzen geschützt. Wissensdateien liegen außerhalb von dist/. Gesprächsinhalte werden nicht serverseitig gespeichert. Flüchtiger Chatverlauf bleibt nur im Browser.
 
 Die reinen Hilfsfunktionen zur Aufbereitung strukturierter Antworten sind nicht mit einem aktiven Modell verbunden. Die Wiedereinführung eines externen Dienstes würde eine ausdrückliche neue Entscheidung und Codeänderung erfordern.
+
+Current public release: visual chat preview only. No backend files or admin pages are published. Input, starter questions and send controls remain disabled; no requests are sent. API integration is a later, separately verified step. Preserve the unpublished backend source for that step.

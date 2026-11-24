@@ -163,7 +163,7 @@
     <link rel="stylesheet" href="/assets/portfolio-quality-20261123.css" />
     <script type="module" src="/assets/portfolio-quality-20261123.js"></script>
     <link rel="stylesheet" href="/assets/profile-chat-20261123.css" />
-    <script type="module" src="/assets/profile-chat-20261124.js"></script>
+    <script type="module" src="/assets/profile-chat-preview-20261124.js"></script>
   </head>
   <body class="window-experience">
     <a class="portfolio-skip" href="#portfolio-inhalt">Zum Inhalt</a
@@ -1365,10 +1365,10 @@
                 <img src="/favicon/favicon.svg" alt="" width="34" height="34" />
                 <div>
                   <h2>Frag Moritz</h2>
-                  <p data-chat-status role="status">Profilwissen wird geladen …</p>
+                  <p data-chat-status role="status">Vorschau · noch nicht verbunden</p>
                 </div>
                 <button
-                  class="fm-reset"
+                  class="fm-reset" disabled
                   type="button"
                   data-chat-reset
                   aria-label="Unterhaltung leeren"
@@ -1389,10 +1389,7 @@
               >
                 <div class="fm-welcome" data-chat-welcome>
                   <p class="fm-intro">Erfahrung, Projekte und Arbeitsweise.</p>
-                  <p>
-                    Antworten aus freigegebenen Profilinfos. Hier antwortet ein Assistent, nicht
-                    Moritz persönlich.
-                  </p>
+                  <p>Hier kannst Du bald einem Assistenten Fragen über Moritz stellen. Aktuell siehst Du die Gestaltung; es werden noch keine Fragen verarbeitet.</p>
                   <div class="fm-starters">
                     <button type="button" data-chat-prompt disabled>
                       Wie verbindet Moritz Design, Technik, Sichtbarkeit?</button
@@ -1420,17 +1417,11 @@
                   ></textarea
                   ><button class="fm-send" type="submit" data-chat-send disabled>Senden</button>
                 </div>
-                <p class="fm-disclosure" data-chat-disclosure>
-                  Noch keine KI aktiv. Antworten kommen direkt aus dem Profilwissen.
-                  <a href="/datenschutz/#profilchat">Datenschutz</a>
-                </p>
+                <p class="fm-disclosure" data-chat-disclosure>Nur Vorschau. Keine KI-Verbindung und keine Datenübermittlung. <a href="/datenschutz/#profilchat">Datenschutz</a></p>
                 <p class="fm-error" data-chat-error role="status"></p>
               </form>
               <noscript
-                ><p class="fm-noscript">
-                  Aktiviere JavaScript für den Chat oder schreib an
-                  <a href="mailto:hello@moritzvollmer.de">hello@moritzvollmer.de</a>.
-                </p></noscript
+                ><p class="fm-noscript">Der Chat ist eine Vorschau. Kontakt: <a href="mailto:hello@moritzvollmer.de">hello@moritzvollmer.de</a>.</p></noscript
               >
             </div>
           </div>

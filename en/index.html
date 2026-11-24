@@ -182,7 +182,7 @@
     <link rel="stylesheet" href="/assets/portfolio-quality-20261123.css" />
     <script type="module" src="/assets/portfolio-quality-20261123.js"></script>
     <link rel="stylesheet" href="/assets/profile-chat-20261123.css" />
-    <script type="module" src="/assets/profile-chat-20261124.js"></script>
+    <script type="module" src="/assets/profile-chat-preview-20261124.js"></script>
   </head>
   <body class="window-experience">
     <a class="portfolio-skip" href="#portfolio-inhalt">Skip to content</a
@@ -1354,10 +1354,10 @@
                 <img src="/favicon/favicon.svg" alt="" width="34" height="34" />
                 <div>
                   <h2>Ask Moritz</h2>
-                  <p data-chat-status role="status">Connecting to profile knowledge…</p>
+                  <p data-chat-status role="status">Preview · not connected yet</p>
                 </div>
                 <button
-                  class="fm-reset"
+                  class="fm-reset" disabled
                   type="button"
                   data-chat-reset
                   aria-label="Clear conversation"
@@ -1378,10 +1378,7 @@
               >
                 <div class="fm-welcome" data-chat-welcome>
                   <p class="fm-intro">Experience, projects and how he works.</p>
-                  <p>
-                    Answers use approved profile information. This is an assistant, not Moritz
-                    himself.
-                  </p>
+                  <p>Soon you can ask an assistant about Moritz. This is a visual preview; no questions are processed yet.</p>
                   <div class="fm-starters">
                     <button type="button" data-chat-prompt disabled>
                       How does Moritz connect Design, Technik, Sichtbarkeit?</button
@@ -1409,17 +1406,11 @@
                   ></textarea
                   ><button class="fm-send" type="submit" data-chat-send disabled>Send</button>
                 </div>
-                <p class="fm-disclosure" data-chat-disclosure>
-                  No AI is active yet. Answers come directly from profile knowledge.
-                  <a href="/datenschutz/#profilchat" lang="de">Privacy</a>
-                </p>
+                <p class="fm-disclosure" data-chat-disclosure>Preview only. No AI connection and no data transmission. <a href="/datenschutz/#profilchat">Privacy</a></p>
                 <p class="fm-error" data-chat-error role="status"></p>
               </form>
               <noscript
-                ><p class="fm-noscript">
-                  Please enable JavaScript to use the chat, or contact
-                  <a href="mailto:hello@moritzvollmer.de">hello@moritzvollmer.de</a>.
-                </p></noscript
+                ><p class="fm-noscript">The chat is a preview. Contact <a href="mailto:hello@moritzvollmer.de">hello@moritzvollmer.de</a>.</p></noscript
               >
             </div>
           </div>
