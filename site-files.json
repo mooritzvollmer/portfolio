@@ -6,6 +6,7 @@
   "files": [
     ".htaccess",
     "404.html",
+    "api/runtime-check.php",
     "arbeitsweise/index.html",
     "assets/Poppins-Bold-b506e1ae-b506e1ae.woff",
     "assets/Poppins-Medium-e58a717b-e58a717b.woff",
@@ -122,6 +123,13 @@
     "ueber-mich/index.html"
   ],
   "lastEdited": "2026-11-20",
-  "serverEndpoints": [],
+  "serverEndpoints": [
+    {
+      "file": "api/runtime-check.php",
+      "path": "/api/runtime-check.php",
+      "status": 200,
+      "kind": "profile-chat-status"
+    }
+  ],
   "executables": []
 }

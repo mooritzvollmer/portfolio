@@ -43,3 +43,5 @@ Es wurden keine Core-Web-Vitals-Felddaten, Rankingveränderungen oder Erwähnung
 Externe KI ist im Backend unveränderlich durch Konfiguration gesperrt; der Providertransport wurde entfernt. Auch Admin-Tests bleiben im lokalen Profilwissen-Modus. Es werden keine API-Schlüssel benötigt und keine zusätzlichen kostenpflichtigen Dienste aktiviert.
 
 Current public release: visual chat preview only. No backend files or admin pages are published. Input, starter questions and send controls remain disabled; no requests are sent. API integration is a later, separately verified step. Preserve the unpublished backend source for that step.
+
+2026-11-26: minimal native PHP runtime check at /api/runtime-check.php. Reports only version and feature booleans; no secrets, personal data, external requests or API charges. Chat remains an inactive visual preview. Do not deploy the former API handler override or CGI wrapper.
