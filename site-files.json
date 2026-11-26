@@ -6,7 +6,10 @@
   "files": [
     ".htaccess",
     "404.html",
+    "api/.htaccess",
     "api/runtime-check.php",
+    "api/vollmair-core.php",
+    "api/vollmair.php",
     "arbeitsweise/index.html",
     "assets/Poppins-Bold-b506e1ae-b506e1ae.woff",
     "assets/Poppins-Medium-e58a717b-e58a717b.woff",
@@ -54,8 +57,7 @@
     "assets/portfolio-quality-20261123.css",
     "assets/portfolio-quality-20261123.js",
     "assets/portrait-20261118.css",
-    "assets/profile-chat-20261124c.css",
-    "assets/profile-chat-preview-20261124.js",
+    "assets/profile-chat-20261126.css",
     "assets/profile-detail-20261118.css",
     "assets/profile-navigation-20261119.js",
     "assets/profile-navigation-902788b9.js",
@@ -76,6 +78,8 @@
     "assets/site-718165b1-db15dbe7.css",
     "assets/strategist-social-20261117.png",
     "assets/subpage-navigation-0ba9999c.js",
+    "assets/vollmair-admin-20261126.js",
+    "assets/vollmair-chat-20261126.js",
     "assets/window-content-height-20261118.js",
     "assets/window-content-height-20261118b.js",
     "code-formatierer/app.js",
@@ -105,6 +109,8 @@
     "fonts/Poppins-Bold.woff",
     "fonts/Poppins-Medium.woff",
     "fonts/Poppins-Regular.woff",
+    "frag-moritz/admin/.htaccess",
+    "frag-moritz/admin/index.html",
     "frag-moritz/index.html",
     "impressum/index.html",
     "index.html",
@@ -129,6 +135,18 @@
       "path": "/api/runtime-check.php",
       "status": 200,
       "kind": "profile-chat-status"
+    },
+    {
+      "file": "api/vollmair.php",
+      "path": "/api/vollmair.php?action=status",
+      "status": 200,
+      "kind": "profile-chat-status"
+    },
+    {
+      "file": "api/vollmair-core.php",
+      "path": "/api/vollmair-core.php",
+      "status": 403,
+      "kind": "denied"
     }
   ],
   "executables": []

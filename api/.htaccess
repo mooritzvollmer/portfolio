@@ -1,8 +1,5 @@
 Options -Indexes
-AddHandler cgi-script .cgi
-RewriteEngine On
-RewriteRule ^frag-moritz\.php$ frag-moritz.cgi [END]
-<Files "frag-moritz-core.php">
+<Files "vollmair-core.php">
 Require all denied
 </Files>
 <IfModule mod_headers.c>

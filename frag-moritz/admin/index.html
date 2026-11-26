@@ -1,124 +1,106 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="robots" content="noindex,nofollow" />
-    <title>Frag Moritz · Admin</title>
+    <title>Interner Chat-Test | Moritz Vollmair</title>
+    <meta
+      name="description"
+      content="Moritz Vollmair nach Erfahrung, Kompetenzen und Website-Projekten. Antworten aus freigegebenem Profilwissen."
+    />
+    <link rel="canonical" href="https://moritzvollmer.de/frag-moritz/" />
+    <meta property="og:title" content="Moritz Vollmair | Moritz Vollmer – Digital Strategist" />
+    <meta property="og:url" content="https://moritzvollmer.de/frag-moritz/" />
+    <meta property="og:type" content="website" />
     <link rel="icon" href="/favicon/favicon.svg" />
-    <link rel="stylesheet" href="/assets/profile-chat-20261123.css" />
-    <script type="module" src="/assets/profile-chat-admin-20261124.js"></script>
+    <link rel="stylesheet" href="/assets/detail-7d62972a.css" />
+    <link rel="stylesheet" href="/assets/digital-card-7a51acda.css" />
+    <meta
+      property="og:description"
+      content="Moritz Vollmair nach Erfahrung, Kompetenzen und Website-Projekten. Antworten aus freigegebenem Profilwissen."
+    />
+    <meta name="twitter:title" content="Moritz Vollmair | Moritz Vollmer – Digital Strategist" />
+    <meta
+      name="twitter:description"
+      content="Moritz Vollmair nach Erfahrung, Kompetenzen und Website-Projekten. Antworten aus freigegebenem Profilwissen."
+    />
+    <meta
+      property="og:image"
+      content="https://moritzvollmer.de/assets/strategist-social-20261117.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Moritz Vollmer · Digital Strategist · Design, Technik, Sichtbarkeit"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "about": { "@id": "https://moritzvollmer.de/#person" },
+        "url": "https://moritzvollmer.de/frag-moritz/",
+        "name": "Moritz Vollmair | Moritz Vollmer",
+        "inLanguage": "de",
+        "dateModified": "2026-11-23"
+      }
+    </script>
+    <link rel="stylesheet" href="/assets/profile-detail-20261118.css" />
+    <link rel="stylesheet" href="/assets/portfolio-quality-20261123.css" />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="/assets/profile-chat-20261126.css" />
+    <script type="module" src="/assets/vollmair-admin-20261126.js"></script>
   </head>
-  <body class="fa-page">
-    <main class="fa-shell">
-      <header class="fa-top">
-        <img src="/favicon/favicon.svg" alt="" width="35" height="35" /><strong>Frag Moritz</strong
-        ><a href="/#chat">Zum Chat</a
-        ><button type="button" class="fa-logout" data-admin-logout hidden>Abmelden</button>
-      </header>
-      <section class="fa-login" data-admin-login>
-        <h1>Frag Moritz Admin</h1>
-        <form method="post" data-admin-login-form>
-          <label for="admin-password"
-            >Passwort<input
-              type="password"
-              id="admin-password"
-              name="password"
-              autocomplete="current-password"
-              required
-              maxlength="160"
-              disabled /></label
-          ><button class="fa-primary" type="submit" disabled>Anmelden</button>
+  <body class="projects-page subpage-shell profile-editorial">
+    <a class="essay-skip" href="#inhalt">Zum Inhalt</a>
+    <div class="subpage-ambient" aria-hidden="true"></div>
+    <header class="subpage-header">
+      <a class="subpage-brand" href="/" aria-label="Zur Startseite von Moritz Vollmer"
+        >moritz<span class="visuallyHidden"> vollmer</span></a
+      >
+      <details class="subpage-menu">
+        <summary aria-label="Navigation">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="5" cy="12" r="2" />
+            <circle cx="12" cy="12" r="2" />
+            <circle cx="19" cy="12" r="2" />
+          </svg>
+        </summary>
+        <nav aria-label="Bereiche">
+          <a href="/">Startseite</a><a href="/ueber-mich/">Profil</a
+          ><a href="/arbeitsweise/">Arbeitsweise</a><a href="/seo-geo/">SEO &amp; GEO</a
+          ><a href="/projekte/">Work</a><a href="/kontakt/" aria-current="page">Kontakt</a>
+        </nav>
+      </details>
+    </header>
+    <main class="fm-standalone" id="inhalt">
+      <h1>Interner Chat-Test</h1>
+      <section class="vm-admin" aria-label="Geschützter Zugang">
+        <form id="vm-login" method="post">
+          <label for="vm-password">Passwort</label
+          ><input
+            id="vm-password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            maxlength="160"
+          /><button type="submit">Anmelden</button>
         </form>
-        <p class="fa-message" data-login-message role="status">Zugang wird geladen …</p>
-      </section>
-      <section data-admin-app hidden>
-        <h1>Profilassistent verwalten</h1>
-        <div class="fa-tabs" role="tablist" aria-label="Verwaltung">
-          <button
-            type="button"
-            id="fa-tab-knowledge"
-            role="tab"
-            aria-controls="fa-knowledge"
-            aria-selected="true"
-            data-admin-tab="knowledge"
-          >
-            Profilwissen</button
-          ><button
-            type="button"
-            id="fa-tab-settings"
-            role="tab"
-            aria-controls="fa-settings"
-            aria-selected="false"
-            tabindex="-1"
-            data-admin-tab="settings"
-          >
-            Betrieb</button
-          ><button
-            type="button"
-            id="fa-tab-test"
-            role="tab"
-            aria-controls="fa-test"
-            aria-selected="false"
-            tabindex="-1"
-            data-admin-tab="test"
-          >
-            Testen
-          </button>
-        </div>
-        <section
-          id="fa-knowledge"
-          role="tabpanel"
-          aria-labelledby="fa-tab-knowledge"
-          data-admin-panel="knowledge"
-        >
-          <p class="fa-help">
-            Hier legst Du fest, was der Assistent über Dich wissen darf. Hinterlege ausschließlich
-            Informationen, die öffentlich beantwortet werden dürfen. Änderungen gelten nach dem
-            Speichern sofort. Das ist eine Wissensbasis, kein Training der Modellgewichte.
+        <div id="vm-signed-in" hidden>
+          <p>
+            Du bist angemeldet. Nur Du kannst die KI-Antworten testen; die öffentliche Vorschau
+            bleibt deaktiviert.
           </p>
-          <div class="fa-toolbar">
-            <p data-record-count></p>
-            <button type="button" data-record-add>Eintrag ergänzen</button
-            ><button type="button" data-record-export>Exportieren</button
-            ><label class="fa-visually-hidden" for="record-import"
-              >Wissen aus JSON importieren</label
-            ><input
-              id="record-import"
-              type="file"
-              accept="application/json,.json"
-              data-record-import
-            />
-          </div>
-          <div data-record-list></div>
-          <div class="fa-savebar">
-            <button class="fa-primary" type="button" data-record-save>Wissen speichern</button>
-            <p data-save-message role="status"></p>
-          </div>
-        </section>
-        <section id="fa-settings" role="tabpanel" aria-labelledby="fa-tab-settings" data-admin-panel="settings" hidden><div class="fa-settings fa-box"><h2>Betrieb ohne externe KI</h2><p data-api-status>Ausschließlich Profilwissen. Keine externen KI-Aufrufe und keine API-Kosten.</p><p class="fa-help">Der Chat sucht in Deinen freigegebenen Einträgen und gibt passende Informationen mit Quellen aus. Unbekannte Fragen bleiben unbeantwortet. Es ist kein Sprachmodell aktiv.</p></div></section><section
-          id="fa-test"
-          role="tabpanel"
-          aria-labelledby="fa-tab-test"
-          data-admin-panel="test"
-          hidden
-        >
-          <div class="fa-settings fa-box">
-            <h2>Antwort prüfen</h2>
-            <p class="fa-help">Teste Fakten, Quellen und unbekannte Fragen. Antworten werden ausschließlich aus Deinem freigegebenen Profilwissen zusammengestellt.</p>
-            <form method="post" data-test-form>
-              <label for="test-question"
-                >Deine Testfrage<textarea id="test-question" maxlength="800" required>
-Was war Moritz’ Beitrag bei Lekkerland?</textarea></label
-              ><button class="fa-primary" type="submit">Antwort testen</button>
-            </form>
-            <p class="fa-message" data-test-state role="status"></p>
-            <div class="fa-test-output" data-test-output></div>
-            <p class="fa-help" data-test-sources></p>
-          </div>
-        </section>
+          <a id="vm-open-chat" href="/frag-moritz/">Chat öffnen</a
+          ><button id="vm-logout" type="button">Abmelden</button>
+        </div>
+        <p id="vm-error" role="status"></p>
       </section>
-      <noscript><p>Für die Verwaltung ist JavaScript erforderlich.</p></noscript>
     </main>
+    <footer class="subpage-footer">
+      <p>© Moritz Vollmer · Köln</p>
+      <p><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></p>
+    </footer>
+    <script type="module" src="/assets/subpage-navigation-0ba9999c.js"></script>
   </body>
 </html>
