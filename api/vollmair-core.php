@@ -88,8 +88,8 @@ function vm_usage_record(): void {
         try {
             if(!flock($h,LOCK_EX))return;$raw=stream_get_contents($h);$old=$raw?json_decode($raw,true,32,JSON_THROW_ON_ERROR):[];
             $now=time();$plan=vm_usage_plan($old,$first,$now);$state=$plan['state'];$config=vm_config();
-            $to=$config['usage_notification_to']??'';$from='hello@moritzvollmer.de';
-            if($plan['notify']&&($config['usage_notifications_enabled']??false)===true&&is_string($to)&&filter_var($to,FILTER_VALIDATE_EMAIL)&&!preg_match('/[\r\n]/',$to)) {
+            $to=$config['usage_notification_to']??'';$from=$config['usage_notification_from']??'hello@moritzvollmer.de';
+            if($plan['notify']&&($config['usage_notifications_enabled']??false)===true&&is_string($to)&&filter_var($to,FILTER_VALIDATE_EMAIL)&&!preg_match('/[\r\n]/',$to)&&is_string($from)&&preg_match('/^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$/D',$from)) {
                 $state['lastAttemptAt']=$now;
                 $time=(new DateTimeImmutable('now',new DateTimeZone('Europe/Berlin')))->format('d.m.Y H:i');
                 $counts=$state['daily'][$plan['day']];
