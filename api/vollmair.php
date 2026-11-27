@@ -12,7 +12,7 @@ if($method==='GET'&&$action==='status'){
     $ready=$internal||$started;
     vm_reply(['ready'=>$ready,'mode'=>$ready?'ai':'knowledge','internal'=>$internal,'publicEnabled'=>$public,'publicAvailable'=>$public,'csrf'=>$ready?$_SESSION['csrf']:null]);
 }
-if($method==='GET'&&$action==='admin-state'){vm_session();vm_reply(['authenticated'=>!empty($_SESSION['admin']),'csrf'=>$_SESSION['csrf'],'publicEnabled'=>vm_public_ready(vm_config())]);}
+if($method==='GET'&&$action==='admin-state'){vm_session();$state=['authenticated'=>!empty($_SESSION['admin']),'csrf'=>$_SESSION['csrf'],'publicEnabled'=>vm_public_ready(vm_config())];if($state['authenticated'])$state['usage']=vm_usage_summary();vm_reply($state);}
 if($method!=='POST'){header('Allow: GET, POST');vm_reply(['error'=>'Methode nicht erlaubt.'],405);}
 if((int)($_SERVER['CONTENT_LENGTH']??0)>12000)vm_reply(['error'=>'Anfrage zu groß.'],413);
 if(!str_starts_with(strtolower($_SERVER['CONTENT_TYPE']??''),'application/json'))vm_reply(['error'=>'JSON erwartet.'],415);
@@ -45,5 +45,5 @@ $clean=[];foreach($history as$turn){if(!is_array($turn)||!in_array($turn['role']
 $limit=$internal?12:6;
 if(!vm_limit($internal?'ask':'public-ask',$identity,600,$limit))vm_retry(['error'=>'Für den Moment ist Dein Anfragelimit erreicht. Versuche es später erneut oder schreib Moritz eine E-Mail.'],600-(time()%600));
 if(!vm_limit('api-daily','all',86400,50))vm_retry(['error'=>'Der Chat hat sein Tageslimit erreicht. Schreib Moritz gerne direkt eine E-Mail.'],86400-(time()%86400));
-$answer=vm_generate($question,$clean,$language,$config);vm_reply($answer+['mode'=>'ai','internal'=>$internal]);
+$answer=vm_generate($question,$clean,$language,$config);if(!$internal)vm_usage_record();vm_reply($answer+['mode'=>'ai','internal'=>$internal]);
 }catch(InvalidArgumentException$e){vm_reply(['error'=>$e->getMessage()],400);}catch(Throwable$e){vm_reply(['error'=>'Der Chat ist gerade nicht erreichbar. Schreib Moritz gerne eine E-Mail.'],503);}

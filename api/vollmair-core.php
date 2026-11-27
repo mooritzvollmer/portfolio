@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) { http_response_code(403); exit; }
-const VM_PUBLIC_ENABLED = false;
+const VM_PUBLIC_ENABLED = true;
 function vm_dir(): string {
     $dev = in_array(PHP_SAPI, ['cli', 'cli-server'], true) ? getenv('VOLLMAIR_TEST_PRIVATE') : false;
     $dir = $dev ?: dirname(__DIR__, 2) . '/.frag-moritz';
@@ -72,6 +72,43 @@ function vm_public_ready(array $config): bool {
     return true;
 }
 function vm_retry(array $data, int $seconds): never { header('Retry-After: '.max(1,$seconds)); vm_reply($data,429); }
+function vm_usage_plan(array $state, bool $firstInSession, int $now): array {
+    $day=gmdate('Y-m-d',$now);$cutoff=gmdate('Y-m-d',$now-29*86400);
+    $state['daily']=is_array($state['daily']??null)?$state['daily']:[];
+    foreach($state['daily']as$key=>$value)if(!preg_match('/^\d{4}-\d{2}-\d{2}$/D',(string)$key)||$key<$cutoff)unset($state['daily'][$key]);
+    $row=$state['daily'][$day]??['sessions'=>0,'answers'=>0];$row['answers']=(int)$row['answers']+1;
+    if($firstInSession)$row['sessions']=(int)$row['sessions']+1;$state['daily'][$day]=$row;
+    return ['state'=>$state,'notify'=>$firstInSession&&($now-(int)($state['lastAttemptAt']??0)>=3600),'day'=>$day];
+}
+function vm_usage_record(): void {
+    // Deliberately takes no question, answer, IP address or user-agent as an argument.
+    try {
+        vm_session();$first=empty($_SESSION['public_usage_recorded']);$_SESSION['public_usage_recorded']=true;session_write_close();
+        $file=vm_dir().'/usage.json';if(is_link($file))return;umask(0077);$h=fopen($file,'c+');if(!$h)return;
+        try {
+            if(!flock($h,LOCK_EX))return;$raw=stream_get_contents($h);$old=$raw?json_decode($raw,true,32,JSON_THROW_ON_ERROR):[];
+            $now=time();$plan=vm_usage_plan($old,$first,$now);$state=$plan['state'];$config=vm_config();
+            $to=$config['usage_notification_to']??'';$from='hello@moritzvollmer.de';
+            if($plan['notify']&&($config['usage_notifications_enabled']??false)===true&&is_string($to)&&filter_var($to,FILTER_VALIDATE_EMAIL)&&!preg_match('/[\r\n]/',$to)) {
+                $state['lastAttemptAt']=$now;
+                $time=(new DateTimeImmutable('now',new DateTimeZone('Europe/Berlin')))->format('d.m.Y H:i');
+                $counts=$state['daily'][$plan['day']];
+                $body="Dein Portfolio-Chat Moritz Vollmair wurde genutzt.\n\nErste erfolgreiche Antwort in einer Chat-Sitzung: ".$time." Uhr (Europe/Berlin).\n";
+                $body.="Heutige Nutzung (UTC-Tag): ".$counts['sessions'].($counts['sessions']===1?" Chat-Sitzung":" Chat-Sitzungen")." und ".$counts['answers'].($counts['answers']===1?" Antwort":" Antworten").".\n\n";
+                $body.="Diese automatische Meldung enthält keine Fragen, Antworten, IP-Adressen oder sonstigen Besucherkennungen.\n";
+                $body.="Pro Chat-Sitzung wird höchstens eine Meldung ausgelöst, insgesamt höchstens eine pro Stunde.\n";
+                $headers=['From'=>'Moritz Vollmair <'.$from.'>','MIME-Version'=>'1.0','Content-Type'=>'text/plain; charset=UTF-8','Content-Transfer-Encoding'=>'base64'];
+                $state['lastMailAccepted']=function_exists('mail')&&@mail($to,'Moritz Vollmair: neue Chat-Nutzung',chunk_split(base64_encode($body)),$headers,'-f'.$from);
+                if($state['lastMailAccepted'])$state['lastAcceptedAt']=$now;
+            }
+            $json=json_encode($state,JSON_THROW_ON_ERROR);rewind($h);if(ftruncate($h,0))fwrite($h,$json);fflush($h);
+        }finally{fclose($h);chmod($file,0600);}
+    }catch(Throwable){/* Notification failure must not turn a completed answer into a chat error. */}
+}
+function vm_usage_summary(): array {
+    $state=vm_read('usage');$today=$state['daily'][gmdate('Y-m-d')]??['sessions'=>0,'answers'=>0];$config=vm_config();
+    return ['sessions'=>(int)$today['sessions'],'answers'=>(int)$today['answers'],'notificationEnabled'=>($config['usage_notifications_enabled']??false)===true,'lastMailAccepted'=>$state['lastMailAccepted']??null];
+}
 function vm_instructions(array $knowledge, string $language): string {
     $style = $language === 'en'
         ? 'Write fluent, idiomatic English and address the visitor directly.'
