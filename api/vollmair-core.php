@@ -72,6 +72,47 @@ function vm_public_ready(array $config): bool {
     return true;
 }
 function vm_retry(array $data, int $seconds): never { header('Retry-After: '.max(1,$seconds)); vm_reply($data,429); }
+function vm_smtp_message(string $body, string $from, string $to, bool $test=false): string {
+    foreach([$from,$to]as$email)if(!preg_match('/^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$/D',$email))throw new InvalidArgumentException('Invalid notification address');
+    if(strlen($body)>4000)throw new InvalidArgumentException('Notification too large');
+    $headers=[
+        'Date: '.gmdate('D, d M Y H:i:s').' +0000',
+        'Message-ID: <'.bin2hex(random_bytes(16)).'@moritzvollmer.de>',
+        'From: Moritz Vollmair <'.$from.'>',
+        'To: <'.$to.'>',
+        'Subject: '.($test?'Moritz Vollmair: technischer Versandtest':'Moritz Vollmair: neue Chat-Nutzung'),
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: base64'
+    ];
+    return implode("\r\n",$headers)."\r\n\r\n".chunk_split(base64_encode($body),76,"\r\n");
+}
+function vm_smtp_send(string $body, array $config, bool $test=false): bool {
+    $user=$config['smtp_username']??'';$password=$config['smtp_password']??'';$to=$config['usage_notification_to']??'';
+    if($user!=='hello@moritzvollmer.de'||$to!=='hello@moritzvollmer.de'||!is_string($password)||$password===''||strlen($password)>4096||preg_match('/[\x00\r\n]/',$password))return false;
+    if(!function_exists('curl_init')||!in_array('smtps',curl_version()['protocols'],true))return false;
+    $stream=null;$curl=null;$accepted=false;$error=-1;$code=0;
+    try {
+        $message=vm_smtp_message($body,$user,$to,$test);$stream=fopen('php://memory','w+b');if(!$stream)return false;
+        fwrite($stream,$message);rewind($stream);
+        $curl=curl_init('smtps://smtp.ionos.de:465');
+        curl_setopt_array($curl,[
+            CURLOPT_USERNAME=>$user,CURLOPT_PASSWORD=>$password,
+            CURLOPT_MAIL_FROM=>'<'.$user.'>',CURLOPT_MAIL_RCPT=>['<'.$to.'>'],
+            CURLOPT_UPLOAD=>true,CURLOPT_INFILE=>$stream,CURLOPT_INFILESIZE=>strlen($message),
+            CURLOPT_RETURNTRANSFER=>true,CURLOPT_FOLLOWLOCATION=>false,
+            CURLOPT_CONNECTTIMEOUT=>4,CURLOPT_TIMEOUT=>8,
+            CURLOPT_SSL_VERIFYPEER=>true,CURLOPT_SSL_VERIFYHOST=>2,CURLOPT_PROTOCOLS=>CURLPROTO_SMTPS
+        ]);
+        $result=curl_exec($curl);$error=curl_errno($curl);$code=(int)curl_getinfo($curl,CURLINFO_RESPONSE_CODE);
+        $accepted=$result!==false&&$error===0&&$code>=200&&$code<300;
+    }catch(Throwable){$accepted=false;}
+    finally{
+        if($curl!==null)curl_close($curl);if(is_resource($stream))fclose($stream);
+        try{umask(0077);$file=vm_dir().'/smtp-status.json';if(!is_link($file)){file_put_contents($file,json_encode(['checkedAtUtc'=>gmdate('c'),'accepted'=>$accepted,'curlErrorCode'=>$error,'smtpCode'=>$code],JSON_THROW_ON_ERROR),LOCK_EX);chmod($file,0600);}}catch(Throwable){}
+    }
+    return $accepted;
+}
 function vm_usage_plan(array $state, bool $firstInSession, int $now): array {
     $day=gmdate('Y-m-d',$now);$cutoff=gmdate('Y-m-d',$now-29*86400);
     $state['daily']=is_array($state['daily']??null)?$state['daily']:[];
@@ -97,8 +138,7 @@ function vm_usage_record(): void {
                 $body.="Heutige Nutzung (UTC-Tag): ".$counts['sessions'].($counts['sessions']===1?" Chat-Sitzung":" Chat-Sitzungen")." und ".$counts['answers'].($counts['answers']===1?" Antwort":" Antworten").".\n\n";
                 $body.="Diese automatische Meldung enthält keine Fragen, Antworten, IP-Adressen oder sonstigen Besucherkennungen.\n";
                 $body.="Pro Chat-Sitzung wird höchstens eine Meldung ausgelöst, insgesamt höchstens eine pro Stunde.\n";
-                $headers=['From'=>'Moritz Vollmair <'.$from.'>','MIME-Version'=>'1.0','Content-Type'=>'text/plain; charset=UTF-8','Content-Transfer-Encoding'=>'base64'];
-                $state['lastMailAccepted']=function_exists('mail')&&@mail($to,'Moritz Vollmair: neue Chat-Nutzung',chunk_split(base64_encode($body)),$headers,'-f'.$from);
+                $state['lastMailAccepted']=vm_smtp_send($body,$config);
                 if($state['lastMailAccepted'])$state['lastAcceptedAt']=$now;
             }
             $json=json_encode($state,JSON_THROW_ON_ERROR);rewind($h);if(ftruncate($h,0))fwrite($h,$json);fflush($h);

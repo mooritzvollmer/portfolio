@@ -55,3 +55,5 @@ Current public release: visual chat preview only. No backend files or admin page
 2026-11-27: owner approved public activation and hourly-throttled email notifications to hello@moritzvollmer.de. Successful public answers count without transcripts/IP identifiers; only the first answer per session is eligible for a notification. Aggregate counts retained thirty days. Notification errors do not fail the chat. No mail for page views, start, failed responses or authenticated internal tests. All existing cost caps and private-storage protections remain in force.
 
 Live public release: fifteen browser checks passed, including approved soft skills and unknown/contact response. Mail transport is not complete: IONOS SMTP rejects its own provisioned authentication with 535. Sending is paused; no successful mail delivery has been asserted. Counts contain no transcripts, IP addresses or visitor IDs.
+
+Mail transport changed from failing host-provisioned sendmail to explicitly authenticated IONOS mailbox SMTPS. Preserve hourly/session throttles and content-free notifications; verify a real technical mail before re-enabling notifications.
