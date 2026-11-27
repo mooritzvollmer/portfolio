@@ -40,7 +40,53 @@
       <article class="legal-page__panel" aria-labelledby="legal-page-title">
         <p class="legal-page__eyebrow">Rechtliches</p>
         <h1 id="legal-page-title">Datenschutz</h1>
-        <section id="profilchat" aria-labelledby="profilchat-title"><h2 id="profilchat-title">Profilchat „Moritz Vollmair“</h2><p>Für öffentliche Besucher ist das Chatfenster derzeit eine Vorschau ohne Nachrichteneingabe. Ein Statusabruf prüft lediglich, ob eine interne Anmeldung besteht; ohne Anmeldung wird dabei kein Chat-Sitzungscookie angelegt.</p><p>Nur nach geschützter Anmeldung kann der Betreiber die KI testen. Dabei werden die Frage, bis zu vier kurze vorherige Nachrichten und ausdrücklich freigegebene Profilinformationen an OpenAI übermittelt. Es werden keine Websuche oder zusätzlichen Werkzeuge verwendet. Die API-Anfragen verwenden store:false; dies deaktiviert die Speicherung von Antwortobjekten, schließt mögliche Sicherheitsprotokolle des Anbieters aber nicht aus.</p><p>Die Anwendung speichert keine laufenden Chatverläufe auf dem Server. Für Anmeldung und interne Nutzung wird ein technisch erforderliches Sitzungscookie verwendet. Zeitlich begrenzte, pseudonymisierte Zähler begrenzen Anfragen; darin wird die IP-Adresse nicht im Klartext gespeichert. Technische Hosting-Protokolle bleiben davon unabhängig.</p><p>Wissensgrundlage und Zugangsdaten liegen außerhalb der öffentlich ausgelieferten Website. Einzelne technische Testberichte werden dort ausschließlich zur internen Prüfung aufbewahrt.</p></section>
+        <section id="profilchat" aria-labelledby="profilchat-title">
+          <h2 id="profilchat-title">KI-Profilassistent „Moritz Vollmair“</h2>
+          <h3>Aktueller Stand und Datenübermittlung</h3>
+          <p>
+            Der öffentliche Chat ist derzeit noch eine Vorschau. Die KI kann nur im geschützten
+            internen Test genutzt werden. Der öffentliche Ablauf wird für eine gesonderte Freigabe
+            vorbereitet: Erst nach dem bewussten Start des Chats wird eine technisch benötigte
+            Sitzung angelegt. Allein die Chatansicht oder der Start senden noch keine Frage an
+            OpenAI.
+          </p>
+          <p>
+            Beim Absenden einer Frage verarbeitet OpenAI den Fragetext, bis zu vier kurze vorherige
+            Nachrichten und die vom Betreiber freigegebenen Profilinformationen, um eine passende
+            Antwort zu erzeugen. Es werden keine Websuche oder weiteren Werkzeuge verwendet. Bitte
+            gib keine vertraulichen oder sensiblen personenbezogenen Informationen ein. KI-Antworten
+            können unzutreffend sein; für verbindliche Angaben kontaktiere Moritz direkt.
+          </p>
+          <h3>Speicherung und Schutz</h3>
+          <p>
+            Die Anwendung speichert laufende Chatverläufe nicht auf dem Server. Der Verlauf bleibt
+            im Arbeitsspeicher des Browsers und wird beim Leeren oder Neuladen verworfen.
+            Zugangsdaten und Wissensdateien liegen außerhalb der öffentlich ausgelieferten Website.
+            Einzelne vom Betreiber ausgeführte technische Testberichte werden dort zur internen
+            Prüfung aufbewahrt.
+          </p>
+          <p>
+            OpenAI erklärt, API-Daten standardmäßig nicht zum Modelltraining zu verwenden, sofern
+            keine gesonderte Freigabe erfolgt. Die Anwendung setzt store:false und speichert somit
+            keine Antwortobjekte über die Responses API. Das bedeutet nicht, dass beim Anbieter
+            keinerlei Daten verbleiben: Sicherheitsprotokolle und Zwischenspeicherung können nach
+            dessen Bedingungen bestehen. Details findest Du in den
+            <a href="https://developers.openai.com/api/docs/guides/your-data"
+              >OpenAI-Hinweisen zur Datennutzung</a
+            >.
+          </p>
+          <p>
+            Eine technisch erforderliche, gegen Auslesen durch JavaScript geschützte Sitzung sichert
+            Anmeldung und Chat-Anfragen ab. Zeitlich begrenzte, mit einem geheimen Schlüssel aus der
+            IP-Adresse abgeleitete Zähler begrenzen die Nutzung; die Anwendung speichert darin keine
+            IP-Adressen im Klartext. Besucher können höchstens sechs Anfragen je
+            Zehn-Minuten-Zeitfenster stellen. Insgesamt sind höchstens 50 KI-Anfragen pro
+            UTC-Kalendertag zugelassen, einschließlich interner Tests. Bei ausgeschöpftem Limit,
+            fehlendem API-Guthaben oder technischen Fehlern wird eine Kontaktmöglichkeit angeboten;
+            es gibt keine automatische Wiederholung oder Guthabenaufladung durch die Website.
+            Allgemeine technische Hosting-Protokolle bleiben davon unabhängig.
+          </p>
+        </section>
       </article>
     </main>
     <footer class="subpage-footer">

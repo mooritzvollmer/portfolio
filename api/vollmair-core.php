@@ -15,7 +15,7 @@ function vm_read(string $name): array {
     if (!is_array($data)) throw new RuntimeException('Invalid private data');
     return $data;
 }
-function vm_config(): array { return vm_read('config') + ['api_key'=>'', 'admin_hash'=>'', 'salt'=>'', 'internal_enabled'=>false]; }
+function vm_config(): array { return vm_read('config') + ['api_key'=>'', 'admin_hash'=>'', 'salt'=>'', 'internal_enabled'=>false, 'public_enabled'=>false, 'ai_enabled'=>false]; }
 function vm_reply(array $data, int $status = 200): never {
     http_response_code($status); header('Content-Type: application/json; charset=utf-8');
     echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR); exit;
@@ -46,7 +46,7 @@ function vm_limit(string $scope, string $identity, int $period, int $limit): boo
     $salt=vm_config()['salt']; if (!is_string($salt) || strlen($salt)<24) throw new RuntimeException('Missing rate-limit secret');
     $bucket=intdiv(time(),$period); $key=hash_hmac('sha256',$scope.'|'.$bucket.'|'.$identity,$salt);
     $file=vm_dir().'/vollmair-limits.json'; if (is_link($file)) throw new RuntimeException('Invalid storage');
-    $h=fopen($file,'c+'); if(!$h)throw new RuntimeException('Limit unavailable');
+    umask(0077); $h=fopen($file,'c+'); if(!$h)throw new RuntimeException('Limit unavailable');
     try { if(!flock($h,LOCK_EX))throw new RuntimeException('Lock unavailable'); $raw=stream_get_contents($h); $rows=$raw?json_decode($raw,true,32,JSON_THROW_ON_ERROR):[];
         foreach($rows as $id=>$row)if(($row['expires']??0)<time())unset($rows[$id]);
         $row=$rows[$key]??['count'=>0,'expires'=>($bucket+1)*$period]; $allowed=$row['count']<$limit;
@@ -62,6 +62,16 @@ function vm_knowledge(): array {
     return ['records'=>$records,'responseStyle'=>$data['responseStyle']];
 }
 function vm_internal_ready(array $config): bool { return $config['internal_enabled']===true && is_string($config['api_key']) && str_starts_with($config['api_key'],'sk-'); }
+function vm_public_ready(array $config): bool {
+    // Local browser tests can exercise the future public flow. Production remains hard-disabled.
+    $localTest = PHP_SAPI === 'cli-server' && getenv('VOLLMAIR_TEST_PUBLIC') === '1';
+    if ((!VM_PUBLIC_ENABLED && !$localTest) || ($config['public_enabled'] ?? false) !== true || ($config['ai_enabled'] ?? false) !== true || !is_string($config['api_key']) || !str_starts_with($config['api_key'],'sk-')) return false;
+    $approved=vm_read('approved-profile');
+    if (($approved['publicActivationApproved'] ?? false) !== true) return false;
+    vm_knowledge();
+    return true;
+}
+function vm_retry(array $data, int $seconds): never { header('Retry-After: '.max(1,$seconds)); vm_reply($data,429); }
 function vm_instructions(array $knowledge, string $language): string {
     $style = $language === 'en'
         ? 'Write fluent, idiomatic English and address the visitor directly.'
@@ -78,7 +88,7 @@ function vm_decode_answer(array $response, array $ids): array {
     return $answer;
 }
 function vm_generate(string $question, array $history, string $language, array $config): array {
-    $knowledge=vm_knowledge();$ids=array_column($knowledge['records'],'id');
+    $knowledge=vm_knowledge(); if(strlen(json_encode($knowledge,JSON_THROW_ON_ERROR))>60000)throw new RuntimeException('Approved context exceeds limit'); $ids=array_column($knowledge['records'],'id');
     $schema=['type'=>'object','properties'=>['answer'=>['type'=>'string'],'known'=>['type'=>'boolean'],'fact_ids'=>['type'=>'array','items'=>['type'=>'string','enum'=>$ids]]],'required'=>['answer','known','fact_ids'],'additionalProperties'=>false];
     $payload=['model'=>'gpt-6-luna','instructions'=>vm_instructions($knowledge,$language),'input'=>json_encode(['history'=>$history,'question'=>$question],JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR),'store'=>false,'reasoning'=>['effort'=>'none'],'max_output_tokens'=>480,'tools'=>[],'text'=>['format'=>['type'=>'json_schema','name'=>'approved_profile_answer','strict'=>true,'schema'=>$schema]]];
     if(session_status()===PHP_SESSION_ACTIVE)session_write_close();
